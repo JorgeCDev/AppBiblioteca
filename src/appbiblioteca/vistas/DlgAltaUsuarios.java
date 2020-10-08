@@ -15,15 +15,13 @@ import java.awt.Font;
 public class DlgAltaUsuarios extends javax.swing.JDialog {
 
     private final Font fuenteH= new Font("Helvetica",Font.PLAIN,13);
-    private final Font fuenteT= new Font("Helvetica",Font.PLAIN,16);
+    private final Font fuenteT= new Font("Helvetica",Font.PLAIN,13);
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     
     
-    /**
-     * Creates new form DlgAltaUsuarios
-     */
+  
     public DlgAltaUsuarios(java.awt.Frame frame, String title ,boolean modal) {
         super(frame,title, modal);
         initComponents();
