@@ -5,6 +5,7 @@
  */
 package appbiblioteca;
 
+import appbiblioteca.vistas.VistaBiblioteca;
 import javax.swing.SwingUtilities;
 
 /**
@@ -20,7 +21,7 @@ public class AppBiblioteca {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                //Aquí el objeto a ejecutar
+               new VistaBiblioteca().setVisible(true);
             }
         });
     }
