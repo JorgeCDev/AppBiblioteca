@@ -14,8 +14,9 @@ import java.awt.Font;
  */
 public class DlgAltaUsuarios extends javax.swing.JDialog {
 
-    private final Font fuenteH= new Font("Helvetica",Font.BOLD,13);
+    private final Font fuenteH= new Font("Helvetica",Font.PLAIN,13);
     private final Font fuenteT= new Font("Helvetica",Font.BOLD,12);
+    private final Font fuenteB= new Font("Helvetica",Font.BOLD,13);
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
@@ -97,6 +98,7 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         btnAltaUsuarioAgregar.setForeground(Color.BLACK);
         btnAltaUsuarioAgregar.setText("Agregar");
         btnAltaUsuarioAgregar.setBorder(null);
+        btnAltaUsuarioAgregar.setFocusPainted(false);
         btnAltaUsuarioAgregar.setPreferredSize(new java.awt.Dimension(100, 25));
 
         btnAltaUsuarioSalir.setBackground(COLOR_DARK);
@@ -104,6 +106,7 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         btnAltaUsuarioSalir.setForeground(Color.BLACK);
         btnAltaUsuarioSalir.setText("Salir");
         btnAltaUsuarioSalir.setBorder(null);
+        btnAltaUsuarioSalir.setFocusPainted(false);
         btnAltaUsuarioSalir.setPreferredSize(new java.awt.Dimension(100, 25));
 
         txtAltaUsuarioApePat.setFont(fuenteH);
