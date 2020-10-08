@@ -14,8 +14,8 @@ import java.awt.Font;
  */
 public class DlgAltaUsuarios extends javax.swing.JDialog {
 
-    private final Font fuenteH= new Font("Helvetica",Font.PLAIN,13);
-    private final Font fuenteT= new Font("Helvetica",Font.PLAIN,13);
+    private final Font fuenteH= new Font("Helvetica",Font.BOLD,13);
+    private final Font fuenteT= new Font("Helvetica",Font.BOLD,12);
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
@@ -26,6 +26,9 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         super(frame,title, modal);
         initComponents();
     }
+    
+  
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,6 +58,9 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alta de Usuarios");
+        setLocationByPlatform(true);
+        setModal(true);
+        setResizable(false);
 
         jLabel1.setFont(fuenteT);
         jLabel1.setText("Nombre");
@@ -69,8 +75,11 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         txtAltaUsuarioApeMat.setBorder(null);
         txtAltaUsuarioApeMat.setMinimumSize(new java.awt.Dimension(0, 20));
 
+        cmbTipo.setBackground(Color.WHITE);
         cmbTipo.setFont(fuenteT);
         cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Alumno", "Maestro", "Externo" }));
+        cmbTipo.setBorder(null);
+        cmbTipo.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
         txtAltaUsuarioCiudad.setFont(fuenteH);
         txtAltaUsuarioCiudad.setBorder(null);
@@ -84,13 +93,15 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         jScrollPane1.setViewportView(txtAltaUsuarioDomicilio);
 
         btnAltaUsuarioAgregar.setBackground(COLOR_DARK);
-        btnAltaUsuarioAgregar.setFont(fuenteT);
+        btnAltaUsuarioAgregar.setFont(fuenteH);
+        btnAltaUsuarioAgregar.setForeground(Color.BLACK);
         btnAltaUsuarioAgregar.setText("Agregar");
         btnAltaUsuarioAgregar.setBorder(null);
         btnAltaUsuarioAgregar.setPreferredSize(new java.awt.Dimension(100, 25));
 
         btnAltaUsuarioSalir.setBackground(COLOR_DARK);
-        btnAltaUsuarioSalir.setFont(fuenteT);
+        btnAltaUsuarioSalir.setFont(fuenteH);
+        btnAltaUsuarioSalir.setForeground(Color.BLACK);
         btnAltaUsuarioSalir.setText("Salir");
         btnAltaUsuarioSalir.setBorder(null);
         btnAltaUsuarioSalir.setPreferredSize(new java.awt.Dimension(100, 25));
