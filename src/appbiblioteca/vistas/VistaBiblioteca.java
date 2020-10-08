@@ -8,6 +8,7 @@ package appbiblioteca.vistas;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Toolkit;
 import javax.swing.Box;
 
 /**
@@ -54,6 +55,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteca");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/recursos/2x/book-2-24.png")));
         setLocationByPlatform(true);
         setName("VistaBiblioteca"); // NOI18N
 
@@ -136,7 +138,6 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 
         menuAcerca.setForeground(Color.BLACK);
         menuAcerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_help_outline_black_18dp.png"))); // NOI18N
-        menuAcerca.setText("Acerca");
         menuAcerca.setFont(fuenteT);
         menuAcerca.setIconTextGap(10);
         menuAcerca.setMargin(new java.awt.Insets(0, 0, 0, 20));
@@ -144,7 +145,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmAcerca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
         mnItmAcerca.setFont(fuenteH);
         mnItmAcerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_contact_support_black_18dp.png"))); // NOI18N
-        mnItmAcerca.setText("Ayuda");
+        mnItmAcerca.setText("Acerca");
         menuAcerca.add(mnItmAcerca);
 
         mbBarraMenu.add(Box.createHorizontalGlue());
@@ -161,7 +162,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
+            .addGap(0, 558, Short.MAX_VALUE)
         );
 
         pack();
