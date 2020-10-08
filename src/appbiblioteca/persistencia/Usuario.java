@@ -13,7 +13,8 @@ import java.util.Objects;
  */
 public class Usuario {
     
-    private String nombreUsuario, domicilioUsuario,ciudadResidencia;
+    private String nombreUsuario, domicilioUsuario,ciudadResidencia, 
+            apePatUsuario,apeMatUsuario;
     private char tipoUsuario;
     private boolean moroso;
 
@@ -65,12 +66,30 @@ public class Usuario {
         this.moroso = moroso;
     }
 
+    public String getApePatUsuario() {
+        return apePatUsuario;
+    }
+
+    public void setApePatUsuario(String apePatUsuario) {
+        this.apePatUsuario = apePatUsuario;
+    }
+
+    public String getApeMatUsuario() {
+        return apeMatUsuario;
+    }
+
+    public void setApeMatUsuario(String apeMatUsuario) {
+        this.apeMatUsuario = apeMatUsuario;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.nombreUsuario);
-        hash = 37 * hash + Objects.hashCode(this.domicilioUsuario);
-        hash = 37 * hash + Objects.hashCode(this.ciudadResidencia);
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(this.nombreUsuario);
+        hash = 89 * hash + Objects.hashCode(this.domicilioUsuario);
+        hash = 89 * hash + Objects.hashCode(this.ciudadResidencia);
+        hash = 89 * hash + Objects.hashCode(this.apePatUsuario);
+        hash = 89 * hash + Objects.hashCode(this.apeMatUsuario);
         return hash;
     }
 
@@ -95,8 +114,18 @@ public class Usuario {
         if (!Objects.equals(this.ciudadResidencia, other.ciudadResidencia)) {
             return false;
         }
+        if (!Objects.equals(this.apePatUsuario, other.apePatUsuario)) {
+            return false;
+        }
+        if (!Objects.equals(this.apeMatUsuario, other.apeMatUsuario)) {
+            return false;
+        }
         return true;
     }
+    
+    
+
+    
     
     
     
