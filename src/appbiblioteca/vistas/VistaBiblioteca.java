@@ -6,6 +6,7 @@
 package appbiblioteca.vistas;
 
 
+import appbiblioteca.negocio.ManejaEventos;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -22,13 +23,42 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
+    private DlgAltaUsuarios altaUsuarios;
+    private ManejaEventos controladora;
+    
+    
     /**
      * Creates new form VistaBiblioteca
      */
     public VistaBiblioteca() {
         initComponents();
+        creaDialogos();
+        creaAcciones();
     }
+        
+    private void creaDialogos(){
+        
+        altaUsuarios= new DlgAltaUsuarios(this, "Alta de Usuarios", true);
+        
+        
+    }
+    
+    private void creaAcciones(){
+        
+        controladora = new ManejaEventos(this);
+        mnItmAltasUsuario.addActionListener(controladora);
+        
+    }
+    
+    //Getter y Setters
 
+    public DlgAltaUsuarios getAltaUsuarios() {
+        return altaUsuarios;
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
