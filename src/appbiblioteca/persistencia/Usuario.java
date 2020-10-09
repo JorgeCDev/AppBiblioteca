@@ -16,14 +16,14 @@ public class Usuario {
     private String nombreUsuario, domicilioUsuario,ciudadResidencia, 
             apePatUsuario,apeMatUsuario;
     private char tipoUsuario;
-    private boolean moroso;
+ 
 
-    public Usuario(String nombreUsuario, String domicilioUsuario, String ciudadResidencia, char tipoUsuario, boolean moroso) {
+    public Usuario(String nombreUsuario, String domicilioUsuario, String ciudadResidencia, char tipoUsuario) {
         this.nombreUsuario = nombreUsuario;
         this.domicilioUsuario = domicilioUsuario;
         this.ciudadResidencia = ciudadResidencia;
         this.tipoUsuario = tipoUsuario;
-        this.moroso = moroso;
+      
     }
 
     public String getNombreUsuario() {
@@ -56,14 +56,6 @@ public class Usuario {
 
     public void setTipoUsuario(char tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
-    }
-
-    public boolean isMoroso() {
-        return moroso;
-    }
-
-    public void setMoroso(boolean moroso) {
-        this.moroso = moroso;
     }
 
     public String getApePatUsuario() {
