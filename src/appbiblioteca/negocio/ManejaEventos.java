@@ -27,12 +27,15 @@ public class ManejaEventos implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         String evento= e.getActionCommand();
-        
+        System.out.println(e.getActionCommand());
         switch(evento){
             case "Altas Usuario":
                 vista.getAltaUsuarios().setVisible(true);
                 break;
                 
+            case "Alta Libros":
+                vista.getAltaLibros().setVisible(true);
+                break;
                 
         }
             
