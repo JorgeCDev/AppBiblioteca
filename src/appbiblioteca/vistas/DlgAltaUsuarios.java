@@ -14,8 +14,8 @@ import java.awt.Font;
  */
 public class DlgAltaUsuarios extends javax.swing.JDialog {
 
-    private final Font fuenteH= new Font("Helvetica",Font.PLAIN,13);
-    private final Font fuenteT= new Font("Helvetica",Font.BOLD,12);
+    private final Font fuenteH= new Font("Helvetica",Font.BOLD,20);
+    private final Font fuenteT= new Font("Helvetica",Font.PLAIN,12);
     private final Font fuenteB= new Font("Helvetica",Font.BOLD,13);
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
@@ -40,10 +40,10 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel5 = new javax.swing.JLabel();
         txtAltaUsuarioApeMat = new javax.swing.JTextField();
         cmbTipo = new javax.swing.JComboBox<>();
         txtAltaUsuarioCiudad = new javax.swing.JTextField();
@@ -53,12 +53,14 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         btnAltaUsuarioSalir = new javax.swing.JButton();
         txtAltaUsuarioApePat = new javax.swing.JTextField();
         txtAltaUsuarioNombre = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel6 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel3 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alta de Usuarios");
+        setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
         setModal(true);
         setResizable(false);
@@ -72,7 +74,7 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         jLabel5.setFont(fuenteT);
         jLabel5.setText("Ciudad de Residencia");
 
-        txtAltaUsuarioApeMat.setFont(fuenteH);
+        txtAltaUsuarioApeMat.setFont(fuenteT);
         txtAltaUsuarioApeMat.setBorder(null);
         txtAltaUsuarioApeMat.setMinimumSize(new java.awt.Dimension(0, 20));
 
@@ -80,40 +82,44 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         cmbTipo.setFont(fuenteT);
         cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Alumno", "Maestro", "Externo" }));
         cmbTipo.setBorder(null);
+        cmbTipo.setPreferredSize(new java.awt.Dimension(0, 25));
         cmbTipo.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
-        txtAltaUsuarioCiudad.setFont(fuenteH);
+        txtAltaUsuarioCiudad.setFont(fuenteT);
         txtAltaUsuarioCiudad.setBorder(null);
+        txtAltaUsuarioCiudad.setPreferredSize(new java.awt.Dimension(0, 25));
 
         jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txtAltaUsuarioDomicilio.setColumns(20);
-        txtAltaUsuarioDomicilio.setFont(fuenteH);
+        txtAltaUsuarioDomicilio.setFont(fuenteT);
         txtAltaUsuarioDomicilio.setRows(2);
         txtAltaUsuarioDomicilio.setBorder(null);
         jScrollPane1.setViewportView(txtAltaUsuarioDomicilio);
 
-        btnAltaUsuarioAgregar.setBackground(COLOR_DARK);
-        btnAltaUsuarioAgregar.setFont(fuenteH);
+        btnAltaUsuarioAgregar.setBackground(COLOR_MEDIO);
+        btnAltaUsuarioAgregar.setFont(fuenteB);
         btnAltaUsuarioAgregar.setForeground(Color.BLACK);
         btnAltaUsuarioAgregar.setText("Agregar");
         btnAltaUsuarioAgregar.setBorder(null);
         btnAltaUsuarioAgregar.setFocusPainted(false);
-        btnAltaUsuarioAgregar.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnAltaUsuarioAgregar.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        btnAltaUsuarioSalir.setBackground(COLOR_DARK);
-        btnAltaUsuarioSalir.setFont(fuenteH);
+        btnAltaUsuarioSalir.setBackground(COLOR_MEDIO);
+        btnAltaUsuarioSalir.setFont(fuenteB);
         btnAltaUsuarioSalir.setForeground(Color.BLACK);
         btnAltaUsuarioSalir.setText("Salir");
         btnAltaUsuarioSalir.setBorder(null);
         btnAltaUsuarioSalir.setFocusPainted(false);
-        btnAltaUsuarioSalir.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnAltaUsuarioSalir.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        txtAltaUsuarioApePat.setFont(fuenteH);
+        txtAltaUsuarioApePat.setFont(fuenteT);
         txtAltaUsuarioApePat.setBorder(null);
         txtAltaUsuarioApePat.setMinimumSize(new java.awt.Dimension(0, 20));
 
-        txtAltaUsuarioNombre.setFont(fuenteH);
+        txtAltaUsuarioNombre.setFont(fuenteT);
         txtAltaUsuarioNombre.setBorder(null);
         txtAltaUsuarioNombre.setMinimumSize(new java.awt.Dimension(0, 20));
         txtAltaUsuarioNombre.setPreferredSize(new java.awt.Dimension(0, 25));
@@ -127,6 +133,9 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         jLabel7.setFont(fuenteT);
         jLabel7.setText("Apellido Materno");
 
+        jLabel8.setFont(fuenteH);
+        jLabel8.setText("Alta de Usuarios");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -135,81 +144,85 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(28, 28, 28)
+                                    .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
-                                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtAltaUsuarioNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
+                                    .addComponent(jLabel8))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
+                                    .addComponent(jLabel3)
+                                    .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel8)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAltaUsuarioNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtAltaUsuarioNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(85, Short.MAX_VALUE))))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41))))
         );
 
         pack();
@@ -221,13 +234,8 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     private javax.swing.JButton btnAltaUsuarioAgregar;
     private javax.swing.JButton btnAltaUsuarioSalir;
     private javax.swing.JComboBox<String> cmbTipo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtAltaUsuarioApeMat;
     private javax.swing.JTextField txtAltaUsuarioApePat;

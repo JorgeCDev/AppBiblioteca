@@ -24,7 +24,9 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     private DlgAltaUsuarios altaUsuarios;
+    private DlgAltaLibros altaLibros;
     private ManejaEventos controladora;
+    
     
     
     /**
@@ -39,7 +41,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private void creaDialogos(){
         
         altaUsuarios= new DlgAltaUsuarios(this, "Alta de Usuarios", true);
-        
+        altaLibros= new DlgAltaLibros(this, "Alta de Libros", true);
         
     }
     
@@ -47,6 +49,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         
         controladora = new ManejaEventos(this);
         mnItmAltasUsuario.addActionListener(controladora);
+        mnItmAltaLibros.addActionListener(controladora);
         
     }
     
@@ -55,6 +58,12 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     public DlgAltaUsuarios getAltaUsuarios() {
         return altaUsuarios;
     }
+
+    public DlgAltaLibros getAltaLibros() {
+        return altaLibros;
+    }
+    
+    
     
     
     
@@ -85,6 +94,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteca");
+        setBackground(Color.WHITE);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/recursos/2x/book-2-24.png")));
         setLocationByPlatform(true);
         setName("VistaBiblioteca"); // NOI18N
