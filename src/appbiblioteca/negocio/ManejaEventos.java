@@ -37,6 +37,10 @@ public class ManejaEventos implements ActionListener{
                 vista.getAltaLibros().setVisible(true);
                 break;
                 
+                
+            case "Aumentar Existencia":
+                vista.getAumentarExistencia().setVisible(true);
+                break;    
         }
             
         
