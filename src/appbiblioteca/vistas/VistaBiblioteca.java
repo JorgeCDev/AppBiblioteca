@@ -25,7 +25,9 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private final Color COLOR_DARK = new Color(0, 129, 203);
     private DlgAltaUsuarios altaUsuarios;
     private DlgAltaLibros altaLibros;
+    private DlgAumentarExist aumentarExistencia;
     private ManejaEventos controladora;
+    
     
     
     
@@ -42,6 +44,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         
         altaUsuarios= new DlgAltaUsuarios(this, "Alta de Usuarios", true);
         altaLibros= new DlgAltaLibros(this, "Alta de Libros", true);
+        aumentarExistencia= new DlgAumentarExist(this, "Aumentar Existencia", true);
         
     }
     
@@ -50,6 +53,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         controladora = new ManejaEventos(this);
         mnItmAltasUsuario.addActionListener(controladora);
         mnItmAltaLibros.addActionListener(controladora);
+        mnItmExistencia.addActionListener(controladora);
         
     }
     
@@ -62,6 +66,11 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     public DlgAltaLibros getAltaLibros() {
         return altaLibros;
     }
+
+    public DlgAumentarExist getAumentarExistencia() {
+        return aumentarExistencia;
+    }
+    
     
     
     
