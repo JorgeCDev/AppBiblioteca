@@ -23,7 +23,11 @@ public class Usuario {
         this.domicilioUsuario = domicilioUsuario;
         this.ciudadResidencia = ciudadResidencia;
         this.tipoUsuario = tipoUsuario;
-      
+    }
+    public Usuario(String nombreUsuario, String domicilioUsuario, String ciudadResidencia) {
+        this.nombreUsuario = nombreUsuario;
+        this.domicilioUsuario = domicilioUsuario;
+        this.ciudadResidencia = ciudadResidencia;
     }
 
     public String getNombreUsuario() {

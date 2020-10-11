@@ -45,7 +45,7 @@ public class ManejaEventos implements ActionListener{
                 
             case "Prestamo Libros":
                 vista.getPrestamos().setVisible(true);
-                break;     
+                break; 
         }
             
         

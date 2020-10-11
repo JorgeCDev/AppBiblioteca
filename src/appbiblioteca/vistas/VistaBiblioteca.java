@@ -7,6 +7,7 @@ package appbiblioteca.vistas;
 
 
 import appbiblioteca.negocio.ManejaEventos;
+import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -29,22 +30,23 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private DlgPrestamos prestamos;
     private ManejaEventos controladora;
     
-    
-    
+    ManejaTablaH tablaH;
     
     /**
      * Creates new form VistaBiblioteca
      */
     public VistaBiblioteca() {
+        
+        tablaH = new ManejaTablaH();
         initComponents();
-        creaDialogos();
+        creaDialogos(tablaH);
         creaAcciones();
     }
         
-    private void creaDialogos(){
+    private void creaDialogos(ManejaTablaH tablaH){
         
-        altaUsuarios= new DlgAltaUsuarios(this, "Alta de Usuarios", true);
-        altaLibros= new DlgAltaLibros(this, "Alta de Libros", true);
+        altaUsuarios= new DlgAltaUsuarios(this, "Alta de Usuarios", true, tablaH);
+        altaLibros= new DlgAltaLibros(this, "Alta de Libros", true, tablaH);
         aumentarExistencia= new DlgAumentarExist(this, "Aumentar Existencia", true);
         prestamos=new DlgPrestamos(this, "Prestamos de Libros", true);
         
@@ -124,7 +126,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         menuArchivo.setFont(fuenteT);
         menuArchivo.setIconTextGap(10);
 
-        menuItmSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
+        menuItmSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuItmSalir.setFont(fuenteH);
         menuItmSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_close_black_18dp.png"))); // NOI18N
         menuItmSalir.setText("Salir");
@@ -138,19 +140,19 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         menuGestion.setFont(fuenteT);
         menuGestion.setIconTextGap(10);
 
-        mnItmAltasUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_MASK));
+        mnItmAltasUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         mnItmAltasUsuario.setFont(fuenteH);
         mnItmAltasUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_person_add_black_18dp.png"))); // NOI18N
         mnItmAltasUsuario.setText("Altas Usuario");
         menuGestion.add(mnItmAltasUsuario);
 
-        mnItmAltaLibros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK));
+        mnItmAltaLibros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         mnItmAltaLibros.setFont(fuenteH);
         mnItmAltaLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_library_add_black_18dp.png"))); // NOI18N
         mnItmAltaLibros.setText("Alta Libros");
         menuGestion.add(mnItmAltaLibros);
 
-        mnItmExistencia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
+        mnItmExistencia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         mnItmExistencia.setFont(fuenteH);
         mnItmExistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_addchart_black_18dp.png"))); // NOI18N
         mnItmExistencia.setText("Aumentar Existencia");
@@ -164,7 +166,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         menuConsultas.setFont(fuenteT);
         menuConsultas.setIconTextGap(10);
 
-        mnItmBusqueda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK));
+        mnItmBusqueda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         mnItmBusqueda.setFont(fuenteH);
         mnItmBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_search_black_18dp.png"))); // NOI18N
         mnItmBusqueda.setText("Busqueda");
@@ -178,13 +180,13 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         menuLibros.setFont(fuenteT);
         menuLibros.setIconTextGap(10);
 
-        mnItmPrestamoLibros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
+        mnItmPrestamoLibros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         mnItmPrestamoLibros.setFont(fuenteH);
         mnItmPrestamoLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_library_books_black_18dp.png"))); // NOI18N
         mnItmPrestamoLibros.setText("Prestamo Libros");
         menuLibros.add(mnItmPrestamoLibros);
 
-        mnItmDevolucionLibros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_MASK));
+        mnItmDevolucionLibros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         mnItmDevolucionLibros.setFont(fuenteH);
         mnItmDevolucionLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_assignment_return_black_18dp.png"))); // NOI18N
         mnItmDevolucionLibros.setText("Devolucion de Libros");
@@ -198,7 +200,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         menuAcerca.setIconTextGap(10);
         menuAcerca.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
-        mnItmAcerca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
+        mnItmAcerca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_DOWN_MASK));
         mnItmAcerca.setFont(fuenteH);
         mnItmAcerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_contact_support_black_18dp.png"))); // NOI18N
         mnItmAcerca.setText("Acerca");

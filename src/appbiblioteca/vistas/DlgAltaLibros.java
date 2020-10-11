@@ -5,6 +5,8 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.negocio.EventosDlgAltaLibros;
+import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -22,12 +24,16 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     
+    EventosDlgAltaLibros eventosAltaLibros;
+    
+    
     
     /**
      * Creates new form DlgAltaLibros
      */
-    public DlgAltaLibros(java.awt.Frame frame,String title, boolean modal) {
+    public DlgAltaLibros(java.awt.Frame frame,String title, boolean modal, ManejaTablaH tablaH) {
         super(frame,title, modal);
+        //eventosaltaLibros = new EventosDlgAltaLibros(this,tablaH);
         initComponents();
     }
     

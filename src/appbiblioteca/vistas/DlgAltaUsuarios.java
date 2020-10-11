@@ -5,6 +5,8 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.negocio.EventosDlgAltaUsuarios;
+import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -21,14 +23,49 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     
+    EventosDlgAltaUsuarios controladoraUsuarios;
     
   
-    public DlgAltaUsuarios(java.awt.Frame frame, String title ,boolean modal) {
+    public DlgAltaUsuarios(java.awt.Frame frame, String title ,boolean modal, ManejaTablaH tablaH) {
         super(frame,title, modal);
         initComponents();
+        creaAcciones(tablaH);
     }
     
-  
+    private void creaAcciones(ManejaTablaH tablaH){
+        controladoraUsuarios = new EventosDlgAltaUsuarios(this, tablaH);
+        
+        btnAltaUsuarioAgregar.addActionListener(controladoraUsuarios);
+        btnAltaUsuarioSalir.addActionListener(controladoraUsuarios);        
+    }
+    
+    public void limpiarTxt(){
+        txtAltaUsuarioNombre.setText("");
+        txtAltaUsuarioApeMat.setText("");
+        txtAltaUsuarioApePat.setText("");
+        txtAltaUsuarioCiudad.setText("");
+        txtAltaUsuarioDomicilio.setText("");
+    }
+    
+    
+    public String getUsuarioNombre(){
+        return txtAltaUsuarioNombre.getText();
+    }
+    public String getUsuarioApeMat(){
+        return txtAltaUsuarioApeMat.getText();
+    }
+    public String getUsuarioApePat(){
+        return txtAltaUsuarioApePat.getText();
+    }
+    public String getUsuarioCiudad(){
+        return txtAltaUsuarioCiudad.getText();
+    }
+    public String getUsuarioDomicilio(){
+        return txtAltaUsuarioDomicilio.getText();
+    }
+    public Object getUsuarioTipo(){
+        return cmbTipo.getSelectedItem();
+    }   
   
 
     /**
