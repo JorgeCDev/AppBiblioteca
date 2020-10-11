@@ -56,6 +56,9 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
 
         jLabel2.setText("Usuario");
 
+        txtDevLibUsuario.setFont(fuenteH);
+        txtDevLibUsuario.setBorder(null);
+
         btnDevLibBuscar.setBackground(COLOR_LIGHT);
         btnDevLibBuscar.setFont(fuenteB);
         btnDevLibBuscar.setText("Buscar");
