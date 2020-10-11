@@ -5,17 +5,26 @@
  */
 package appbiblioteca.vistas;
 
+import java.awt.Color;
+import java.awt.Font;
+
 /**
  *
  * @author Jorge
  */
 public class DlgDevolverLibros extends javax.swing.JDialog {
-
+    
+    private final Font fuenteH= new Font("Helvetica",Font.PLAIN,12);
+    private final Font fuenteT= new Font("Helvetica",Font.BOLD,20);
+    private final Font fuenteB= new Font("Helvetica",Font.BOLD,13);
+    private final Color COLOR_MEDIO = new Color(0, 176, 255);
+    private final Color COLOR_LIGHT = new Color(105, 226, 255);
+    private final Color COLOR_DARK = new Color(0, 129, 203);    
     /**
      * Creates new form DlgDevolverLibros
      */
-    public DlgDevolverLibros(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public DlgDevolverLibros(java.awt.Frame parent, String title,boolean modal) {
+        super(parent,title, modal);
         initComponents();
     }
 
@@ -30,21 +39,69 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtDevLibUsuario = new javax.swing.JTextField();
+        btnDevLibBuscar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDevLibTablaLibrosPrestados = new javax.swing.JTable();
+        chkDevLibMoroso = new javax.swing.JCheckBox();
+        btnDevLibDevolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Devolucion de Libros");
+        setLocationByPlatform(true);
+        setResizable(false);
 
+        jLabel1.setFont(fuenteT);
         jLabel1.setText("Devolucion de Libros");
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("Usuario");
 
-        jTextField1.setText("jTextField1");
+        btnDevLibBuscar.setBackground(COLOR_LIGHT);
+        btnDevLibBuscar.setFont(fuenteB);
+        btnDevLibBuscar.setText("Buscar");
+        btnDevLibBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.DARK_GRAY));
+        btnDevLibBuscar.setFocusPainted(false);
+        btnDevLibBuscar.setOpaque(false);
+        btnDevLibBuscar.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        jLabel3.setText("jLabel3");
+        tblDevLibTablaLibrosPrestados.setFont(fuenteH);
+        tblDevLibTablaLibrosPrestados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre Usuario", "Nombre Libro", "Dias Transcurridos"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
-        jTextField2.setText("jTextField2");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblDevLibTablaLibrosPrestados.setDoubleBuffered(true);
+        tblDevLibTablaLibrosPrestados.setFillsViewportHeight(true);
+        tblDevLibTablaLibrosPrestados.setGridColor(Color.LIGHT_GRAY);
+        jScrollPane1.setViewportView(tblDevLibTablaLibrosPrestados);
+        if (tblDevLibTablaLibrosPrestados.getColumnModel().getColumnCount() > 0) {
+            tblDevLibTablaLibrosPrestados.getColumnModel().getColumn(0).setResizable(false);
+            tblDevLibTablaLibrosPrestados.getColumnModel().getColumn(1).setResizable(false);
+            tblDevLibTablaLibrosPrestados.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        chkDevLibMoroso.setText("Moroso");
+
+        btnDevLibDevolver.setBackground(COLOR_MEDIO);
+        btnDevLibDevolver.setFont(fuenteB);
+        btnDevLibDevolver.setText("Devolver");
+        btnDevLibDevolver.setBorder(null);
+        btnDevLibDevolver.setFocusPainted(false);
+        btnDevLibDevolver.setPreferredSize(new java.awt.Dimension(100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,14 +110,26 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtDevLibUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnDevLibBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chkDevLibMoroso)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnDevLibDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -70,65 +139,31 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDevLibUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDevLibBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(chkDevLibMoroso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnDevLibDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DlgDevolverLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DlgDevolverLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DlgDevolverLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DlgDevolverLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                DlgDevolverLibros dialog = new DlgDevolverLibros(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDevLibBuscar;
+    private javax.swing.JButton btnDevLibDevolver;
+    private javax.swing.JCheckBox chkDevLibMoroso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblDevLibTablaLibrosPrestados;
+    private javax.swing.JTextField txtDevLibUsuario;
     // End of variables declaration//GEN-END:variables
 }

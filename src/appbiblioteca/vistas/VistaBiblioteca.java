@@ -28,6 +28,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private DlgAltaLibros altaLibros;
     private DlgAumentarExist aumentarExistencia;
     private DlgPrestamos prestamos;
+    private DlgDevolverLibros devoluciones;
     private ManejaEventos controladora;
     
     ManejaTablaH tablaH;
@@ -49,6 +50,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         altaLibros= new DlgAltaLibros(this, "Alta de Libros", true, tablaH);
         aumentarExistencia= new DlgAumentarExist(this, "Aumentar Existencia", true);
         prestamos=new DlgPrestamos(this, "Prestamos de Libros", true);
+        devoluciones= new DlgDevolverLibros(this, "Devoluciones", true);
         
     }
     
@@ -59,6 +61,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmAltaLibros.addActionListener(controladora);
         mnItmExistencia.addActionListener(controladora);
         mnItmPrestamoLibros.addActionListener(controladora);
+        mnItmDevolucionLibros.addActionListener(controladora);
         
     }
     
@@ -79,6 +82,12 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     public DlgPrestamos getPrestamos() {
         return prestamos;
     }
+
+    public DlgDevolverLibros getDevoluciones() {
+        return devoluciones;
+    }
+    
+    
     
     
     
