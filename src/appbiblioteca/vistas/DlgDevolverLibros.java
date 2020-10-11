@@ -67,6 +67,9 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
         btnDevLibBuscar.setOpaque(false);
         btnDevLibBuscar.setPreferredSize(new java.awt.Dimension(100, 30));
 
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.DARK_GRAY));
+        jScrollPane1.setDoubleBuffered(true);
+
         tblDevLibTablaLibrosPrestados.setFont(fuenteH);
         tblDevLibTablaLibrosPrestados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,9 +90,12 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
+        tblDevLibTablaLibrosPrestados.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         tblDevLibTablaLibrosPrestados.setDoubleBuffered(true);
         tblDevLibTablaLibrosPrestados.setFillsViewportHeight(true);
-        tblDevLibTablaLibrosPrestados.setGridColor(Color.LIGHT_GRAY);
+        tblDevLibTablaLibrosPrestados.setGridColor(Color.lightGray);
+        tblDevLibTablaLibrosPrestados.setSelectionBackground(COLOR_LIGHT);
+        tblDevLibTablaLibrosPrestados.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         jScrollPane1.setViewportView(tblDevLibTablaLibrosPrestados);
         if (tblDevLibTablaLibrosPrestados.getColumnModel().getColumnCount() > 0) {
             tblDevLibTablaLibrosPrestados.getColumnModel().getColumn(0).setResizable(false);
