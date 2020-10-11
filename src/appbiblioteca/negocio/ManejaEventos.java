@@ -8,6 +8,7 @@ package appbiblioteca.negocio;
 import appbiblioteca.vistas.VistaBiblioteca;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -29,6 +30,12 @@ public class ManejaEventos implements ActionListener{
         String evento= e.getActionCommand();
        
         switch(evento){
+            
+             case "Salir":
+                 vista.dispose();
+                 System.exit(0);
+                break;
+                
             case "Altas Usuario":
                 vista.getAltaUsuarios().setVisible(true);
                 break;
@@ -47,10 +54,13 @@ public class ManejaEventos implements ActionListener{
                 vista.getPrestamos().setVisible(true);
                 break; 
                 
-              case "Devolucion de Libros":
+            case "Devolucion de Libros":
                 vista.getDevoluciones().setVisible(true);
                 break;     
                 
+            case "Busqueda":
+                vista.getBusqueda().setVisible(true);
+                break;    
         }
             
         
