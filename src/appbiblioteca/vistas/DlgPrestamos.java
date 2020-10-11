@@ -112,6 +112,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
         txtPresLibUsuario.setBorder(null);
         txtPresLibUsuario.setPreferredSize(new java.awt.Dimension(6, 30));
 
+        btnPresLibBuscarUs.setBackground(new Color(240,240,240));
         btnPresLibBuscarUs.setFont(fuenteB);
         btnPresLibBuscarUs.setText("Buscar");
         btnPresLibBuscarUs.setActionCommand("btnDevLibBuscarUs");
