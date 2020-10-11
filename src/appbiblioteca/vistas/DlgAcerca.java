@@ -21,8 +21,8 @@ public class DlgAcerca extends javax.swing.JDialog {
     /**
      * Creates new form DlgAcerca
      */
-    public DlgAcerca(java.awt.Frame parent,String title, boolean modal) {
-        super(parent,title, modal);
+    public DlgAcerca(java.awt.Frame parent, String title, boolean modal) {
+        super(parent, title, modal);
         initComponents();
     }
 

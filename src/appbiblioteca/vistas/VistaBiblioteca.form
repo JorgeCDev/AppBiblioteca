@@ -138,6 +138,14 @@
                 <Property name="text" type="java.lang.String" value="Busqueda"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnItmReporteUsuarios">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/recursos/1x/baseline_search_black_18dp.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Reporte Usuarios"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuLibros">

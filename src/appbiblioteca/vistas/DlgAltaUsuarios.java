@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package appbiblioteca.vistas;
 
 import appbiblioteca.negocio.EventosDlgAltaUsuarios;
@@ -24,12 +19,15 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     private final Color COLOR_DARK = new Color(0, 129, 203);
     
     EventosDlgAltaUsuarios controladoraUsuarios;
+    ManejaTablaH tablaH;
+        
     
   
     public DlgAltaUsuarios(java.awt.Frame frame, String title ,boolean modal, ManejaTablaH tablaH) {
         super(frame,title, modal);
         initComponents();
         creaAcciones(tablaH);
+        
     }
     
     private void creaAcciones(ManejaTablaH tablaH){

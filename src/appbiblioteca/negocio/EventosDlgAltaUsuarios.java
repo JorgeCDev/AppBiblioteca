@@ -25,18 +25,18 @@ public class EventosDlgAltaUsuarios implements ActionListener
        
         switch(evento){
             case "Agregar":
-                String nombre = usuario.getUsuarioNombre();
-                String apePaterno = usuario.getUsuarioApePat();
-                String apeMaterno = usuario.getUsuarioApeMat();
-                String domicilio = usuario.getUsuarioDomicilio();
-                String residencia = usuario.getUsuarioCiudad();
-                //char tipo = usuario.getUsuarioTipo();
+                String nombre = usuario.getUsuarioNombre().toUpperCase();
+                String apePaterno = usuario.getUsuarioApePat().toUpperCase();
+                String apeMaterno = usuario.getUsuarioApeMat().toUpperCase();
+                String domicilio = usuario.getUsuarioDomicilio().toUpperCase();
+                String residencia = usuario.getUsuarioCiudad().toUpperCase();
+//                char tipo = (char) usuario.getUsuarioTipo();
                 
                 if( nombre.equals("") || apePaterno.equals("") || apeMaterno.equals("") || domicilio.equals("") || residencia.equals("") )
                     JOptionPane.showMessageDialog(usuario,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
                 else{
-                    tablaH.AgregaUsuario(nombre, domicilio, residencia);
-                    JOptionPane.showMessageDialog(usuario,"Usuario Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
+                    tablaH.AgregaUsuario(nombre, apePaterno, apeMaterno, domicilio, residencia);
+                    JOptionPane.showMessageDialog(usuario,"Usuario "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                     usuario.limpiarTxt();
                 }
                 break;

@@ -18,16 +18,23 @@ public class Usuario {
     private char tipoUsuario;
  
 
-    public Usuario(String nombreUsuario, String domicilioUsuario, String ciudadResidencia, char tipoUsuario) {
+    public Usuario(String nombreUsuario, String apePatUsuario,String apeMatUsuario,String domicilioUsuario, String ciudadResidencia, char tipoUsuario) {
         this.nombreUsuario = nombreUsuario;
+        this.apePatUsuario = apePatUsuario;
+        this.apeMatUsuario = apeMatUsuario;
         this.domicilioUsuario = domicilioUsuario;
         this.ciudadResidencia = ciudadResidencia;
         this.tipoUsuario = tipoUsuario;
     }
+    
     public Usuario(String nombreUsuario, String domicilioUsuario, String ciudadResidencia) {
         this.nombreUsuario = nombreUsuario;
         this.domicilioUsuario = domicilioUsuario;
         this.ciudadResidencia = ciudadResidencia;
+    }
+
+    Usuario(String nombre, String apePat, String ApeMat, String domicilio, String ciudad) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNombreUsuario() {

@@ -24,43 +24,25 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
-    private DlgAltaUsuarios altaUsuarios;
+//    private DlgAltaUsuarios altaUsuarios;
     private DlgAltaLibros altaLibros;
     private DlgAumentarExist aumentarExistencia;
     private DlgPrestamos prestamos;
     private DlgDevolverLibros devoluciones;
     private DlgBusqueda busqueda;
+//    DlgReporteUsuarios ReporteUsuarios;
     private DlgAcerca acerca;
-    private ManejaEventos controladora;
+//    DlgReporteUsuarios ReporteUsuarios;
+//    ManejaEventos controladora;
     
-    ManejaTablaH tablaH;
-    
-    /**
-     * Creates new form VistaBiblioteca
-     */
+    ManejaTablaH tablaH = new ManejaTablaH();
+
     public VistaBiblioteca() {
         
-        tablaH = new ManejaTablaH();
+//        tablaH = new ManejaTablaH();
         initComponents();
-        creaDialogos(tablaH);
-        creaAcciones();
-    }
         
-    private void creaDialogos(ManejaTablaH tablaH){
-        
-        altaUsuarios= new DlgAltaUsuarios(this, "Alta de Usuarios", true, tablaH);
-        altaLibros= new DlgAltaLibros(this, "Alta de Libros", true, tablaH);
-        aumentarExistencia= new DlgAumentarExist(this, "Aumentar Existencia", true);
-        prestamos=new DlgPrestamos(this, "Prestamos de Libros", true);
-        devoluciones= new DlgDevolverLibros(this, "Devoluciones", true);
-        busqueda=new DlgBusqueda(this, "Buscar", true);
-        acerca=new DlgAcerca(this, "Acerca De", true);
-       
-    }
-    
-    private void creaAcciones(){
-        
-        controladora = new ManejaEventos(this);
+        ManejaEventos controladora = new ManejaEventos(this,tablaH);
         menuItmSalir.addActionListener(controladora);
         mnItmAltasUsuario.addActionListener(controladora);
         mnItmAltaLibros.addActionListener(controladora);
@@ -68,39 +50,75 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmPrestamoLibros.addActionListener(controladora);
         mnItmDevolucionLibros.addActionListener(controladora);
         mnItmBusqueda.addActionListener(controladora);
+        mnItmReporteUsuarios.addActionListener(controladora);
         mnItmAcerca.addActionListener(controladora);
-        
+//        creaDialogos();
+//        creaAcciones();
     }
+        
+    public void creaDialogos(){
+        
+//        DlgAltaUsuarios altaUsuarios = new DlgAltaUsuarios(this, "Alta de Usuarios", true, tablaH);
+//        DlgReporteUsuarios ReporteUsuarios = new DlgReporteUsuarios(this, "Reporte Usuarios", true, tablaH);
+        
+        altaLibros= new DlgAltaLibros(this, "Alta de Libros", true, tablaH);
+        aumentarExistencia= new DlgAumentarExist(this, "Aumentar Existencia", true);
+        prestamos=new DlgPrestamos(this, "Prestamos de Libros", true);
+        devoluciones= new DlgDevolverLibros(this, "Devoluciones", true);
+        busqueda=new DlgBusqueda(this, "Buscar", true);
+        
+        acerca=new DlgAcerca(this, "Acerca De", true);
+       
+    }
+    
+//    private void creaAcciones(){
+//        
+//        ManejaEventos controladora = new ManejaEventos(this);
+//        menuItmSalir.addActionListener(controladora);
+//        mnItmAltasUsuario.addActionListener(controladora);
+//        mnItmAltaLibros.addActionListener(controladora);
+//        mnItmExistencia.addActionListener(controladora);
+//        mnItmPrestamoLibros.addActionListener(controladora);
+//        mnItmDevolucionLibros.addActionListener(controladora);
+//        mnItmBusqueda.addActionListener(controladora);
+//        mnItmReporteUsuarios.addActionListener(controladora);
+//        mnItmAcerca.addActionListener(controladora);
+//        
+//    }
     
     //Getter y Setters
 
-    public DlgAltaUsuarios getAltaUsuarios() {
-        return altaUsuarios;
-    }
-
-    public DlgAltaLibros getAltaLibros() {
-        return altaLibros;
-    }
-
-    public DlgAumentarExist getAumentarExistencia() {
-        return aumentarExistencia;
-    }
-
-    public DlgPrestamos getPrestamos() {
-        return prestamos;
-    }
-
-    public DlgDevolverLibros getDevoluciones() {
-        return devoluciones;
-    }
-
-    public DlgBusqueda getBusqueda() {
-        return busqueda;
-    }
-
-    public DlgAcerca getAcerca() {
-        return acerca;
-    }
+//    public DlgAltaUsuarios getAltaUsuarios() {
+//        return altaUsuarios;
+//    }
+//
+//    public DlgAltaLibros getAltaLibros() {
+//        return altaLibros;
+//    }
+//
+//    public DlgAumentarExist getAumentarExistencia() {
+//        return aumentarExistencia;
+//    }
+//
+//    public DlgPrestamos getPrestamos() {
+//        return prestamos;
+//    }
+//
+//    public DlgDevolverLibros getDevoluciones() {
+//        return devoluciones;
+//    }
+//
+//    public DlgBusqueda getBusqueda() {
+//        return busqueda;
+//    }
+//    
+//    public DlgReporteUsuarios getReporteUsuarios() {
+//        return ReporteUsuarios;
+//    }
+//
+//    public DlgAcerca getAcerca() {
+//        return acerca;
+//    }
     
     
     
@@ -126,6 +144,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmExistencia = new javax.swing.JMenuItem();
         menuConsultas = new javax.swing.JMenu();
         mnItmBusqueda = new javax.swing.JMenuItem();
+        mnItmReporteUsuarios = new javax.swing.JMenuItem();
         menuLibros = new javax.swing.JMenu();
         mnItmPrestamoLibros = new javax.swing.JMenuItem();
         mnItmDevolucionLibros = new javax.swing.JMenuItem();
@@ -193,6 +212,10 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_search_black_18dp.png"))); // NOI18N
         mnItmBusqueda.setText("Busqueda");
         menuConsultas.add(mnItmBusqueda);
+
+        mnItmReporteUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_search_black_18dp.png"))); // NOI18N
+        mnItmReporteUsuarios.setText("Reporte Usuarios");
+        menuConsultas.add(mnItmReporteUsuarios);
 
         mbBarraMenu.add(menuConsultas);
 
@@ -268,5 +291,6 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnItmDevolucionLibros;
     private javax.swing.JMenuItem mnItmExistencia;
     private javax.swing.JMenuItem mnItmPrestamoLibros;
+    private javax.swing.JMenuItem mnItmReporteUsuarios;
     // End of variables declaration//GEN-END:variables
 }
