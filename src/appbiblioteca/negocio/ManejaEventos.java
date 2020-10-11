@@ -60,7 +60,11 @@ public class ManejaEventos implements ActionListener{
                 
             case "Busqueda":
                 vista.getBusqueda().setVisible(true);
-                break;    
+                break;   
+                
+            case "Acerca":
+                vista.getAcerca().setVisible(true);
+                break; 
         }
             
         
