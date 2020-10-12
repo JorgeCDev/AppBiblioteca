@@ -117,9 +117,13 @@ public class ManejaTablaH
         
     }
     
-    public int size(){
+    public int sizeLibro(){
         
         return tablaLibro.size();
+    }
+    public int sizeUsuario(){
+        
+        return tablaUsuario.size();
     }
 
     public Hashtable<Integer, Usuario> getTablaUsuario() {
