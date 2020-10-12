@@ -30,7 +30,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private DlgPrestamos prestamos;
     private DlgDevolverLibros devoluciones;
     private DlgBusqueda busqueda;
-    DlgReporteUsuarios ReporteUsuarios;
+    private DlgReporteUsuarios ReporteUsuarios;
     private DlgAcerca acerca;
     private ManejaTablaH tablaH;
 
@@ -56,45 +56,6 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmInventario.addActionListener(controladora);
     }
 
-    public DlgAltaUsuarios getAltaUsuarios() {
-        return altaUsuarios;
-    }
-
-    public DlgAltaLibros getAltaLibros() {
-        return altaLibros;
-    }
-
-    public DlgAumentarExist getAumentarExistencia() {
-        return aumentarExistencia;
-    }
-
-    public DlgPrestamos getPrestamos() {
-        return prestamos;
-    }
-
-    public DlgDevolverLibros getDevoluciones() {
-        return devoluciones;
-    }
-
-    public DlgBusqueda getBusqueda() {
-        return busqueda;
-    }
-
-    public DlgReporteUsuarios getReporteUsuarios() {
-        return ReporteUsuarios;
-    }
-
-    public DlgAcerca getAcerca() {
-        return acerca;
-    }
-
-    public ManejaTablaH getTablaH() {
-        return tablaH;
-    }
-    
-    
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
