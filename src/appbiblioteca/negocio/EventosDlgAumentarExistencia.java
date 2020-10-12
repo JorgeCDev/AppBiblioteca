@@ -9,6 +9,7 @@ import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.vistas.DlgAumentarExist;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,6 +44,28 @@ public class EventosDlgAumentarExistencia implements ActionListener{
                int select =existencia.getCmbAmtExstNombreLibro().getSelectedIndex();
                existencia.getCmbAumExstClaveLibro().setSelectedIndex(select);
                break;
+               
+            case "Agregar":
+                
+                if(existencia.getCmbAmtExstNombreLibro().getItemCount()==0|
+                        existencia.getCmbAumExstClaveLibro().getItemCount()==0|
+                        existencia.getTxtAmtrExstExistencia().getText().equals("")){
+                    JOptionPane.showMessageDialog(existencia, 
+                            "No puede haber elementos vacios");
+                }else{
+                 int llave =Integer.parseInt(existencia.getCmbAumExstClaveLibro().
+                         getSelectedItem().toString());
+                 int ext = tablaH.getLibro(llave).getExistencia();
+                 int nExt= Integer.parseInt(existencia.
+                         getTxtAmtrExstExistencia().getText());
+                 tablaH.getLibro(llave).setExistencia(ext+nExt);
+                 existencia.limpiar();
+                 
+                 
+               
+                }
+                    
+                    break;
         }
         
         
