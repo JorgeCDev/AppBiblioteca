@@ -11,7 +11,6 @@ public class DlgReporteUsuarios extends javax.swing.JDialog{
     
     public DlgReporteUsuarios(Frame f, String t, boolean modal, ManejaTablaH mt){
         super(f,t, modal);
-        setLocationRelativeTo(null);
         String[] nombreColumnas = {
             "Clave",
             "Nombre",
