@@ -76,5 +76,20 @@ public class ManejaTablaH
         return lista;
     }
     
+       public String[] getAllNames() {
+      String []names =new String[tablaLibro.size()];
+      
+
+      Enumeration<Integer> e= tablaLibro.keys();
+      int cont=0;
+      while (e.hasMoreElements()){
+
+          names[cont++]=tablaLibro.get(e.nextElement())
+                  .getNombreLibro();
+      }
+
+      return names;
+      }
+    
     
 }
