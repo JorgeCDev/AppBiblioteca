@@ -16,11 +16,11 @@ import java.awt.event.ActionListener;
  */
 public class EventosDlgAumentarExistencia implements ActionListener{
     private ManejaTablaH tablaH;
-    private DlgAumentarExist exitencia;
+    private DlgAumentarExist existencia;
 
     public EventosDlgAumentarExistencia(ManejaTablaH tablaH, DlgAumentarExist exitencia) {
         this.tablaH = tablaH;
-        this.exitencia = exitencia;
+        this.existencia = exitencia;
     }
     
     
@@ -31,15 +31,18 @@ public class EventosDlgAumentarExistencia implements ActionListener{
         String evento= e.getActionCommand();
         
         switch(evento){
+            
             case"cmbClave":
-               
-                       
-                       
-                       
-                       
+                
+               int selec =existencia.getCmbAumExstClaveLibro().getSelectedIndex();
+               existencia.getCmbAmtExstNombreLibro().setSelectedIndex(selec);
+                    
                 break;
-            
-            
+            case"cmbLibro":    
+             
+               int select =existencia.getCmbAmtExstNombreLibro().getSelectedIndex();
+               existencia.getCmbAumExstClaveLibro().setSelectedIndex(select);
+               break;
         }
         
         
