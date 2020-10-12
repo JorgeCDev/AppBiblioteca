@@ -23,7 +23,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
-    
+    private ManejaTablaH tablaH;
     EventosDlgAltaLibros controladoraLibros;
     
     /**
@@ -31,8 +31,10 @@ public class DlgAltaLibros extends javax.swing.JDialog {
      */
     public DlgAltaLibros(java.awt.Frame frame,String title, boolean modal, ManejaTablaH tablaH) {
         super(frame,title, modal);
+        this.tablaH=tablaH;
         initComponents();
         creaAcciones(tablaH);
+        txtAltaLibClave.setText(""+(tablaH.size()+1));
     }
     
     private void creaAcciones(ManejaTablaH tablaH){
@@ -59,12 +61,12 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     }
     
     public void limpiarTxt(){
-        this.txtAltaLibAutor.setText("");
-        this.txtAltaLibClave.setText("");
-        this.txtAltaLibDescripcion.setText("");
-        this.txtAltaLibEditorial.setText("");
-        this.spnAltaLibrosExistencia.setValue(0);
-        this.txtAltaLibNombre.setText("");
+        txtAltaLibAutor.setText("");
+        txtAltaLibClave.setText(""+(tablaH.size()+1));
+        txtAltaLibDescripcion.setText("");
+        txtAltaLibEditorial.setText("");
+        spnAltaLibrosExistencia.setValue(0);
+        txtAltaLibNombre.setText("");
     }
     
     
@@ -125,6 +127,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         jLabel7.setFont(fuenteL);
         jLabel7.setText("Editorial");
 
+        txtAltaLibClave.setEditable(false);
         txtAltaLibClave.setBorder(null);
         txtAltaLibClave.setPreferredSize(new java.awt.Dimension(50, 25));
 
