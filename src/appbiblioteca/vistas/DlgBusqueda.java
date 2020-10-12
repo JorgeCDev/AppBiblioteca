@@ -5,9 +5,14 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.negocio.EventosDlgBusqueda;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -20,14 +25,46 @@ public class DlgBusqueda extends javax.swing.JDialog {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);  
+    private EventosDlgBusqueda busqueda;
+    
     /**
      * Creates new form DlgBusqueda
      */
     public DlgBusqueda(java.awt.Frame parent,String title, boolean modal, ManejaTablaH tablaH) {
         super(parent,title, modal);
+        busqueda= new EventosDlgBusqueda(tablaH,this);
         initComponents();
+        creaEscuchadores();
+    }
+    
+    public void creaEscuchadores(){
+        
+        btnSrcBuscar.addActionListener(busqueda);
+        
         
     }
+
+    public JButton getBtnSrcBuscar() {
+        return btnSrcBuscar;
+    }
+
+    public JRadioButton getrBtnSrcAutor() {
+        return rBtnSrcAutor;
+    }
+
+    public JRadioButton getrBtnSrcEditorial() {
+        return rBtnSrcEditorial;
+    }
+
+    public JTable getTblSrcResultados() {
+        return tblSrcResultados;
+    }
+
+    public JTextField getTxtSrcBusqueda() {
+        return txtSrcBusqueda;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

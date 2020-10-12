@@ -24,30 +24,25 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
-//    private DlgAltaUsuarios altaUsuarios;
+    private DlgAltaUsuarios altaUsuarios;
     private DlgAltaLibros altaLibros;
     private DlgAumentarExist aumentarExistencia;
     private DlgPrestamos prestamos;
     private DlgDevolverLibros devoluciones;
     private DlgBusqueda busqueda;
-//    DlgReporteUsuarios ReporteUsuarios;
+    DlgReporteUsuarios ReporteUsuarios;
     private DlgAcerca acerca;
-//    DlgReporteUsuarios ReporteUsuarios;
-//    ManejaEventos controladora;
-    
     private ManejaTablaH tablaH;
 
     public VistaBiblioteca() {
         
         tablaH = new ManejaTablaH();
         initComponents();
-        
-        tablaH.AgregaUsuario("JOSE", "PEREZ", "LOPEZ", "COL: HIDALGO", "CULIACAN", 'A');
-        
         creaAcciones();
     }
     
     private void creaAcciones(){
+        
         ManejaEventos controladora = new ManejaEventos(this,tablaH);
         menuItmSalir.addActionListener(controladora);
         mnItmAltasUsuario.addActionListener(controladora);
@@ -60,6 +55,44 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmAcerca.addActionListener(controladora);
         mnItmInventario.addActionListener(controladora);
     }
+
+    public DlgAltaUsuarios getAltaUsuarios() {
+        return altaUsuarios;
+    }
+
+    public DlgAltaLibros getAltaLibros() {
+        return altaLibros;
+    }
+
+    public DlgAumentarExist getAumentarExistencia() {
+        return aumentarExistencia;
+    }
+
+    public DlgPrestamos getPrestamos() {
+        return prestamos;
+    }
+
+    public DlgDevolverLibros getDevoluciones() {
+        return devoluciones;
+    }
+
+    public DlgBusqueda getBusqueda() {
+        return busqueda;
+    }
+
+    public DlgReporteUsuarios getReporteUsuarios() {
+        return ReporteUsuarios;
+    }
+
+    public DlgAcerca getAcerca() {
+        return acerca;
+    }
+
+    public ManejaTablaH getTablaH() {
+        return tablaH;
+    }
+    
+    
     
     
     /**
