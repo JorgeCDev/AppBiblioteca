@@ -84,13 +84,14 @@ public class Usuario {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.nombreUsuario);
-        hash = 89 * hash + Objects.hashCode(this.domicilioUsuario);
-        hash = 89 * hash + Objects.hashCode(this.ciudadResidencia);
-        hash = 89 * hash + Objects.hashCode(this.apePatUsuario);
-        hash = 89 * hash + Objects.hashCode(this.apeMatUsuario);
+        hash = 19 * hash + Objects.hashCode(this.nombreUsuario);
+        hash = 19 * hash + Objects.hashCode(this.apePatUsuario);
+        hash = 19 * hash + Objects.hashCode(this.apeMatUsuario);
+        hash = 19 * hash + this.tipoUsuario;
         return hash;
     }
+
+
 
     @Override
     public boolean equals(Object obj) {

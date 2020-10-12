@@ -5,19 +5,15 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 
 
+
 public class ManejaTablaH 
 {
     Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
     Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
     
-    public void AgregaUsuario(String nombre, String apePat, String ApeMat,String domicilio, String ciudad, char tipo)
+    public void AgregaUsuario(Usuario usuario)
     {
-        
-        Usuario user = new Usuario(nombre, apePat, ApeMat, domicilio, ciudad, tipo);
-        
-        
-        
-        tablaUsuario.put(tablaUsuario.size()+1, user);
+        tablaUsuario.put(tablaUsuario.size()+1, usuario); 
     }
     
     public String[][] ObtenerTablaUsuario()
@@ -101,7 +97,7 @@ public class ManejaTablaH
       String[] llaves=new String[tablaLibro.size()];
         
       Enumeration<Integer> e = tablaLibro.keys();
-        System.out.println();
+     
       
       int cont=0;
       
@@ -125,5 +121,15 @@ public class ManejaTablaH
         
         return tablaLibro.size();
     }
+
+    public Hashtable<Integer, Usuario> getTablaUsuario() {
+        return tablaUsuario;
+    }
+
+    public Hashtable<Integer, Libro> getTablaLibro() {
+        return tablaLibro;
+    }
+    
+    
     
 }
