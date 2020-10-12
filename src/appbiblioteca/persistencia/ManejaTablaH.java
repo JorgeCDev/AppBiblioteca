@@ -12,7 +12,11 @@ public class ManejaTablaH
     
     public void AgregaUsuario(String nombre, String apePat, String ApeMat,String domicilio, String ciudad, char tipo)
     {
+        
         Usuario user = new Usuario(nombre, apePat, ApeMat, domicilio, ciudad, tipo);
+        
+        System.out.println(tablaLibro.contains(user));
+        
         tablaUsuario.put(tablaUsuario.size()+1, user);
     }
     

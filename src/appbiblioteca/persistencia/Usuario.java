@@ -104,13 +104,10 @@ public class Usuario {
             return false;
         }
         final Usuario other = (Usuario) obj;
+        if (this.tipoUsuario != other.tipoUsuario) {
+            return false;
+        }
         if (!Objects.equals(this.nombreUsuario, other.nombreUsuario)) {
-            return false;
-        }
-        if (!Objects.equals(this.domicilioUsuario, other.domicilioUsuario)) {
-            return false;
-        }
-        if (!Objects.equals(this.ciudadResidencia, other.ciudadResidencia)) {
             return false;
         }
         if (!Objects.equals(this.apePatUsuario, other.apePatUsuario)) {
@@ -121,6 +118,8 @@ public class Usuario {
         }
         return true;
     }
+
+   
     
     
 
