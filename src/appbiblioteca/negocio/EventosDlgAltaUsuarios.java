@@ -41,9 +41,12 @@ public class EventosDlgAltaUsuarios implements ActionListener
                 if(tipo == 'S' )
                     JOptionPane.showMessageDialog(usuario,"Porfavor Seleccionar Tipo de Usuario","", JOptionPane.WARNING_MESSAGE);
                 else if(tablaH.getTablaUsuario().contains(user)){
+                    
                     JOptionPane.showMessageDialog(usuario,"Usuario duplicado","", JOptionPane.WARNING_MESSAGE);
                     usuario.limpiarTxt();
+                    
                 }else{
+                    
                     tablaH.AgregaUsuario(user);
                     JOptionPane.showMessageDialog(usuario,"Usuario "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                     usuario.limpiarTxt();
