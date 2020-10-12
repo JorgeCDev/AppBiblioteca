@@ -60,7 +60,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         this.txtAltaLibClave.setText("");
         this.txtAltaLibDescripcion.setText("");
         this.txtAltaLibEditorial.setText("");
-        this.txtAltaLibExistencia.setText("");
+        this.spnAltaLibrosExistencia.setValue(0);
         this.txtAltaLibNombre.setText("");
     }
     
@@ -90,9 +90,9 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         txtAltaLibDescripcion = new javax.swing.JTextArea();
         txtAltaLibAutor = new javax.swing.JTextField();
         txtAltaLibEditorial = new javax.swing.JTextField();
-        txtAltaLibExistencia = new javax.swing.JTextField();
         btnAltaLibAgregar = new javax.swing.JButton();
         btnAltaLibSalir = new javax.swing.JButton();
+        spnAltaLibrosExistencia = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alta de Libros");
@@ -143,9 +143,6 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         txtAltaLibEditorial.setBorder(null);
         txtAltaLibEditorial.setPreferredSize(new java.awt.Dimension(50, 25));
 
-        txtAltaLibExistencia.setBorder(null);
-        txtAltaLibExistencia.setPreferredSize(new java.awt.Dimension(50, 25));
-
         btnAltaLibAgregar.setBackground(COLOR_MEDIO);
         btnAltaLibAgregar.setFont(fuenteB);
         btnAltaLibAgregar.setText("Agregar");
@@ -157,6 +154,10 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         btnAltaLibSalir.setText("Salir");
         btnAltaLibSalir.setBorder(null);
         btnAltaLibSalir.setPreferredSize(new java.awt.Dimension(100, 30));
+
+        spnAltaLibrosExistencia.setFont(fuenteL);
+        spnAltaLibrosExistencia.setBorder(null);
+        spnAltaLibrosExistencia.setPreferredSize(new java.awt.Dimension(29, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,8 +172,11 @@ public class DlgAltaLibros extends javax.swing.JDialog {
                             .addComponent(txtAltaLibAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAltaLibEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel7)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtAltaLibEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(spnAltaLibrosExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,9 +197,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
                             .addComponent(txtAltaLibNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(503, 503, 503)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(txtAltaLibExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAltaLibAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,7 +231,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAltaLibEditorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtAltaLibAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAltaLibExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnAltaLibrosExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAltaLibSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,11 +255,11 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner spnAltaLibrosExistencia;
     private javax.swing.JTextField txtAltaLibAutor;
     private javax.swing.JTextField txtAltaLibClave;
     private javax.swing.JTextArea txtAltaLibDescripcion;
     private javax.swing.JTextField txtAltaLibEditorial;
-    private javax.swing.JTextField txtAltaLibExistencia;
     private javax.swing.JTextField txtAltaLibNombre;
     // End of variables declaration//GEN-END:variables
 }

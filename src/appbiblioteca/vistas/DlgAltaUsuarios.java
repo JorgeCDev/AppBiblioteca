@@ -80,8 +80,6 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         txtAltaUsuarioApeMat = new javax.swing.JTextField();
         cmbTipo = new javax.swing.JComboBox<>();
         txtAltaUsuarioCiudad = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtAltaUsuarioDomicilio = new javax.swing.JTextArea();
         btnAltaUsuarioAgregar = new javax.swing.JButton();
         btnAltaUsuarioSalir = new javax.swing.JButton();
         txtAltaUsuarioApePat = new javax.swing.JTextField();
@@ -90,11 +88,11 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         javax.swing.JLabel jLabel3 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        txtAltaUsuarioDomicilio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alta de Usuarios");
         setBackground(new java.awt.Color(255, 255, 255));
-        setLocationByPlatform(true);
         setModal(true);
         setResizable(false);
 
@@ -121,16 +119,6 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         txtAltaUsuarioCiudad.setFont(fuenteT);
         txtAltaUsuarioCiudad.setBorder(null);
         txtAltaUsuarioCiudad.setPreferredSize(new java.awt.Dimension(0, 25));
-
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-
-        txtAltaUsuarioDomicilio.setColumns(20);
-        txtAltaUsuarioDomicilio.setFont(fuenteT);
-        txtAltaUsuarioDomicilio.setRows(2);
-        txtAltaUsuarioDomicilio.setBorder(null);
-        jScrollPane1.setViewportView(txtAltaUsuarioDomicilio);
 
         btnAltaUsuarioAgregar.setBackground(COLOR_MEDIO);
         btnAltaUsuarioAgregar.setFont(fuenteB);
@@ -169,6 +157,9 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         jLabel8.setFont(fuenteH);
         jLabel8.setText("Alta de Usuarios");
 
+        txtAltaUsuarioDomicilio.setFont(new Font("Helvetica", Font.PLAIN,13));
+        txtAltaUsuarioDomicilio.setBorder(null);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -177,6 +168,11 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,20 +195,12 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
                                     .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jLabel7)
+                                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel2)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtAltaUsuarioDomicilio))))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
@@ -241,9 +229,9 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtAltaUsuarioDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6))
@@ -269,11 +257,10 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtAltaUsuarioApeMat;
     private javax.swing.JTextField txtAltaUsuarioApePat;
     private javax.swing.JTextField txtAltaUsuarioCiudad;
-    private javax.swing.JTextArea txtAltaUsuarioDomicilio;
+    private javax.swing.JTextField txtAltaUsuarioDomicilio;
     private javax.swing.JTextField txtAltaUsuarioNombre;
     // End of variables declaration//GEN-END:variables
 }
