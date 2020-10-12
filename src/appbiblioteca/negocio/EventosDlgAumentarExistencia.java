@@ -56,10 +56,14 @@ public class EventosDlgAumentarExistencia implements ActionListener{
                     
                  int llave =Integer.parseInt(existencia.getCmbAumExstClaveLibro().
                          getSelectedItem().toString());
+                 
                  int ext = tablaH.getLibro(llave).getExistencia();
+                 
                  int nExt= Integer.parseInt(existencia.
                          getTxtAmtrExstExistencia().getText());
+                 
                  tablaH.getLibro(llave).setExistencia(ext+nExt);
+                 
                  existencia.limpiar();
                  
                  
