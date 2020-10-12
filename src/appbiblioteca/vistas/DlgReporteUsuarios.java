@@ -28,6 +28,7 @@ import javax.swing.JTable;
 
         JScrollPane sp = new JScrollPane(jt_info);
         getContentPane().add(sp, BorderLayout.CENTER);
+        setLocationByPlatform(true);
         setSize(800,500);
     }
 
