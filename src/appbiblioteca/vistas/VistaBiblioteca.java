@@ -156,6 +156,8 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmReporteUsuarios.setText("Reporte Usuarios");
         menuConsultas.add(mnItmReporteUsuarios);
 
+        mnItmInventario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
+        mnItmInventario.setFont(fuenteH);
         mnItmInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_search_black_18dp.png"))); // NOI18N
         mnItmInventario.setText("Inventario");
         menuConsultas.add(mnItmInventario);

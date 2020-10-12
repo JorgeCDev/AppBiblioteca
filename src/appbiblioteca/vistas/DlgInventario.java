@@ -26,6 +26,7 @@ public class DlgInventario extends javax.swing.JDialog
 
         JScrollPane sp = new JScrollPane(jt_info);
         getContentPane().add(sp, BorderLayout.CENTER);
+        setLocationByPlatform(true);
         setSize(800,500);
     }
 }
