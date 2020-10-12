@@ -5,9 +5,14 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.negocio.EventosDlgAumentarExistencia;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
@@ -21,14 +26,47 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
-
+    private EventosDlgAumentarExistencia existencia;
     /**
      * Creates new form DlgAumentarExist
      */
     public DlgAumentarExist(java.awt.Frame parent,String title ,boolean modal, ManejaTablaH tablaH) {
         super(parent,title, modal);
         initComponents();
+        existencia= new EventosDlgAumentarExistencia(tablaH, this);
+        crearEscuchadores();
+        llenarCombos(tablaH);
     }
+    
+    public void crearEscuchadores(){
+        
+        btnAumentarExistenciaAgregar.addActionListener(existencia);
+        cmbAumExstClaveLibro.addActionListener(existencia);
+        
+        
+    }
+    
+    public void llenarCombos(ManejaTablaH tabla){
+        
+        cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeys()));
+        cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNames()));
+       cmbAmtExstNombreLibro.setSelectedIndex(cmbAumExstClaveLibro.getSelectedIndex());
+        
+    }
+
+    public JComboBox<String> getCmbAmtExstNombreLibro() {
+        return cmbAmtExstNombreLibro;
+    }
+
+    public JComboBox<String> getCmbAumExstClaveLibro() {
+        return cmbAumExstClaveLibro;
+    }
+
+    public JTextField getTxtAmtrExstExistencia() {
+        return txtAmtrExstExistencia;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,7 +82,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         cmbAmtExstNombreLibro = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnAumentarExistenciaAgregar = new javax.swing.JButton();
         txtAmtrExstExistencia = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
@@ -58,14 +96,13 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         jLabel1.setFont(fuenteT);
         jLabel1.setText("Aumentar Existencias");
 
-        cmbAumExstClaveLibro.setEditable(true);
         cmbAumExstClaveLibro.setFont(fuenteH);
-        cmbAumExstClaveLibro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbAumExstClaveLibro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        cmbAumExstClaveLibro.setActionCommand("cmbClave");
         cmbAumExstClaveLibro.setBorder(null);
         cmbAumExstClaveLibro.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
         cmbAmtExstNombreLibro.setFont(fuenteH);
-        cmbAmtExstNombreLibro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbAmtExstNombreLibro.setBorder(null);
         cmbAmtExstNombreLibro.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
@@ -75,13 +112,13 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         jLabel3.setFont(fuenteH);
         jLabel3.setText("Libro");
 
-        jButton1.setBackground(COLOR_MEDIO);
-        jButton1.setFont(fuenteB);
-        jButton1.setText("Agregar");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setFocusPainted(false);
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnAumentarExistenciaAgregar.setBackground(COLOR_MEDIO);
+        btnAumentarExistenciaAgregar.setFont(fuenteB);
+        btnAumentarExistenciaAgregar.setText("Agregar");
+        btnAumentarExistenciaAgregar.setBorder(null);
+        btnAumentarExistenciaAgregar.setBorderPainted(false);
+        btnAumentarExistenciaAgregar.setFocusPainted(false);
+        btnAumentarExistenciaAgregar.setPreferredSize(new java.awt.Dimension(100, 30));
 
         txtAmtrExstExistencia.setFont(fuenteB);
 
@@ -103,7 +140,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
                         .addComponent(cmbAmtExstNombreLibro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cmbAumExstClaveLibro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAumentarExistenciaAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -124,7 +161,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtAmtrExstExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAumentarExistenciaAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
 
@@ -134,9 +171,9 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAumentarExistenciaAgregar;
     private javax.swing.JComboBox<String> cmbAmtExstNombreLibro;
     private javax.swing.JComboBox<String> cmbAumExstClaveLibro;
-    private javax.swing.JButton jButton1;
     private volatile javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
