@@ -41,6 +41,7 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         txtAltaUsuarioApePat.setText("");
         txtAltaUsuarioCiudad.setText("");
         txtAltaUsuarioDomicilio.setText("");
+        cmbTipo.setSelectedIndex(0);
     }
     
     
