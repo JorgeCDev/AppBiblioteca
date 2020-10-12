@@ -1,11 +1,11 @@
 
 package appbiblioteca.negocio;
 
-import appbiblioteca.vistas.DlgAcerca;
 import appbiblioteca.vistas.DlgAltaUsuarios;
 import appbiblioteca.vistas.VistaBiblioteca;
 import appbiblioteca.vistas.DlgReporteUsuarios;
 import appbiblioteca.persistencia.ManejaTablaH;
+import appbiblioteca.vistas.DlgAltaLibros;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,12 +15,14 @@ import java.awt.event.ActionListener;
  * @author Jorge
  */
 public class ManejaEventos implements ActionListener{
-    VistaBiblioteca tVista;
-    ManejaTablaH manejaT;
     
+    private VistaBiblioteca vista;
+    private ManejaTablaH manejaT;
+    private DlgAltaUsuarios dialogAltaUsuario;
+    private DlgAltaLibros dialogAltaLibros;
 
     public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt) {
-        tVista = vista;
+        this.vista = vista;
         manejaT = mt;
     }
     
@@ -35,13 +37,12 @@ public class ManejaEventos implements ActionListener{
         switch(evento){
             
              case "Salir":
-//                 dispose();
-                 System.exit(0);
+                System.exit(0);
                 break;
                 
             case "Altas Usuario":
-                DlgAltaUsuarios dau = new DlgAltaUsuarios(tVista, evento, true, manejaT);
-                dau.setVisible(true);
+                dialogAltaUsuario = new DlgAltaUsuarios(vista, evento, true, manejaT);
+                dialogAltaUsuario.setVisible(true);
                 
 //                vista.getAltaUsuarios().setVisible(true);
                 break;
@@ -69,7 +70,7 @@ public class ManejaEventos implements ActionListener{
                 break;
                 
             case "Reporte Usuarios":
-                DlgReporteUsuarios dru = new DlgReporteUsuarios(tVista, evento, true, manejaT);
+                DlgReporteUsuarios dru = new DlgReporteUsuarios(vista, evento, true, manejaT);
                 dru.setVisible(true);
                         
 //              vista.getReporteUsuarios().setVisible(true);

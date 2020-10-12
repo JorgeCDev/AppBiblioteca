@@ -30,12 +30,17 @@ public class EventosDlgAltaUsuarios implements ActionListener
                 String apeMaterno = usuario.getUsuarioApeMat().toUpperCase();
                 String domicilio = usuario.getUsuarioDomicilio().toUpperCase();
                 String residencia = usuario.getUsuarioCiudad().toUpperCase();
-//                char tipo = (char) usuario.getUsuarioTipo();
+                char tipo = usuario.getUsuarioTipo();
+                
+                
+                System.out.println(tipo);
                 
                 if( nombre.equals("") || apePaterno.equals("") || apeMaterno.equals("") || domicilio.equals("") || residencia.equals("") )
                     JOptionPane.showMessageDialog(usuario,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
+                if(tipo == 'S' )
+                    JOptionPane.showMessageDialog(usuario,"Porfavor Seleccionar Tipo de Usuario","", JOptionPane.WARNING_MESSAGE);
                 else{
-                    tablaH.AgregaUsuario(nombre, apePaterno, apeMaterno, domicilio, residencia);
+                    tablaH.AgregaUsuario(nombre, apePaterno, apeMaterno, domicilio, residencia, tipo);
                     JOptionPane.showMessageDialog(usuario,"Usuario "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                     usuario.limpiarTxt();
                 }

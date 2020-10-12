@@ -19,10 +19,8 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     private final Color COLOR_DARK = new Color(0, 129, 203);
     
     EventosDlgAltaUsuarios controladoraUsuarios;
-    ManejaTablaH tablaH;
-        
     
-  
+    
     public DlgAltaUsuarios(java.awt.Frame frame, String title ,boolean modal, ManejaTablaH tablaH) {
         super(frame,title, modal);
         initComponents();
@@ -61,8 +59,8 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     public String getUsuarioDomicilio(){
         return txtAltaUsuarioDomicilio.getText();
     }
-    public Object getUsuarioTipo(){
-        return cmbTipo.getSelectedItem();
+    public char getUsuarioTipo(){
+        return cmbTipo.getSelectedItem().toString().charAt(0);
     }   
   
 

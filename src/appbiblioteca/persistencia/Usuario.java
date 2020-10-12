@@ -33,10 +33,6 @@ public class Usuario {
         this.ciudadResidencia = ciudadResidencia;
     }
 
-    Usuario(String nombre, String apePat, String ApeMat, String domicilio, String ciudad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public String getNombreUsuario() {
         return nombreUsuario;
     }

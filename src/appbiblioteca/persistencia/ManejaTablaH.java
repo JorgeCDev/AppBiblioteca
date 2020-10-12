@@ -8,16 +8,15 @@ public class ManejaTablaH
 {
     Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
     
-    public void AgregaUsuario(String nombre, String apePat, String ApeMat,String domicilio, String ciudad)
+    public void AgregaUsuario(String nombre, String apePat, String ApeMat,String domicilio, String ciudad, char tipo)
     {
-        Usuario user = new Usuario(nombre, apePat, ApeMat, domicilio, ciudad, 'A');
+        Usuario user = new Usuario(nombre, apePat, ApeMat, domicilio, ciudad, tipo);
         tablaUsuario.put(tablaUsuario.size(), user);
-//        tablaUsuario.put(tablaUsuario.size(), user);
     }
     
     public String[][] ObtenerTablaUsuario()
     {
-        String[][] datos = new String[ tablaUsuario.size() ][ 5 ];
+        String[][] datos = new String[ tablaUsuario.size() ][ 6 ];
         Enumeration<Integer> e = tablaUsuario.keys();
         
         int cont=0;
@@ -29,9 +28,8 @@ public class ManejaTablaH
             datos[cont][1] = u.getNombreUsuario();
             datos[cont][2] = u.getApePatUsuario();
             datos[cont][3] = u.getApeMatUsuario();
-//            datos[cont][4] = u.getTipoUsuario();
-//            datos [cont][5] = u.getCiudadResidencia()
-//            datos[cont][4] = String.valueOf( u.getTipoUsuario() );
+            datos[cont][4] = u.getCiudadResidencia();
+            datos[cont][5] = String.valueOf( u.getTipoUsuario() );
             cont++;            
         }        
         return datos;

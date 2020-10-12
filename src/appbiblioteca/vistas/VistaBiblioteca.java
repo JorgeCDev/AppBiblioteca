@@ -35,12 +35,19 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 //    DlgReporteUsuarios ReporteUsuarios;
 //    ManejaEventos controladora;
     
-    ManejaTablaH tablaH = new ManejaTablaH();
+    private ManejaTablaH tablaH;
 
     public VistaBiblioteca() {
         
-//        tablaH = new ManejaTablaH();
+        tablaH = new ManejaTablaH();
         initComponents();
+        
+        tablaH.AgregaUsuario("Jose", "Perez", "Lopez", "Col: Hidalgo", "Culiacan", 'A');
+        
+        creaAcciones();
+    }
+    
+    private void creaAcciones(){
         
         ManejaEventos controladora = new ManejaEventos(this,tablaH);
         menuItmSalir.addActionListener(controladora);
@@ -52,78 +59,8 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmBusqueda.addActionListener(controladora);
         mnItmReporteUsuarios.addActionListener(controladora);
         mnItmAcerca.addActionListener(controladora);
-//        creaDialogos();
-//        creaAcciones();
+        
     }
-        
-    public void creaDialogos(){
-        
-//        DlgAltaUsuarios altaUsuarios = new DlgAltaUsuarios(this, "Alta de Usuarios", true, tablaH);
-//        DlgReporteUsuarios ReporteUsuarios = new DlgReporteUsuarios(this, "Reporte Usuarios", true, tablaH);
-        
-        altaLibros= new DlgAltaLibros(this, "Alta de Libros", true, tablaH);
-        aumentarExistencia= new DlgAumentarExist(this, "Aumentar Existencia", true);
-        prestamos=new DlgPrestamos(this, "Prestamos de Libros", true);
-        devoluciones= new DlgDevolverLibros(this, "Devoluciones", true);
-        busqueda=new DlgBusqueda(this, "Buscar", true);
-        
-        acerca=new DlgAcerca(this, "Acerca De", true);
-       
-    }
-    
-//    private void creaAcciones(){
-//        
-//        ManejaEventos controladora = new ManejaEventos(this);
-//        menuItmSalir.addActionListener(controladora);
-//        mnItmAltasUsuario.addActionListener(controladora);
-//        mnItmAltaLibros.addActionListener(controladora);
-//        mnItmExistencia.addActionListener(controladora);
-//        mnItmPrestamoLibros.addActionListener(controladora);
-//        mnItmDevolucionLibros.addActionListener(controladora);
-//        mnItmBusqueda.addActionListener(controladora);
-//        mnItmReporteUsuarios.addActionListener(controladora);
-//        mnItmAcerca.addActionListener(controladora);
-//        
-//    }
-    
-    //Getter y Setters
-
-//    public DlgAltaUsuarios getAltaUsuarios() {
-//        return altaUsuarios;
-//    }
-//
-//    public DlgAltaLibros getAltaLibros() {
-//        return altaLibros;
-//    }
-//
-//    public DlgAumentarExist getAumentarExistencia() {
-//        return aumentarExistencia;
-//    }
-//
-//    public DlgPrestamos getPrestamos() {
-//        return prestamos;
-//    }
-//
-//    public DlgDevolverLibros getDevoluciones() {
-//        return devoluciones;
-//    }
-//
-//    public DlgBusqueda getBusqueda() {
-//        return busqueda;
-//    }
-//    
-//    public DlgReporteUsuarios getReporteUsuarios() {
-//        return ReporteUsuarios;
-//    }
-//
-//    public DlgAcerca getAcerca() {
-//        return acerca;
-//    }
-    
-    
-    
-    
-    
     
     
     /**
