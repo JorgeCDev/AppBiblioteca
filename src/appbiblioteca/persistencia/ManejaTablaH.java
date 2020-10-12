@@ -15,7 +15,7 @@ public class ManejaTablaH
         
         Usuario user = new Usuario(nombre, apePat, ApeMat, domicilio, ciudad, tipo);
         
-        System.out.println(tablaLibro.contains(user));
+        
         
         tablaUsuario.put(tablaUsuario.size()+1, user);
     }
