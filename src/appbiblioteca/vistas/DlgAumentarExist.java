@@ -42,9 +42,12 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         
         btnAumentarExistenciaAgregar.addActionListener(existencia);
         cmbAumExstClaveLibro.addActionListener(existencia);
-        cmbAmtExstNombreLibro.addActionListener(existencia);
+        cmbAmtExstNombreLibro.addActionListener(existencia); 
+    }
+    
+    public void limpiar(){
         
-        
+        txtAmtrExstExistencia.setText("");
     }
     
     public void llenarCombos(ManejaTablaH tabla){
