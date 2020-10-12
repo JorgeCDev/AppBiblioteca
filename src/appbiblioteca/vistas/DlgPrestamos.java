@@ -14,7 +14,6 @@ import java.awt.Font;
  */
 public class DlgPrestamos extends javax.swing.JDialog {
     
-        
     private final Font fuenteH= new Font("Helvetica",Font.PLAIN,12);
     private final Font fuenteT= new Font("Helvetica",Font.BOLD,20);
     private final Font fuenteB= new Font("Helvetica",Font.BOLD,13);
