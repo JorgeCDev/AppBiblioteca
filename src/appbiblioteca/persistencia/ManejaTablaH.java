@@ -2,6 +2,7 @@ package appbiblioteca.persistencia;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.LinkedList;
 
 
 public class ManejaTablaH 
@@ -60,5 +61,20 @@ public class ManejaTablaH
         }        
         return datos;
     }
+    
+    public LinkedList<Libro> getAllLibros(){
+        
+        LinkedList<Libro>lista = new LinkedList<>();
+    
+          Enumeration<Integer> e = tablaLibro.keys();
+          
+        while(e.hasMoreElements())
+        {
+            lista.add(tablaLibro.get(e.nextElement()));
+        }        
+          
+        return lista;
+    }
+    
     
 }
