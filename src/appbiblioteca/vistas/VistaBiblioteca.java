@@ -42,7 +42,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         tablaH = new ManejaTablaH();
         initComponents();
         
-        tablaH.AgregaUsuario("Jose", "Perez", "Lopez", "Col: Hidalgo", "Culiacan", 'A');
+        tablaH.AgregaUsuario("JOSE", "PEREZ", "LOPEZ", "COL: HIDALGO", "CULIACAN", 'A');
         
         creaAcciones();
     }

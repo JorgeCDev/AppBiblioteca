@@ -43,12 +43,11 @@ public class ManejaEventos implements ActionListener{
             case "Altas Usuario":
                 dialogAltaUsuario = new DlgAltaUsuarios(vista, evento, true, manejaT);
                 dialogAltaUsuario.setVisible(true);
-                
-//                vista.getAltaUsuarios().setVisible(true);
                 break;
                 
             case "Alta Libros":
-//                vista.getAltaLibros().setVisible(true);
+                dialogAltaLibros = new DlgAltaLibros(vista, evento, true, manejaT);
+                dialogAltaLibros.setVisible(true);
                 break;
                 
                 

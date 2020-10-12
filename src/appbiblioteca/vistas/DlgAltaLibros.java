@@ -33,9 +33,32 @@ public class DlgAltaLibros extends javax.swing.JDialog {
      */
     public DlgAltaLibros(java.awt.Frame frame,String title, boolean modal, ManejaTablaH tablaH) {
         super(frame,title, modal);
-        //eventosaltaLibros = new EventosDlgAltaLibros(this,tablaH);
+        eventosAltaLibros = new EventosDlgAltaLibros(this,tablaH);
         initComponents();
     }
+    
+    public String getNombre(){
+        return this.txtAltaLibNombre.getText();
+    }
+    public String getDescripcion(){
+        return this.txtAltaLibDescripcion.getText();
+    }
+    public String getAutor(){
+        return this.txtAltaLibAutor.getText();
+    }
+    public String getEditorial(){
+        return this.txtAltaLibEditorial.getText();
+    }
+    
+    public void limpiarTxt(){
+        this.txtAltaLibAutor.setText("");
+        this.txtAltaLibClave.setText("");
+        this.txtAltaLibDescripcion.setText("");
+        this.txtAltaLibEditorial.setText("");
+        this.txtAltaLibExistencia.setText("");
+        this.txtAltaLibNombre.setText("");
+    }
+    
     
     
     
