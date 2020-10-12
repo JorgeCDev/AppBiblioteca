@@ -42,6 +42,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         
         btnAumentarExistenciaAgregar.addActionListener(existencia);
         cmbAumExstClaveLibro.addActionListener(existencia);
+        cmbAmtExstNombreLibro.addActionListener(existencia);
         
         
     }
@@ -50,8 +51,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         
         cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeys()));
         cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNames()));
-       cmbAmtExstNombreLibro.setSelectedIndex(cmbAumExstClaveLibro.getSelectedIndex());
-        
+       
     }
 
     public JComboBox<String> getCmbAmtExstNombreLibro() {
@@ -103,6 +103,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         cmbAumExstClaveLibro.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
         cmbAmtExstNombreLibro.setFont(fuenteH);
+        cmbAmtExstNombreLibro.setActionCommand("cmbLibro");
         cmbAmtExstNombreLibro.setBorder(null);
         cmbAmtExstNombreLibro.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
