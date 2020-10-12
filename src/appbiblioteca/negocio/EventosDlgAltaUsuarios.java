@@ -1,6 +1,7 @@
 package appbiblioteca.negocio;
 
 import appbiblioteca.persistencia.ManejaTablaH;
+import appbiblioteca.persistencia.Usuario;
 import appbiblioteca.vistas.DlgAltaUsuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,6 +32,7 @@ public class EventosDlgAltaUsuarios implements ActionListener
                 String domicilio = usuario.getUsuarioDomicilio().toUpperCase();
                 String residencia = usuario.getUsuarioCiudad().toUpperCase();
                 char tipo = usuario.getUsuarioTipo();
+                Usuario user= new Usuario(nombre, apePaterno, apeMaterno, domicilio, residencia, tipo);
                
                       
                 
@@ -38,8 +40,11 @@ public class EventosDlgAltaUsuarios implements ActionListener
                     JOptionPane.showMessageDialog(usuario,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
                 if(tipo == 'S' )
                     JOptionPane.showMessageDialog(usuario,"Porfavor Seleccionar Tipo de Usuario","", JOptionPane.WARNING_MESSAGE);
-                else{
-                    tablaH.AgregaUsuario(nombre, apePaterno, apeMaterno, domicilio, residencia, tipo);
+                else if(tablaH.getTablaUsuario().contains(user)){
+                    JOptionPane.showMessageDialog(usuario,"Usuario duplicado","", JOptionPane.WARNING_MESSAGE);
+                    usuario.limpiarTxt();
+                }else{
+                    tablaH.AgregaUsuario(user);
                     JOptionPane.showMessageDialog(usuario,"Usuario "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                     usuario.limpiarTxt();
                 }
