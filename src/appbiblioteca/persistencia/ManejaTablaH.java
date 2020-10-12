@@ -13,7 +13,7 @@ public class ManejaTablaH
     public void AgregaUsuario(String nombre, String apePat, String ApeMat,String domicilio, String ciudad, char tipo)
     {
         Usuario user = new Usuario(nombre, apePat, ApeMat, domicilio, ciudad, tipo);
-        tablaUsuario.put(tablaUsuario.size(), user);
+        tablaUsuario.put(tablaUsuario.size()+1, user);
     }
     
     public String[][] ObtenerTablaUsuario()
@@ -103,7 +103,7 @@ public class ManejaTablaH
       while (e.hasMoreElements()){
 
           llaves[cont++]=""+e.nextElement();
-                  ;
+                  
         }
         return llaves;
     }
@@ -113,6 +113,11 @@ public class ManejaTablaH
         
         return tablaLibro.get(llave);
         
+    }
+    
+    public int size(){
+        
+        return tablaLibro.size();
     }
     
 }
