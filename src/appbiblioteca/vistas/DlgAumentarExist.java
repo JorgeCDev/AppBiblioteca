@@ -52,8 +52,8 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     
     public void llenarCombos(ManejaTablaH tabla){
         
-        cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeys()));
-        cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNames()));
+        cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeysLibros()));
+        cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNamesLibros()));
        
     }
 
