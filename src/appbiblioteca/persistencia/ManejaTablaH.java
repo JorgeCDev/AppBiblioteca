@@ -90,6 +90,10 @@ public class ManejaTablaH
 
       return names;
       }
-    
+    public Libro getLibro(int llave){
+        
+        return tablaLibro.get(llave);
+        
+    }
     
 }
