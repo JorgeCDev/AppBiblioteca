@@ -53,6 +53,7 @@ public class EventosDlgAumentarExistencia implements ActionListener{
                     JOptionPane.showMessageDialog(existencia, 
                             "No puede haber elementos vacios");
                 }else{
+                    
                  int llave =Integer.parseInt(existencia.getCmbAumExstClaveLibro().
                          getSelectedItem().toString());
                  int ext = tablaH.getLibro(llave).getExistencia();

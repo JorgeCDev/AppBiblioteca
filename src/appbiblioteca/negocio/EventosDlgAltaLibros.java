@@ -36,6 +36,7 @@ public class EventosDlgAltaLibros implements ActionListener
                     tablaH.AgregaLibro(nombre, autor, descripcion, editorial, existencia);
                     JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                     dLibros.limpiarTxt();
+                    
                 }
                 
                 break;
