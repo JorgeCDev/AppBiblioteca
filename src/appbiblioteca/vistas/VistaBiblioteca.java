@@ -48,7 +48,6 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     }
     
     private void creaAcciones(){
-        
         ManejaEventos controladora = new ManejaEventos(this,tablaH);
         menuItmSalir.addActionListener(controladora);
         mnItmAltasUsuario.addActionListener(controladora);
@@ -59,7 +58,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmBusqueda.addActionListener(controladora);
         mnItmReporteUsuarios.addActionListener(controladora);
         mnItmAcerca.addActionListener(controladora);
-        
+        mnItmInventario.addActionListener(controladora);
     }
     
     
@@ -82,6 +81,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         menuConsultas = new javax.swing.JMenu();
         mnItmBusqueda = new javax.swing.JMenuItem();
         mnItmReporteUsuarios = new javax.swing.JMenuItem();
+        mnItmInventario = new javax.swing.JMenuItem();
         menuLibros = new javax.swing.JMenu();
         mnItmPrestamoLibros = new javax.swing.JMenuItem();
         mnItmDevolucionLibros = new javax.swing.JMenuItem();
@@ -154,6 +154,10 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmReporteUsuarios.setText("Reporte Usuarios");
         menuConsultas.add(mnItmReporteUsuarios);
 
+        mnItmInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_search_black_18dp.png"))); // NOI18N
+        mnItmInventario.setText("Inventario");
+        menuConsultas.add(mnItmInventario);
+
         mbBarraMenu.add(menuConsultas);
 
         menuLibros.setForeground(Color.BLACK);
@@ -208,10 +212,6 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar mbBarraMenu;
@@ -227,6 +227,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnItmBusqueda;
     private javax.swing.JMenuItem mnItmDevolucionLibros;
     private javax.swing.JMenuItem mnItmExistencia;
+    private javax.swing.JMenuItem mnItmInventario;
     private javax.swing.JMenuItem mnItmPrestamoLibros;
     private javax.swing.JMenuItem mnItmReporteUsuarios;
     // End of variables declaration//GEN-END:variables

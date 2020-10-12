@@ -32,9 +32,6 @@ public class EventosDlgAltaUsuarios implements ActionListener
                 String residencia = usuario.getUsuarioCiudad().toUpperCase();
                 char tipo = usuario.getUsuarioTipo();
                 
-                
-                System.out.println(tipo);
-                
                 if( nombre.equals("") || apePaterno.equals("") || apeMaterno.equals("") || domicilio.equals("") || residencia.equals("") )
                     JOptionPane.showMessageDialog(usuario,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
                 if(tipo == 'S' )

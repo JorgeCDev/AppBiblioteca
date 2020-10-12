@@ -7,21 +7,20 @@ import java.awt.Frame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class DlgReporteUsuarios extends javax.swing.JDialog{
-    
-    public DlgReporteUsuarios(Frame f, String t, boolean modal, ManejaTablaH mt){
+public class DlgInventario extends javax.swing.JDialog
+{
+    public DlgInventario(Frame f, String t, boolean modal, ManejaTablaH mt){
         super(f,t, modal);
         setLocationRelativeTo(null);
         String[] nombreColumnas = {
             "Clave",
             "Nombre",
-            "Apellido Paterno",
-            "Apellido Materno",
-            "Ciudad o Residencia",
-            "Tipo de Usuario"
+            "Descripcion",
+            "Autor",
+            "Editorial",
+            "Existencia"
         };
-        String[][] data = mt.ObtenerTablaUsuario();
-        System.out.println( "datos: " + data );
+        String[][] data = mt.ObtenerTablaLibro();
         JTable jt_info = new JTable(data, nombreColumnas);
         jt_info.setPreferredScrollableViewportSize(new Dimension (600, 180));
 
@@ -29,5 +28,4 @@ public class DlgReporteUsuarios extends javax.swing.JDialog{
         getContentPane().add(sp, BorderLayout.CENTER);
         setSize(800,500);
     }
-
 }

@@ -24,17 +24,22 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     
-    EventosDlgAltaLibros eventosAltaLibros;
-    
-    
+    EventosDlgAltaLibros controladoraLibros;
     
     /**
      * Creates new form DlgAltaLibros
      */
     public DlgAltaLibros(java.awt.Frame frame,String title, boolean modal, ManejaTablaH tablaH) {
         super(frame,title, modal);
-        eventosAltaLibros = new EventosDlgAltaLibros(this,tablaH);
         initComponents();
+        creaAcciones(tablaH);
+    }
+    
+    private void creaAcciones(ManejaTablaH tablaH){
+        controladoraLibros = new EventosDlgAltaLibros(this, tablaH);
+        
+        this.btnAltaLibAgregar.addActionListener(controladoraLibros);
+        this.btnAltaLibSalir.addActionListener(controladoraLibros);        
     }
     
     public String getNombre(){

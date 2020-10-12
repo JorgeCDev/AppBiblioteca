@@ -6,6 +6,7 @@ import appbiblioteca.vistas.VistaBiblioteca;
 import appbiblioteca.vistas.DlgReporteUsuarios;
 import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.vistas.DlgAltaLibros;
+import appbiblioteca.vistas.DlgInventario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +21,7 @@ public class ManejaEventos implements ActionListener{
     private ManejaTablaH manejaT;
     private DlgAltaUsuarios dialogAltaUsuario;
     private DlgAltaLibros dialogAltaLibros;
+    private DlgInventario dialogInventario;
 
     public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt) {
         this.vista = vista;
@@ -78,6 +80,11 @@ public class ManejaEventos implements ActionListener{
             case "Acerca":
 //                vista.getAcerca().setVisible(true);
                 break; 
+                
+            case "Inventario":
+                this.dialogInventario = new DlgInventario(vista, evento, true, manejaT);
+                this.dialogInventario.setVisible(true);
+                break;
         }
             
         

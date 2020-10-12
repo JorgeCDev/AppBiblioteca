@@ -24,14 +24,18 @@ public class EventosDlgAltaLibros implements ActionListener
        
         switch(evento){
             case "Agregar":
-                String nombre = dLibros.getNombre();
-                String descripcion = dLibros.getDescripcion();
-                String autor = dLibros.getAutor();
-                String editorial = dLibros.getEditorial();
+                String nombre = dLibros.getNombre().toUpperCase();
+                String descripcion = dLibros.getDescripcion().toUpperCase();
+                String autor = dLibros.getAutor().toUpperCase();
+                String editorial = dLibros.getEditorial().toUpperCase();
                 
-                tablaH.AgregaLibro(nombre, autor, descripcion, editorial, 0);
-                JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
-                dLibros.limpiarTxt();
+                if( nombre.equals("") || descripcion.equals("") || autor.equals("") || editorial.equals("") )
+                    JOptionPane.showMessageDialog(dLibros,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
+                else{
+                    tablaH.AgregaLibro(nombre, autor, descripcion, editorial, 0);
+                    JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
+                    dLibros.limpiarTxt();
+                }
                 
                 break;
                 
