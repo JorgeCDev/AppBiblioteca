@@ -28,11 +28,12 @@ public class EventosDlgAltaLibros implements ActionListener
                 String descripcion = dLibros.getDescripcion().toUpperCase();
                 String autor = dLibros.getAutor().toUpperCase();
                 String editorial = dLibros.getEditorial().toUpperCase();
+                int existencia = dLibros.getExistencia();
                 
                 if( nombre.equals("") || descripcion.equals("") || autor.equals("") || editorial.equals("") )
                     JOptionPane.showMessageDialog(dLibros,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
                 else{
-                    tablaH.AgregaLibro(nombre, autor, descripcion, editorial, 0);
+                    tablaH.AgregaLibro(nombre, autor, descripcion, editorial, existencia);
                     JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                     dLibros.limpiarTxt();
                 }

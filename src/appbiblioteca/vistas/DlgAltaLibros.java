@@ -54,6 +54,9 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     public String getEditorial(){
         return this.txtAltaLibEditorial.getText();
     }
+    public int getExistencia(){
+        return Integer.parseInt(spnAltaLibrosExistencia.getValue().toString());
+    }
     
     public void limpiarTxt(){
         this.txtAltaLibAutor.setText("");

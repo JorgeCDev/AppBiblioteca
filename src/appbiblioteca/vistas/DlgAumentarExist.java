@@ -5,6 +5,7 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -24,7 +25,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     /**
      * Creates new form DlgAumentarExist
      */
-    public DlgAumentarExist(java.awt.Frame parent,String title ,boolean modal) {
+    public DlgAumentarExist(java.awt.Frame parent,String title ,boolean modal, ManejaTablaH tablaH) {
         super(parent,title, modal);
         initComponents();
     }

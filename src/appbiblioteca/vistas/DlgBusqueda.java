@@ -5,6 +5,7 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -22,9 +23,10 @@ public class DlgBusqueda extends javax.swing.JDialog {
     /**
      * Creates new form DlgBusqueda
      */
-    public DlgBusqueda(java.awt.Frame parent,String title, boolean modal) {
+    public DlgBusqueda(java.awt.Frame parent,String title, boolean modal, ManejaTablaH tablaH) {
         super(parent,title, modal);
         initComponents();
+        
     }
 
     /**
