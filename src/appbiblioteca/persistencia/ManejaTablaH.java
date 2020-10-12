@@ -76,7 +76,7 @@ public class ManejaTablaH
         return lista;
     }
     
-    public String[] getAllNames() {
+    public String[] getAllNamesLibros() {
       String []names =new String[tablaLibro.size()];
       
 
@@ -91,7 +91,7 @@ public class ManejaTablaH
       return names;
     }
     
-    public String[]getAllKeys(){
+    public String[]getAllKeysLibros(){
         
         
       String[] llaves=new String[tablaLibro.size()];
