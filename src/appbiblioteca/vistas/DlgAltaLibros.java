@@ -34,7 +34,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         this.tablaH=tablaH;
         initComponents();
         creaAcciones(tablaH);
-        txtAltaLibClave.setText(""+(tablaH.size()+1));
+        txtAltaLibClave.setText(""+(tablaH.sizeLibro()+1));
     }
     
     private void creaAcciones(ManejaTablaH tablaH){
@@ -62,7 +62,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     
     public void limpiarTxt(){
         txtAltaLibAutor.setText("");
-        txtAltaLibClave.setText(""+(tablaH.size()+1));
+        txtAltaLibClave.setText(""+(tablaH.sizeLibro()+1));
         txtAltaLibDescripcion.setText("");
         txtAltaLibEditorial.setText("");
         spnAltaLibrosExistencia.setValue(0);
