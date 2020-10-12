@@ -39,7 +39,7 @@ public class ManejaTablaH
     
     public void AgregaLibro(String libNom, String autor, String descripcion, String editorial, int existencia){
         Libro libro = new Libro(libNom, autor, descripcion, editorial, existencia);
-        tablaLibro.put(tablaLibro.size(), libro);
+        tablaLibro.put(tablaLibro.size()+1, libro);
     }
     
     public String[][] ObtenerTablaLibro(){
@@ -96,13 +96,15 @@ public class ManejaTablaH
         
       String[] llaves=new String[tablaLibro.size()];
         
-      Enumeration<Integer> e= tablaLibro.keys();
+      Enumeration<Integer> e = tablaLibro.keys();
+        System.out.println();
       
       int cont=0;
       
       while (e.hasMoreElements()){
-
-          llaves[cont++]=""+e.nextElement();
+  
+       
+          llaves[cont++]=e.nextElement().toString();
                   
         }
         return llaves;
