@@ -5,6 +5,7 @@ import appbiblioteca.vistas.DlgAltaUsuarios;
 import appbiblioteca.vistas.VistaBiblioteca;
 import appbiblioteca.vistas.DlgReporteUsuarios;
 import appbiblioteca.persistencia.ManejaTablaH;
+import appbiblioteca.vistas.DlgAcerca;
 import appbiblioteca.vistas.DlgAltaLibros;
 import appbiblioteca.vistas.DlgAumentarExist;
 import appbiblioteca.vistas.DlgBusqueda;
@@ -26,6 +27,7 @@ public class ManejaEventos implements ActionListener{
     private DlgInventario dialogInventario;
     private DlgAumentarExist dialogAumentarExistencia;
     private DlgBusqueda dialogBusqueda;
+    private DlgAcerca dialogAcerca;
 
     public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt) {
         this.vista = vista;
@@ -84,7 +86,8 @@ public class ManejaEventos implements ActionListener{
                 break;
                 
             case "Acerca":
-//                vista.getAcerca().setVisible(true);
+                dialogAcerca = new DlgAcerca(vista, evento, true);
+                dialogAcerca.setVisible(true);
                 break; 
                 
             case "Inventario":

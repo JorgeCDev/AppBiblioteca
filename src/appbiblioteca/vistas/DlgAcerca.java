@@ -7,6 +7,8 @@ package appbiblioteca.vistas;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -24,6 +26,16 @@ public class DlgAcerca extends javax.swing.JDialog {
     public DlgAcerca(java.awt.Frame parent, String title, boolean modal) {
         super(parent, title, modal);
         initComponents();
+        initAcciones();
+    }
+    
+    private void initAcciones(){
+        this.btnAcrcaSalir.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                dispose();
+            }
+        });
     }
 
     /**
