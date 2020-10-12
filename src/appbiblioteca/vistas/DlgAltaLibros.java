@@ -9,6 +9,9 @@ import appbiblioteca.negocio.EventosDlgAltaLibros;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSpinner;
+import javax.swing.text.NumberFormatter;
 
 /**
  *
@@ -35,6 +38,10 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         initComponents();
         creaAcciones(tablaH);
         txtAltaLibClave.setText(""+(tablaH.sizeLibro()+1));
+                
+        // Impide que se ingresen letras al JSpinner 
+        JFormattedTextField txt = ((JSpinner.NumberEditor) spnAltaLibrosExistencia.getEditor()).getTextField(); 
+        ((NumberFormatter) txt.getFormatter()).setAllowsInvalid(false); 
     }
     
     private void creaAcciones(ManejaTablaH tablaH){
