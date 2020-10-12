@@ -25,7 +25,6 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         super(frame,title, modal);
         initComponents();
         creaAcciones(tablaH);
-        
     }
     
     private void creaAcciones(ManejaTablaH tablaH){

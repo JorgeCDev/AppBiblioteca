@@ -1,5 +1,6 @@
 package appbiblioteca.negocio;
 
+import appbiblioteca.persistencia.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.vistas.DlgAltaLibros;
 import java.awt.event.ActionEvent;
@@ -30,15 +31,18 @@ public class EventosDlgAltaLibros implements ActionListener
                 String editorial = dLibros.getEditorial().toUpperCase();
                 int existencia = dLibros.getExistencia();
                 
+                Libro libro = new Libro(nombre, autor, descripcion, editorial, existencia);
+                
                 if( nombre.equals("") || descripcion.equals("") || autor.equals("") || editorial.equals("") )
                     JOptionPane.showMessageDialog(dLibros,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
-                else{
-                    tablaH.AgregaLibro(nombre, autor, descripcion, editorial, existencia);
-                    JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
-                    dLibros.limpiarTxt();
-                    
-                }
-                
+                else
+                    if( tablaH.getTablaLibro().contains(libro) )
+                        JOptionPane.showMessageDialog(dLibros,"Libro Duplicado","", JOptionPane.WARNING_MESSAGE);
+                    else{
+                        tablaH.AgregaLibro(libro);
+                        JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
+                        dLibros.limpiarTxt();
+                    }
                 break;
                 
             case "Salir":

@@ -51,7 +51,7 @@ public class EventosDlgAumentarExistencia implements ActionListener{
                         existencia.getCmbAumExstClaveLibro().getItemCount()==0|
                         existencia.getTxtAmtrExstExistencia().getText().equals("")){
                     JOptionPane.showMessageDialog(existencia, 
-                            "No puede haber elementos vacios");
+                            "No puede haber elementos vacios", "", JOptionPane.WARNING_MESSAGE);
                 }else{
                     
                  int llave =Integer.parseInt(existencia.getCmbAumExstClaveLibro().
@@ -64,6 +64,8 @@ public class EventosDlgAumentarExistencia implements ActionListener{
                  
                  tablaH.getLibro(llave).setExistencia(ext+nExt);
                  
+                 JOptionPane.showMessageDialog(existencia,"Existencia Actualizada Correctamente\n" +
+                         "Existencia Actual: " + tablaH.getLibro(llave).getExistencia());
                  existencia.limpiar();
                  
                  

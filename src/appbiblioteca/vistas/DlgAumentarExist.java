@@ -39,22 +39,18 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     }
     
     public void crearEscuchadores(){
-        
         btnAumentarExistenciaAgregar.addActionListener(existencia);
         cmbAumExstClaveLibro.addActionListener(existencia);
         cmbAmtExstNombreLibro.addActionListener(existencia); 
     }
     
     public void limpiar(){
-        
         txtAmtrExstExistencia.setText("");
     }
     
     public void llenarCombos(ManejaTablaH tabla){
-        
         cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeysLibros()));
         cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNamesLibros()));
-       
     }
 
     public JComboBox<String> getCmbAmtExstNombreLibro() {

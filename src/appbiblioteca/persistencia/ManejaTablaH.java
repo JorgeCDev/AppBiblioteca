@@ -11,8 +11,7 @@ public class ManejaTablaH
     Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
     Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
     
-    public void AgregaUsuario(Usuario usuario)
-    {
+    public void AgregaUsuario(Usuario usuario){
         tablaUsuario.put(tablaUsuario.size()+1, usuario); 
     }
     
@@ -26,7 +25,7 @@ public class ManejaTablaH
         {
             int clave = e.nextElement();
             Usuario u = tablaUsuario.get(clave);
-            datos[cont][0] = Integer.toString(clave+1);
+            datos[cont][0] = Integer.toString(clave);
             datos[cont][1] = u.getNombreUsuario();
             datos[cont][2] = u.getApePatUsuario();
             datos[cont][3] = u.getApeMatUsuario();
@@ -37,8 +36,7 @@ public class ManejaTablaH
         return datos;
     }
     
-    public void AgregaLibro(String libNom, String autor, String descripcion, String editorial, int existencia){
-        Libro libro = new Libro(libNom, autor, descripcion, editorial, existencia);
+    public void AgregaLibro(Libro libro){
         tablaLibro.put(tablaLibro.size()+1, libro);
     }
     
@@ -51,7 +49,7 @@ public class ManejaTablaH
         {
             int clave = e.nextElement();
             Libro l = tablaLibro.get(clave);
-            datos[cont][0] = Integer.toString(clave+1);
+            datos[cont][0] = Integer.toString(clave);
             datos[cont][1] = l.getNombreLibro();
             datos[cont][2] = l.getAutor();
             datos[cont][3] = l.getDescripcion();
@@ -66,13 +64,11 @@ public class ManejaTablaH
         
         LinkedList<Libro>lista = new LinkedList<>();
     
-          Enumeration<Integer> e = tablaLibro.keys();
+        Enumeration<Integer> e = tablaLibro.keys();
           
-        while(e.hasMoreElements())
-        {
+        while(e.hasMoreElements()){
             lista.add(tablaLibro.get(e.nextElement()));
         }        
-          
         return lista;
     }
     

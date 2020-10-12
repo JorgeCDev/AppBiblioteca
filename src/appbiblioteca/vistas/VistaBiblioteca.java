@@ -7,7 +7,9 @@ package appbiblioteca.vistas;
 
 
 import appbiblioteca.negocio.ManejaEventos;
+import appbiblioteca.persistencia.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
+import appbiblioteca.persistencia.Usuario;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -24,14 +26,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
-    private DlgAltaUsuarios altaUsuarios;
-    private DlgAltaLibros altaLibros;
-    private DlgAumentarExist aumentarExistencia;
-    private DlgPrestamos prestamos;
-    private DlgDevolverLibros devoluciones;
-    private DlgBusqueda busqueda;
-    private DlgReporteUsuarios ReporteUsuarios;
-    private DlgAcerca acerca;
+    
     private ManejaTablaH tablaH;
 
     public VistaBiblioteca() {
@@ -39,6 +34,26 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         tablaH = new ManejaTablaH();
         initComponents();
         creaAcciones();
+        
+        // Usuarios Agregados Inicialmente Para hacer Pruebas
+        Usuario pedro = new Usuario("PEDRO", "PEREZ", "LOPEZ", "LAS QUINTAS", "CULIACAN", 'A');
+        Usuario katy = new Usuario("KATHERINE", "PERALTA", "PEÑUÑURI", "POR AHI", "CULIACAN", 'M');
+        Usuario armando = new Usuario("ARMANDO", "BELTRAN", "MEDINA", "DOMICILIO CONOCIDO", "CULIACAN", 'E');
+
+        tablaH.AgregaUsuario(pedro);
+        tablaH.AgregaUsuario(katy);
+        tablaH.AgregaUsuario(armando);
+        
+        // Libros Agregados Inicialmente Para Hacer Pruebas
+        Libro libro1 = new Libro("GAME OF THRONES", "GEORGE R.R MARTIN",
+                "LIBRO DE FANTASIA MEDIEVAL", "NO SE", 5);
+        Libro libro2 = new Libro("HARRY POTTER Y LA PIEDRA FILOSOFAL", "J.K ROWLINS", "LIBRO DE FANTASIA MAGICA Y HECHICERIA", "NO SE", 6);
+        
+        tablaH.AgregaLibro(libro1);
+        tablaH.AgregaLibro(libro2);
+                
+        
+        
     }
     
     private void creaAcciones(){
