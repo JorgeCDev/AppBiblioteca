@@ -12,6 +12,7 @@ import appbiblioteca.vistas.DlgMorosos;
 import appbiblioteca.vistas.DlgAumentarExist;
 import appbiblioteca.vistas.DlgBusqueda;
 import appbiblioteca.vistas.DlgInventario;
+import appbiblioteca.vistas.DlgPrestamos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -32,6 +33,7 @@ public class ManejaEventos implements ActionListener{
     private DlgBusqueda dialogBusqueda;
     private DlgAcerca dialogAcerca;
     private DlgMorosos dialogMorosos;
+  //  private DlgPrestamos prestamos;
 
     public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt, ManejaLista lista) {
         this.vista = vista;
@@ -68,7 +70,10 @@ public class ManejaEventos implements ActionListener{
                 
                 
             case "Prestamo Libros":
-//                vista.getPrestamos().setVisible(true);
+                /*
+                prestamos = new DlgPrestamos(vista, "Prestamos", true, manejaT);   
+                prestamos.setVisible(true);
+                */
                 break; 
                 
             case "Devolucion de Libros":
