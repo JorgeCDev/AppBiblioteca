@@ -44,8 +44,6 @@ public class ManejaLista
         return morosos.contains(usuario);
     }
     
-    
-    
     public ArrayList<Usuario> getListaMorosos(){
         return morosos;
     }

@@ -3,15 +3,11 @@ package appbiblioteca.persistencia;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.LinkedList;
-import java.util.List;
-
-
 
 public class ManejaTablaH 
 {
     Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
     Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
-   
     
     public void AgregaUsuario(Usuario usuario){
         tablaUsuario.put(tablaUsuario.size()+1, usuario); 
@@ -105,96 +101,70 @@ public class ManejaTablaH
     }
     
     public String[]getAllKeysLibros(){
-        
-        
       String[] llaves=new String[tablaLibro.size()];
         
       Enumeration<Integer> e = tablaLibro.keys();
-     
       
       int cont=0;
       
       while (e.hasMoreElements()){
-  
-       
           llaves[cont++]=e.nextElement().toString();
-                  
         }
         return llaves;
     }
     
     //llena el combo de llaves y añade un espacio no borrar
      public String[]getKeysLibrosCombos(){
-        
-        
-      String[] llaves=new String[tablaLibro.size()+1];
-       llaves[0]=""; 
-      Enumeration<Integer> e = tablaLibro.keys();
-     
+        String[] llaves=new String[tablaLibro.size()+1];
+        llaves[0]=""; 
+        Enumeration<Integer> e = tablaLibro.keys(); 
       
-      int cont=1;
+        int cont=1;
       
-      while (e.hasMoreElements()){
-  
-          llaves[cont]=e.nextElement().toString();
-          cont++;        
-          
+        while (e.hasMoreElements()){
+            llaves[cont]=e.nextElement().toString();
+            cont++;        
         }
         return llaves;
     }
      
-     
-     //Llena con nombres de usuario y añade un espacio no borrar
-      public String[]getNamesCombos(){
-        
-        
-      String[] llaves=new String[tablaUsuario.size()+1];
-       llaves[0]=""; 
-      Enumeration<Integer> e = tablaUsuario.keys();
-     
-      
-      int cont=1;
-      
-      while (e.hasMoreElements()){
-          int elemt= e.nextElement();
-          llaves[cont]= tablaUsuario.get(elemt).getNombreUsuario()+" "+
-                  tablaUsuario.get(elemt).getApePatUsuario()+" "+
-                  tablaUsuario.get(elemt).getApeMatUsuario();
-          cont++;        
-          
-        }
-        return llaves;
-    }
-    
-       
-       
-    public Libro getLibro(int llave){
-        
-        return tablaLibro.get(llave);
-        
-    }
-    
-     public LinkedList<Usuario> getAllUsuarios(){
-        
-        LinkedList<Usuario>lista = new LinkedList<>();
-    
+    //Llena con nombres de usuario y añade un espacio no borrar
+    public String[]getNamesCombos(){
+        String[] llaves=new String[tablaUsuario.size()+1];
+        llaves[0]=""; 
         Enumeration<Integer> e = tablaUsuario.keys();
-          
+     
+      
+        int cont=1;
+      
+        while (e.hasMoreElements()){
+            int elemt= e.nextElement();
+            llaves[cont]= tablaUsuario.get(elemt).getNombreUsuario()+" "+
+                    tablaUsuario.get(elemt).getApePatUsuario()+" "+
+                    tablaUsuario.get(elemt).getApeMatUsuario();
+            cont++;        
+        }
+        return llaves;
+    }
+    
+    public Libro getLibro(int llave){
+        return tablaLibro.get(llave);
+    }
+    
+    public LinkedList<Usuario> getAllUsuarios(){
+        LinkedList<Usuario>lista = new LinkedList<>();
+        Enumeration<Integer> e = tablaUsuario.keys();
         while(e.hasMoreElements()){
-            
             lista.add(tablaUsuario.get(e.nextElement()));
-            
         }        
         return lista;
     }
     
      
     public int sizeLibro(){
-        
         return tablaLibro.size();
     }
     public int sizeUsuario(){
-        
         return tablaUsuario.size();
     }
 
@@ -206,8 +176,8 @@ public class ManejaTablaH
         return tablaLibro;
     }
     
-    
-    
+    // Busca al usuario Moroso en la Tabla Usuarios 
+    // y cambia el atributo moroso a false
     public Usuario buscarUsuario(String nombre, String apellPat, String apellMat){
         Enumeration<Integer> e = tablaUsuario.keys();
         Usuario user = null;
@@ -225,13 +195,10 @@ public class ManejaTablaH
                 
                 user = new Usuario(nombre, apellPat, apellMat, domicilio, ciudad, tipo);
             }   
-            
             tablaUsuario.get(llave).setMoroso(false);            
         }
         return user;
-        
     }
-    
     
     
 }
