@@ -33,7 +33,7 @@ public class ManejaEventos implements ActionListener{
     private DlgBusqueda dialogBusqueda;
     private DlgAcerca dialogAcerca;
     private DlgMorosos dialogMorosos;
-  //  private DlgPrestamos prestamos;
+    private DlgPrestamos prestamos;
 
     public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt, ManejaLista lista) {
         this.vista = vista;
@@ -70,10 +70,10 @@ public class ManejaEventos implements ActionListener{
                 
                 
             case "Prestamo Libros":
-                /*
+                
                 prestamos = new DlgPrestamos(vista, "Prestamos", true, manejaT);   
                 prestamos.setVisible(true);
-                */
+                
                 break; 
                 
             case "Devolucion de Libros":
