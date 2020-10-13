@@ -30,7 +30,7 @@ public class DlgMorosos extends javax.swing.JDialog {
     }
     
     private void llenarCombo(ManejaTablaH tabla){
-        this.cmbUsuario.setModel(new DefaultComboBoxModel<>(tabla.getAllUsuarios()));
+        this.cmbUsuario.setModel(new DefaultComboBoxModel<>(tabla.getUsuarios()));
     }
     public JComboBox<String> getCmbUsuario() {
         return this.cmbUsuario;

@@ -72,7 +72,7 @@ public class ManejaTablaH
         return lista;
     }
     
-    public String[] getAllUsuarios(){
+    public String[] getUsuarios(){
         String[] usuarios = new String[tablaUsuario.size()];
         Enumeration<Integer> e = tablaLibro.keys();
         
