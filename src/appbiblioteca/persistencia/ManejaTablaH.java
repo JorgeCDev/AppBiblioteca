@@ -113,6 +113,21 @@ public class ManejaTablaH
         
     }
     
+     public LinkedList<Usuario> getAllUsuarios(){
+        
+        LinkedList<Usuario>lista = new LinkedList<>();
+    
+        Enumeration<Integer> e = tablaUsuario.keys();
+          
+        while(e.hasMoreElements()){
+            
+            lista.add(tablaUsuario.get(e.nextElement()));
+            
+        }        
+        return lista;
+    }
+     
+    
     public int sizeLibro(){
         
         return tablaLibro.size();
