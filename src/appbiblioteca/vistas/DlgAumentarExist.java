@@ -12,7 +12,9 @@ import java.awt.Font;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
-import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSpinner;
+import javax.swing.text.NumberFormatter;
 
 /**
  *
@@ -36,6 +38,9 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         existencia= new EventosDlgAumentarExistencia(tablaH, this);
         crearEscuchadores();
         llenarCombos(tablaH);
+        
+        JFormattedTextField txt = ((JSpinner.NumberEditor) this.jSpinnerExistencia.getEditor()).getTextField(); 
+        ((NumberFormatter) txt.getFormatter()).setAllowsInvalid(false); 
     }
     
     public void crearEscuchadores(){
@@ -45,7 +50,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     }
     
     public void limpiar(){
-        txtAmtrExstExistencia.setText("");
+        this.jSpinnerExistencia.setValue(0);
     }
     
     public void llenarCombos(ManejaTablaH tabla){
@@ -56,15 +61,12 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     public JComboBox<String> getCmbAmtExstNombreLibro() {
         return cmbAmtExstNombreLibro;
     }
-
     public JComboBox<String> getCmbAumExstClaveLibro() {
         return cmbAumExstClaveLibro;
     }
-
-    public JTextField getTxtAmtrExstExistencia() {
-        return txtAmtrExstExistencia;
+    public int getExistencia(){
+        return Integer.parseInt(this.jSpinnerExistencia.getValue().toString());
     }
-    
     
 
     /**
@@ -82,8 +84,8 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnAumentarExistenciaAgregar = new javax.swing.JButton();
-        txtAmtrExstExistencia = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jSpinnerExistencia = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Aumentar Existencia");
@@ -120,10 +122,10 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         btnAumentarExistenciaAgregar.setFocusPainted(false);
         btnAumentarExistenciaAgregar.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        txtAmtrExstExistencia.setFont(fuenteB);
-
         jLabel4.setFont(fuenteH);
         jLabel4.setText("Existencia");
+
+        jSpinnerExistencia.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,11 +134,11 @@ public class DlgAumentarExist extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSpinnerExistencia, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel2)
                         .addComponent(jLabel3)
                         .addComponent(jLabel4)
-                        .addComponent(txtAmtrExstExistencia)
                         .addComponent(cmbAmtExstNombreLibro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cmbAumExstClaveLibro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
@@ -159,8 +161,8 @@ public class DlgAumentarExist extends javax.swing.JDialog {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAmtrExstExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jSpinnerExistencia, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnAumentarExistenciaAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
@@ -178,6 +180,6 @@ public class DlgAumentarExist extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField txtAmtrExstExistencia;
+    private javax.swing.JSpinner jSpinnerExistencia;
     // End of variables declaration//GEN-END:variables
 }

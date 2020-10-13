@@ -165,6 +165,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         btnAltaLibSalir.setPreferredSize(new java.awt.Dimension(100, 30));
 
         spnAltaLibrosExistencia.setFont(fuenteL);
+        spnAltaLibrosExistencia.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         spnAltaLibrosExistencia.setBorder(null);
         spnAltaLibrosExistencia.setPreferredSize(new java.awt.Dimension(29, 30));
 

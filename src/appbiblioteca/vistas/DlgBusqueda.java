@@ -6,13 +6,17 @@
 package appbiblioteca.vistas;
 
 import appbiblioteca.negocio.EventosDlgBusqueda;
+import appbiblioteca.persistencia.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Hashtable;
+import java.util.LinkedList;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,13 +39,34 @@ public class DlgBusqueda extends javax.swing.JDialog {
         busqueda= new EventosDlgBusqueda(tablaH,this);
         initComponents();
         creaEscuchadores();
+        generarTabla(tablaH);
     }
     
-    public void creaEscuchadores(){
-        
+    private void creaEscuchadores(){
         btnSrcBuscar.addActionListener(busqueda);
-        
-        
+    }
+    
+    private void generarTabla(ManejaTablaH tablaH){
+                
+        LinkedList<Libro> lista = tablaH.getAllLibros();
+        DefaultTableModel modelo = (DefaultTableModel) this.tblSrcResultados.getModel();
+
+        modelo.setRowCount(0);
+
+        Object matrix[] = new Object[5];
+
+        for (int i = 0; i < lista.size(); i++) {
+            matrix[0] = lista.get(i).getAutor();
+            matrix[1] = lista.get(i).getNombreLibro();
+            matrix[2] = lista.get(i).getDescripcion();
+            matrix[3] = lista.get(i).getEditorial();
+            matrix[4] = lista.get(i).getExistencia();
+
+            modelo.addRow(matrix);
+
+        }
+
+        this.tblSrcResultados.setModel(modelo);        
     }
 
     public JButton getBtnSrcBuscar() {

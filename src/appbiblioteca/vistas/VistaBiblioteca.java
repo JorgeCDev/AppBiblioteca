@@ -47,7 +47,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         // Libros Agregados Inicialmente Para Hacer Pruebas
         Libro libro1 = new Libro("GAME OF THRONES", "GEORGE R.R MARTIN",
                 "LIBRO DE FANTASIA MEDIEVAL", "NO SE", 5);
-        Libro libro2 = new Libro("HARRY POTTER Y LA PIEDRA FILOSOFAL", "J.K ROWLINS", "LIBRO DE FANTASIA MAGICA Y HECHICERIA", "NO SE", 6);
+        Libro libro2 = new Libro("HARRY POTTER Y LA PIEDRA FILOSOFAL", "J.K ROWLINS", "LIBRO DE FANTASIA MAGICA Y HECHICERIA", "BLOOMSBURY PUBLISHING", 6);
         
         tablaH.AgregaLibro(libro1);
         tablaH.AgregaLibro(libro2);

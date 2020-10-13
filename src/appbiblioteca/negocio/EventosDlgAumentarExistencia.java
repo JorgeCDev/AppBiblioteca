@@ -48,19 +48,18 @@ public class EventosDlgAumentarExistencia implements ActionListener{
             case "Agregar":
                 
                 if(existencia.getCmbAmtExstNombreLibro().getItemCount()==0|
-                        existencia.getCmbAumExstClaveLibro().getItemCount()==0|
-                        existencia.getTxtAmtrExstExistencia().getText().equals("")){
+                        existencia.getCmbAumExstClaveLibro().getItemCount()==0){
                     JOptionPane.showMessageDialog(existencia, 
                             "No puede haber elementos vacios", "", JOptionPane.WARNING_MESSAGE);
-                }else{
+                }
+                else{
                     
                  int llave =Integer.parseInt(existencia.getCmbAumExstClaveLibro().
                          getSelectedItem().toString());
                  
                  int ext = tablaH.getLibro(llave).getExistencia();
                  
-                 int nExt= Integer.parseInt(existencia.
-                         getTxtAmtrExstExistencia().getText());
+                 int nExt= existencia.getExistencia();
                  
                  tablaH.getLibro(llave).setExistencia(ext+nExt);
                  
