@@ -90,8 +90,17 @@ public class Usuario {
     public void setMoroso(boolean moroso) {
         this.moroso = moroso;
     }
-    
-    
+   
+    public String getTypeAsString(){
+        
+        if (tipoUsuario=='A')
+           return "Alumno";
+        else if(tipoUsuario=='M')
+            return "Maestro";
+        else
+            return "Externo";
+    }
+  
 
     @Override
     public int hashCode() {
