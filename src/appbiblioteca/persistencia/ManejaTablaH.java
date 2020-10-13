@@ -76,8 +76,7 @@ public class ManejaTablaH
     public String[] getUsuarios(){
         String[] usuarios = new String[tablaUsuario.size()];
         Enumeration<Integer> e = tablaLibro.keys();
-        usuarios[0]="";
-        int cont=1;
+        int cont=0;
         while(e.hasMoreElements()){
             int llave = e.nextElement();
             String nombre = tablaUsuario.get(llave).getNombreUsuario();
@@ -122,6 +121,50 @@ public class ManejaTablaH
         }
         return llaves;
     }
+    
+    //llena el combo de llaves y añade un espacio no borrar
+     public String[]getKeysLibrosCombos(){
+        
+        
+      String[] llaves=new String[tablaLibro.size()+1];
+       llaves[0]=""; 
+      Enumeration<Integer> e = tablaLibro.keys();
+     
+      
+      int cont=1;
+      
+      while (e.hasMoreElements()){
+  
+          llaves[cont]=e.nextElement().toString();
+          cont++;        
+          
+        }
+        return llaves;
+    }
+     
+     
+     //Llena con nombres de usuario y añade un espacio no borrar
+      public String[]getNamesCombos(){
+        
+        
+      String[] llaves=new String[tablaUsuario.size()+1];
+       llaves[0]=""; 
+      Enumeration<Integer> e = tablaUsuario.keys();
+     
+      
+      int cont=1;
+      
+      while (e.hasMoreElements()){
+          int elemt= e.nextElement();
+          llaves[cont]= tablaUsuario.get(elemt).getNombreUsuario()+" "+
+                  tablaUsuario.get(elemt).getApePatUsuario()+" "+
+                  tablaUsuario.get(elemt).getApeMatUsuario();
+          cont++;        
+          
+        }
+        return llaves;
+    }
+    
        
        
     public Libro getLibro(int llave){
