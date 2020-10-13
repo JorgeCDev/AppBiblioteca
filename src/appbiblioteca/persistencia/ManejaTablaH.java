@@ -3,6 +3,7 @@ package appbiblioteca.persistencia;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.LinkedList;
+import java.util.List;
 
 
 
@@ -75,8 +76,8 @@ public class ManejaTablaH
     public String[] getUsuarios(){
         String[] usuarios = new String[tablaUsuario.size()];
         Enumeration<Integer> e = tablaLibro.keys();
-        
-        int cont=0;
+        usuarios[0]="";
+        int cont=1;
         while(e.hasMoreElements()){
             int llave = e.nextElement();
             String nombre = tablaUsuario.get(llave).getNombreUsuario();
@@ -142,8 +143,8 @@ public class ManejaTablaH
         }        
         return lista;
     }
-     
     
+     
     public int sizeLibro(){
         
         return tablaLibro.size();
