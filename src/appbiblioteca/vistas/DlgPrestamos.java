@@ -24,7 +24,6 @@ public class DlgPrestamos extends javax.swing.JDialog {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     private ManejaTablaH tablaH;
-    private FiltraComboBox cmbPresLibUsuario, cmbPrestLibLibro;
 
     /**
      * Creates new form DlgPrestamos
@@ -35,22 +34,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
         initComponents();
         //creaCombos();
     }
-    
-    /*
-    public void creaCombos(){
-        
-      
-        cmbPresLibUsuario= new FiltraComboBox(Arrays.asList(tablaH.getNamesCombos()));
-        cmbPresLibUsuario.setBounds(10, 70, 420, 30);
-        add(cmbPresLibUsuario);
-     
-        
-         cmbPrestLibLibro=new FiltraComboBox(Arrays.asList(tablaH.getKeysLibrosCombos()));
-         cmbPrestLibLibro.setBounds(10, 130, 420, 30);
-         add(cmbPrestLibLibro);
-        
-    }
-    */
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,9 +58,9 @@ public class DlgPrestamos extends javax.swing.JDialog {
         txtPresLibExistencia1 = new javax.swing.JTextField();
         txtPresLibMorosidad1 = new javax.swing.JTextField();
         String[]names= tablaH.getNamesCombos();
-        jComboBox1 = new FiltraComboBox(Arrays.asList(names));
+        cmbPrestLibUsuario = new FiltraComboBox(Arrays.asList(names));
         String[]llaves= tablaH.getKeysLibrosCombos();
-        jComboBox2 = new FiltraComboBox(Arrays.asList(llaves));
+        cmbPrestLibClave = new FiltraComboBox(Arrays.asList(llaves));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Prestamo de Libros");
@@ -126,16 +110,16 @@ public class DlgPrestamos extends javax.swing.JDialog {
         txtPresLibMorosidad1.setFont(fuenteH);
         txtPresLibMorosidad1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
-        jComboBox1.setFont(fuenteH);
-        jComboBox1.setActionCommand("cmbUsuario");
-        jComboBox1.setBorder(null);
-        jComboBox1.setPreferredSize(new java.awt.Dimension(28, 30));
-        jComboBox1.getComponent(0).setBackground(new Color(224, 224, 224, 255));
+        cmbPrestLibUsuario.setFont(fuenteH);
+        cmbPrestLibUsuario.setActionCommand("cmbUsuario");
+        cmbPrestLibUsuario.setBorder(null);
+        cmbPrestLibUsuario.setPreferredSize(new java.awt.Dimension(28, 30));
+        cmbPrestLibUsuario.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
-        jComboBox2.setFont(fuenteH);
-        jComboBox2.setActionCommand("cmbClave");
-        jComboBox2.setMinimumSize(new java.awt.Dimension(56, 30));
-        jComboBox2.getComponent(0).setBackground(new Color(224, 224, 224, 255));
+        cmbPrestLibClave.setFont(fuenteH);
+        cmbPrestLibClave.setActionCommand("cmbClave");
+        cmbPrestLibClave.setMinimumSize(new java.awt.Dimension(56, 30));
+        cmbPrestLibClave.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,7 +128,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbPrestLibClave, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnPresLibPrestar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -166,7 +150,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cmbPrestLibUsuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -177,11 +161,11 @@ public class DlgPrestamos extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbPrestLibUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addComponent(cmbPrestLibClave, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -210,8 +194,8 @@ public class DlgPrestamos extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPresLibPrestar;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> cmbPrestLibClave;
+    private javax.swing.JComboBox<String> cmbPrestLibUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
