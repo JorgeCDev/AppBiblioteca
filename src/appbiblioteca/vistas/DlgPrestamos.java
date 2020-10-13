@@ -5,11 +5,15 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.negocio.EventosDlgPrestamoLibros;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import recursos.FiltraComboBox;
 import java.awt.Font;
 import java.util.Arrays;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
@@ -24,6 +28,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     private ManejaTablaH tablaH;
+    private EventosDlgPrestamoLibros control;
 
     /**
      * Creates new form DlgPrestamos
@@ -34,6 +39,47 @@ public class DlgPrestamos extends javax.swing.JDialog {
         initComponents();
         //creaCombos();
     }
+    public void creaEscuchadores(){
+        
+        control = new EventosDlgPrestamoLibros(tablaH, this);
+        btnPresLibPrestar.addActionListener(control);
+        cmbPrestLibClave.addActionListener(control);
+        cmbPrestLibUsuario.addActionListener(control);   
+        
+    }
+
+    public JButton getBtnPresLibPrestar() {
+        return btnPresLibPrestar;
+    }
+
+    public JComboBox<String> getCmbPrestLibClave() {
+        return cmbPrestLibClave;
+    }
+
+    public JComboBox<String> getCmbPrestLibUsuario() {
+        return cmbPrestLibUsuario;
+    }
+
+    public JTextField getTxtPresLibExistencia() {
+        return txtPresLibExistencia;
+    }
+    
+    public JTextField getTxtPresLibMorosidad() {
+        return txtPresLibMorosidad;
+    }
+
+    public JTextField getTxtPresLibPrestamos() {
+        return txtPresLibPrestamos;
+    }
+
+    public JTextField getTxtPresLibTipo() {
+        return txtPresLibTipo;
+    }
+    
+   
+    
+    
+    
 
     
     /**
@@ -55,8 +101,8 @@ public class DlgPrestamos extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtPresLibExistencia1 = new javax.swing.JTextField();
-        txtPresLibMorosidad1 = new javax.swing.JTextField();
+        txtPresLibTipo = new javax.swing.JTextField();
+        txtPresLibPrestamos = new javax.swing.JTextField();
         String[]names= tablaH.getNamesCombos();
         cmbPrestLibUsuario = new FiltraComboBox(Arrays.asList(names));
         String[]llaves= tablaH.getKeysLibrosCombos();
@@ -102,13 +148,13 @@ public class DlgPrestamos extends javax.swing.JDialog {
 
         jLabel8.setText("Tipo");
 
-        txtPresLibExistencia1.setEditable(false);
-        txtPresLibExistencia1.setFont(fuenteB);
-        txtPresLibExistencia1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
+        txtPresLibTipo.setEditable(false);
+        txtPresLibTipo.setFont(fuenteB);
+        txtPresLibTipo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
-        txtPresLibMorosidad1.setEditable(false);
-        txtPresLibMorosidad1.setFont(fuenteH);
-        txtPresLibMorosidad1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
+        txtPresLibPrestamos.setEditable(false);
+        txtPresLibPrestamos.setFont(fuenteH);
+        txtPresLibPrestamos.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
         cmbPrestLibUsuario.setFont(fuenteH);
         cmbPrestLibUsuario.setActionCommand("cmbUsuario");
@@ -137,10 +183,10 @@ public class DlgPrestamos extends javax.swing.JDialog {
                             .addComponent(jLabel6)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
-                            .addComponent(txtPresLibMorosidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPresLibPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPresLibExistencia1)
+                            .addComponent(txtPresLibTipo)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -172,8 +218,8 @@ public class DlgPrestamos extends javax.swing.JDialog {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPresLibExistencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPresLibMorosidad1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPresLibTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPresLibPrestamos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -204,8 +250,8 @@ public class DlgPrestamos extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txtPresLibExistencia;
-    private javax.swing.JTextField txtPresLibExistencia1;
     private javax.swing.JTextField txtPresLibMorosidad;
-    private javax.swing.JTextField txtPresLibMorosidad1;
+    private javax.swing.JTextField txtPresLibPrestamos;
+    private javax.swing.JTextField txtPresLibTipo;
     // End of variables declaration//GEN-END:variables
 }
