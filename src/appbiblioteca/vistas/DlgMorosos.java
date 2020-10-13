@@ -4,6 +4,7 @@ import appbiblioteca.negocio.EventosDlgMorosos;
 import appbiblioteca.persistencia.ManejaLista;
 import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.persistencia.Usuario;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -20,6 +21,8 @@ public class DlgMorosos extends javax.swing.JDialog {
         initComponents();
         llenarCombo(tablaH);
         crearEscuchadores(tablaH, lista);
+        
+        lista.agregaMoroso();
         generarTabla(lista);
     }
     
@@ -36,19 +39,18 @@ public class DlgMorosos extends javax.swing.JDialog {
         return this.cmbUsuario;
     }
     
-    private void generarTabla(ManejaLista lista){
-        LinkedList<Usuario> morosos = lista.getListaMorosos();
+    public void generarTabla(ManejaLista lista){
         DefaultTableModel modelo = (DefaultTableModel) this.jTbMorosos.getModel();
 
         modelo.setRowCount(0);
 
         Object matrix[] = new Object[4];
 
-        for (int i = 0; i < morosos.size(); i++) {
-            matrix[0] = morosos.get(i).getNombreUsuario();
-            matrix[1] = morosos.get(i).getApePatUsuario();
-            matrix[2] = morosos.get(i).getApeMatUsuario();
-            matrix[3] = morosos.get(i).getCiudadResidencia();
+        for (int i = 0; i < lista.morosos.size(); i++) {
+            matrix[0] = lista.morosos.get(i).getNombreUsuario();
+            matrix[1] = lista.morosos.get(i).getApePatUsuario();
+            matrix[2] = lista.morosos.get(i).getApeMatUsuario();
+            matrix[3] = lista.morosos.get(i).getCiudadResidencia();
 
             modelo.addRow(matrix);
         }

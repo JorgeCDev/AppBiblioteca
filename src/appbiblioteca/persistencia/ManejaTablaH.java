@@ -11,6 +11,7 @@ public class ManejaTablaH
 {
     Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
     Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
+   
     
     public void AgregaUsuario(Usuario usuario){
         tablaUsuario.put(tablaUsuario.size()+1, usuario); 
@@ -75,7 +76,7 @@ public class ManejaTablaH
     
     public String[] getUsuarios(){
         String[] usuarios = new String[tablaUsuario.size()];
-        Enumeration<Integer> e = tablaLibro.keys();
+        Enumeration<Integer> e = tablaUsuario.keys();
         int cont=0;
         while(e.hasMoreElements()){
             int llave = e.nextElement();
@@ -203,6 +204,32 @@ public class ManejaTablaH
 
     public Hashtable<Integer, Libro> getTablaLibro() {
         return tablaLibro;
+    }
+    
+    
+    
+    public Usuario buscarUsuario(String nombre, String apellPat, String apellMat){
+        Enumeration<Integer> e = tablaUsuario.keys();
+        Usuario user = null;
+        
+        while(e.hasMoreElements()){
+            int llave = e.nextElement();
+                        
+            if( tablaUsuario.get(llave).getNombreUsuario().equals(nombre) &&
+                    tablaUsuario.get(llave).getApePatUsuario().equals(apellPat) &&
+                    tablaUsuario.get(llave).getApeMatUsuario().equals(apellMat) )
+            {
+                String domicilio = tablaUsuario.get(llave).getDomicilioUsuario();
+                String ciudad = tablaUsuario.get(llave).getCiudadResidencia();
+                char tipo = tablaUsuario.get(llave).getTipoUsuario();
+                
+                user = new Usuario(nombre, apellPat, apellMat, domicilio, ciudad, tipo);
+            }   
+            
+            tablaUsuario.get(llave).setMoroso(false);            
+        }
+        return user;
+        
     }
     
     

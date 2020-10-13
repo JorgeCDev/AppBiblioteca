@@ -34,17 +34,17 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     public VistaBiblioteca() {
         
         tablaH = new ManejaTablaH();
-        lista = new ManejaLista();
+        lista = new ManejaLista(tablaH);
         initComponents();
         creaAcciones();
         
         // Usuarios Agregados Inicialmente Para hacer Pruebas
         Usuario pedro = new Usuario("PEDRO", "PEREZ", "LOPEZ", "LAS QUINTAS", "CULIACAN", 'A');
-        Usuario katy = new Usuario("KATHERINE", "PERALTA", "PEÑUÑURI", "POR AHI", "CULIACAN", 'M');
+        Usuario hernan = new Usuario("HERNAN", "ROSALES", "CORVERA", "POR AHI", "CULIACAN", 'M');
         Usuario armando = new Usuario("ARMANDO", "BELTRAN", "MEDINA", "DOMICILIO CONOCIDO", "CULIACAN", 'E');
 
         tablaH.AgregaUsuario(pedro);
-        tablaH.AgregaUsuario(katy);
+        tablaH.AgregaUsuario(hernan);
         tablaH.AgregaUsuario(armando);
         
         // Libros Agregados Inicialmente Para Hacer Pruebas
@@ -55,7 +55,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         tablaH.AgregaLibro(libro1);
         tablaH.AgregaLibro(libro2);
                 
-        lista.agregaMoroso(armando);
+        pedro.setMoroso(true);
         
     }
     
