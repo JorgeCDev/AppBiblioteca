@@ -66,14 +66,8 @@ public class EventosDlgAumentarExistencia implements ActionListener{
                  JOptionPane.showMessageDialog(existencia,"Existencia Actualizada Correctamente\n" +
                          "Existencia Actual: " + tablaH.getLibro(llave).getExistencia());
                  existencia.limpiar();
-                 
-                 
-               
                 }
-                    
-                    break;
+                break;
         }
-        
-        
     }
 }

@@ -1,12 +1,14 @@
 
 package appbiblioteca.negocio;
 
+import appbiblioteca.persistencia.ManejaLista;
 import appbiblioteca.vistas.DlgAltaUsuarios;
 import appbiblioteca.vistas.VistaBiblioteca;
 import appbiblioteca.vistas.DlgReporteUsuarios;
 import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.vistas.DlgAcerca;
 import appbiblioteca.vistas.DlgAltaLibros;
+import appbiblioteca.vistas.DlgMorosos;
 import appbiblioteca.vistas.DlgAumentarExist;
 import appbiblioteca.vistas.DlgBusqueda;
 import appbiblioteca.vistas.DlgInventario;
@@ -22,20 +24,20 @@ public class ManejaEventos implements ActionListener{
     
     private VistaBiblioteca vista;
     private ManejaTablaH manejaT;
+    private ManejaLista lista;
     private DlgAltaUsuarios dialogAltaUsuario;
     private DlgAltaLibros dialogAltaLibros;
     private DlgInventario dialogInventario;
     private DlgAumentarExist dialogAumentarExistencia;
     private DlgBusqueda dialogBusqueda;
     private DlgAcerca dialogAcerca;
+    private DlgMorosos dialogMorosos;
 
-    public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt) {
+    public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt, ManejaLista lista) {
         this.vista = vista;
         manejaT = mt;
+        this.lista = lista;
     }
-    
-    
-    
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -94,6 +96,12 @@ public class ManejaEventos implements ActionListener{
                 this.dialogInventario = new DlgInventario(vista, evento, true, manejaT);
                 this.dialogInventario.setVisible(true);
                 break;
+                
+            case "Morosos":
+                this.dialogMorosos = new DlgMorosos(vista, evento, true, manejaT, lista);
+                this.dialogMorosos.setVisible(true);
+                break;
+                
         }
             
         

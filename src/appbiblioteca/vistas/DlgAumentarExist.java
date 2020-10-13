@@ -9,7 +9,6 @@ import appbiblioteca.negocio.EventosDlgAumentarExistencia;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -43,21 +42,19 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         ((NumberFormatter) txt.getFormatter()).setAllowsInvalid(false); 
     }
     
-    public void crearEscuchadores(){
+    private void crearEscuchadores(){
         btnAumentarExistenciaAgregar.addActionListener(existencia);
         cmbAumExstClaveLibro.addActionListener(existencia);
         cmbAmtExstNombreLibro.addActionListener(existencia); 
+    }
+    private void llenarCombos(ManejaTablaH tabla){
+        cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeysLibros()));
+        cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNamesLibros()));
     }
     
     public void limpiar(){
         this.jSpinnerExistencia.setValue(0);
     }
-    
-    public void llenarCombos(ManejaTablaH tabla){
-        cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeysLibros()));
-        cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNamesLibros()));
-    }
-
     public JComboBox<String> getCmbAmtExstNombreLibro() {
         return cmbAmtExstNombreLibro;
     }

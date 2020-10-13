@@ -110,7 +110,6 @@ public class DlgBusqueda extends javax.swing.JDialog {
         tblSrcResultados = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setLocationByPlatform(true);
         setModal(true);
         setResizable(false);
 
