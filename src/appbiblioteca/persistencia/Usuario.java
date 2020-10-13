@@ -16,6 +16,7 @@ public class Usuario {
     private String nombreUsuario, domicilioUsuario,ciudadResidencia, 
             apePatUsuario,apeMatUsuario;
     private char tipoUsuario;
+    private boolean moroso;
  
 
     public Usuario(String nombreUsuario, String apePatUsuario,String apeMatUsuario,String domicilioUsuario, String ciudadResidencia, char tipoUsuario) {
@@ -25,6 +26,7 @@ public class Usuario {
         this.domicilioUsuario = domicilioUsuario;
         this.ciudadResidencia = ciudadResidencia;
         this.tipoUsuario = tipoUsuario;
+        moroso= false;
     }
     
     public Usuario(String nombreUsuario, String domicilioUsuario, String ciudadResidencia) {
@@ -80,6 +82,16 @@ public class Usuario {
     public void setApeMatUsuario(String apeMatUsuario) {
         this.apeMatUsuario = apeMatUsuario;
     }
+
+    public boolean isMoroso() {
+        return moroso;
+    }
+
+    public void setMoroso(boolean moroso) {
+        this.moroso = moroso;
+    }
+    
+    
 
     @Override
     public int hashCode() {
