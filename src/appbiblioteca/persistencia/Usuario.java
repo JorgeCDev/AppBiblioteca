@@ -34,6 +34,13 @@ public class Usuario {
         this.domicilioUsuario = domicilioUsuario;
         this.ciudadResidencia = ciudadResidencia;
     }
+    
+    
+    
+    
+    
+    
+    
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -100,19 +107,21 @@ public class Usuario {
         else
             return "Externo";
     }
-  
+    
+    public String getNombreCompleto(){
+        
+        
+        return nombreUsuario+" "+apePatUsuario+" "+apeMatUsuario;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 19 * hash + Objects.hashCode(this.nombreUsuario);
-        hash = 19 * hash + Objects.hashCode(this.apePatUsuario);
-        hash = 19 * hash + Objects.hashCode(this.apeMatUsuario);
-        hash = 19 * hash + this.tipoUsuario;
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.nombreUsuario);
+        hash = 89 * hash + Objects.hashCode(this.apePatUsuario);
+        hash = 89 * hash + Objects.hashCode(this.apeMatUsuario);
         return hash;
     }
-
-
 
     @Override
     public boolean equals(Object obj) {
@@ -126,9 +135,6 @@ public class Usuario {
             return false;
         }
         final Usuario other = (Usuario) obj;
-        if (this.tipoUsuario != other.tipoUsuario) {
-            return false;
-        }
         if (!Objects.equals(this.nombreUsuario, other.nombreUsuario)) {
             return false;
         }
@@ -140,6 +146,8 @@ public class Usuario {
         }
         return true;
     }
+  
+    
 
    
     
