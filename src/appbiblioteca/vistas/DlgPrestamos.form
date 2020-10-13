@@ -39,11 +39,11 @@
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtPresLibMorosidad1" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                          <Component id="txtPresLibPrestamos" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtPresLibExistencia1" max="32767" attributes="0"/>
+                          <Component id="txtPresLibTipo" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -84,8 +84,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtPresLibExistencia1" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="txtPresLibMorosidad1" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="txtPresLibTipo" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="txtPresLibPrestamos" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -201,7 +201,7 @@
         <Property name="text" type="java.lang.String" value="Tipo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPresLibExistencia1">
+    <Component class="javax.swing.JTextField" name="txtPresLibTipo">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -216,7 +216,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPresLibMorosidad1">
+    <Component class="javax.swing.JTextField" name="txtPresLibPrestamos">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
