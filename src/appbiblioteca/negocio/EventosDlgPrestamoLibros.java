@@ -9,6 +9,7 @@ import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.vistas.DlgPrestamos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -97,7 +98,43 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                  
                  break;
                  
+             case "Prestar" :
                  
+                   
+                    if(prest.isEmpty()){
+                        
+                        JOptionPane.showMessageDialog(prest,"No puede haber valores vacios");
+                       
+                        return;
+                    }
+                    
+                    int existencia= Integer.parseInt(prest.
+                            getTxtPresLibExistencia().getText());
+                    if(existencia==0){
+                         JOptionPane.showMessageDialog(prest,"Libro Sin Existencia"); 
+                    }else
+                    if(prest.getTxtPresLibMorosidad().getText().equals("Moroso")){
+                        JOptionPane.showMessageDialog(prest,"Usuario Moroso");
+                        prest.limpiarTxt();
+                    }else {
+                        
+                        int llaveUsuario = Integer.parseInt(prest.getCmbPrestLibUsuario()
+                          .getSelectedItem().toString());
+                        
+                          int llaveLibro = Integer.parseInt(prest.getCmbPrestLibClave()
+                          .getSelectedItem().toString());
+                        
+                      tablaH.getLibro(llaveLibro).cambiarExistencia(-1);
+                        
+                      
+                              
+                      JOptionPane.showMessageDialog(prest,"Prestamo Exitoso");  
+                      prest.dispose();
+                    }
+                    
+                       
+                 prest.limpiarTxt();
+                 break;
                  
                  
            
