@@ -51,6 +51,19 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                 
                 prest.getTxtPresLibMorosidad().setText(
                         tablaH.getTablaUsuario().get(llave).getMorosidadTxt());
+                
+                
+                if(!tablaH.getTablaPrestamos().containsKey(
+                        tablaH.getTablaUsuario().get(llave)))
+                    
+                        prest.getTxtPresLibPrestamos().setText("0");
+                else{
+                    
+                    prest.getTxtPresLibPrestamos().setText(
+                            ""+tablaH.librosPrestados(
+                                    tablaH.getTablaUsuario().get(llave)));
+                    
+                }
                   } 
               
 
@@ -83,6 +96,10 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                  
                  
                  break;
+                 
+                 
+                 
+                 
            
        }
     }
