@@ -37,7 +37,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
         super(parent,title, modal);
         this.tablaH=tablaH;
         initComponents();
-        //creaCombos();
+        creaEscuchadores();
     }
     public void creaEscuchadores(){
         
@@ -46,6 +46,10 @@ public class DlgPrestamos extends javax.swing.JDialog {
         cmbPrestLibClave.addActionListener(control);
         cmbPrestLibUsuario.addActionListener(control);   
         
+    }
+
+    public JTextField getTxtPresLibNombreUs() {
+        return txtPresLibNomLibro;
     }
 
     public JButton getBtnPresLibPrestar() {
@@ -75,6 +79,14 @@ public class DlgPrestamos extends javax.swing.JDialog {
     public JTextField getTxtPresLibTipo() {
         return txtPresLibTipo;
     }
+
+    public JTextField getTxtPresLibNomLibro() {
+        return txtPresLibNomLibro;
+    }
+
+    public JTextField getTxtPresLibNombreUs1() {
+        return txtPresLibNombreUs1;
+    }
     
    
     
@@ -103,10 +115,14 @@ public class DlgPrestamos extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         txtPresLibTipo = new javax.swing.JTextField();
         txtPresLibPrestamos = new javax.swing.JTextField();
-        String[]names= tablaH.getNamesCombos();
+        String[]names= tablaH.getKeysCombos();
         cmbPrestLibUsuario = new FiltraComboBox(Arrays.asList(names));
         String[]llaves= tablaH.getKeysLibrosCombos();
         cmbPrestLibClave = new FiltraComboBox(Arrays.asList(llaves));
+        txtPresLibNomLibro = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtPresLibNombreUs1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Prestamo de Libros");
@@ -142,7 +158,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
         btnPresLibPrestar.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jLabel6.setFont(fuenteH);
-        jLabel6.setText("Usuario");
+        jLabel6.setText("Clave Usuario");
 
         jLabel7.setText("Prestamos");
 
@@ -167,6 +183,18 @@ public class DlgPrestamos extends javax.swing.JDialog {
         cmbPrestLibClave.setMinimumSize(new java.awt.Dimension(56, 30));
         cmbPrestLibClave.getComponent(0).setBackground(new Color(224, 224, 224, 255));
 
+        txtPresLibNomLibro.setEditable(false);
+        txtPresLibNomLibro.setFont(fuenteH);
+        txtPresLibNomLibro.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
+
+        jLabel2.setText("Usuario");
+
+        jLabel9.setText("Nombre Libro");
+
+        txtPresLibNombreUs1.setEditable(false);
+        txtPresLibNombreUs1.setFont(fuenteH);
+        txtPresLibNombreUs1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -175,28 +203,38 @@ public class DlgPrestamos extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cmbPrestLibClave, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPresLibPrestar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPresLibPrestar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbPrestLibUsuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPresLibMorosidad, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
                             .addComponent(txtPresLibPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPresLibTipo)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel8))
+                                .addComponent(jLabel8)
+                                .addGap(0, 186, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPresLibMorosidad, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
                                 .addGap(0, 158, Short.MAX_VALUE))
                             .addComponent(txtPresLibExistencia)))
+                    .addComponent(txtPresLibNombreUs1)
+                    .addComponent(txtPresLibNomLibro, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(cmbPrestLibUsuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel9))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -211,16 +249,24 @@ public class DlgPrestamos extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cmbPrestLibClave, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addComponent(cmbPrestLibClave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPresLibNombreUs1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPresLibNomLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtPresLibTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPresLibPrestamos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                    .addComponent(txtPresLibPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4))
@@ -228,9 +274,9 @@ public class DlgPrestamos extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPresLibMorosidad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPresLibExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addGap(18, 18, 18)
                 .addComponent(btnPresLibPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addContainerGap())
         );
 
         pack();
@@ -243,14 +289,18 @@ public class DlgPrestamos extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> cmbPrestLibClave;
     private javax.swing.JComboBox<String> cmbPrestLibUsuario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtPresLibExistencia;
     private javax.swing.JTextField txtPresLibMorosidad;
+    private javax.swing.JTextField txtPresLibNomLibro;
+    private javax.swing.JTextField txtPresLibNombreUs1;
     private javax.swing.JTextField txtPresLibPrestamos;
     private javax.swing.JTextField txtPresLibTipo;
     // End of variables declaration//GEN-END:variables
