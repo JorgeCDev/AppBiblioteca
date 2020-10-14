@@ -63,6 +63,17 @@ public class Libro {
     public void setExistencia(int existencia) {
         this.existencia = existencia;
     }
+    
+    public void cambiarExistencia(int restarSumar){
+        
+        if (existencia==0||existencia<=10){
+            return;
+        }else{
+            existencia=existencia+restarSumar;
+        }
+        
+        
+    }
 
     @Override
     public int hashCode() {
