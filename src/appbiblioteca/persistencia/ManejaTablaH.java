@@ -220,9 +220,18 @@ public class ManejaTablaH
     
     public void addPrestamo(Usuario user, Prestamo prestamo){
         
-    if(tablaPrestamos.contains(user)){
+    if(tablaPrestamos.containsKey(user)){
+            
+        Prestamo[] prestamos =tablaPrestamos.get(user);
         
-                Arrays.asList(tablaPrestamos.get(user)).add(prestamo);
+        for (int i = 0; i < prestamos.length; i++) {
+            if(Objects.isNull(prestamos[i])){
+                prestamos[i]=prestamo;
+                return;
+            }
+        }
+              
+                
         
     }else{
         
