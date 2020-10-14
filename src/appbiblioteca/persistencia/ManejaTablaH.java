@@ -1,9 +1,10 @@
 package appbiblioteca.persistencia;
 
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.LinkedList;
-import java.util.List;
+
 
 
 
@@ -11,6 +12,7 @@ public class ManejaTablaH
 {
     Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
     Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
+    Hashtable<Usuario, Prestamo[]> tablaPrestamos =new Hashtable<>();
    
     
     public void AgregaUsuario(Usuario usuario){
@@ -214,7 +216,56 @@ public class ManejaTablaH
         
         return tablaUsuario.size();
     }
-
+    
+    public void addPrestamo(Usuario user, Prestamo prestamo){
+        
+    if(tablaPrestamos.contains(user)){
+        
+                Arrays.asList(tablaPrestamos.get(user)).add(prestamo);
+        
+    }else{
+        
+        int size = user.getTipoUsuario()=='A'|user.getTipoUsuario()=='E'?2:3;
+        
+        Prestamo[] prestamos =new Prestamo[size];
+        
+        prestamos[0]=prestamo;
+        
+        tablaPrestamos.put(user,prestamos);
+        
+        
+    }
+         
+    }
+    
+    
+    public Prestamo[] getPrestamos(Usuario user){
+       
+        return tablaPrestamos.get(user);
+           
+    }
+    
+    public int librosPrestados(Usuario user){
+        
+        return Arrays.asList(getPrestamos(user)).size();
+        
+    }
+    
+    public void removePrestamo(Usuario user, String nombreLibro){
+        
+        Prestamo[] prestamos= tablaPrestamos.get(user);
+        
+        for (int i = 0; i < prestamos.length; i++) {
+            
+           if(prestamos[i].getNombreUsuario().equalsIgnoreCase(nombreLibro))
+               prestamos[i]=null;
+        }    
+    }
+    
+  
+    
+    //metodos Get Set
+    
     public Hashtable<Integer, Usuario> getTablaUsuario() {
         return tablaUsuario;
     }
@@ -222,7 +273,10 @@ public class ManejaTablaH
     public Hashtable<Integer, Libro> getTablaLibro() {
         return tablaLibro;
     }
-    
+
+    public Hashtable<Usuario, Prestamo[]> getTablaPrestamos() {
+        return tablaPrestamos;
+    }
     
     
     // Busca al usuario Moroso en la Tabla Usuarios 
