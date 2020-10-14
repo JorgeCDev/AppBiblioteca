@@ -35,12 +35,24 @@ public class ManejaTablaH
             datos[cont][2] = u.getApePatUsuario();
             datos[cont][3] = u.getApeMatUsuario();
             datos[cont][4] = u.getCiudadResidencia();
-            datos[cont][5] = String.valueOf( u.getTipoUsuario() );
+            datos[cont][5] = tipoUsuario( u.getTipoUsuario() );
             cont++;            
         }        
         return datos;
     }
     
+    public String tipoUsuario(char tipo){
+        String retorno = "";
+        
+        if(tipo == 'A')
+            retorno = "ALUMNO";
+        if(tipo == 'E')
+            retorno = "EXTERNO";
+        if(tipo == 'M')
+            retorno = "MAESTRO";
+        
+        return retorno;
+    }
     public void AgregaLibro(Libro libro){
         tablaLibro.put(tablaLibro.size()+1, libro);
     }
