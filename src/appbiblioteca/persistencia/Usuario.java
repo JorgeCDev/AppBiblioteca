@@ -109,9 +109,14 @@ public class Usuario {
     }
     
     public String getNombreCompleto(){
-        
-        
+       
         return nombreUsuario+" "+apePatUsuario+" "+apeMatUsuario;
+    }
+    
+    public String getMorosidadTxt(){
+        
+        return moroso?"Moroso":"Sin Mora";
+        
     }
 
     @Override
