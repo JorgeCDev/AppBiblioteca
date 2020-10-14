@@ -144,6 +144,7 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                       
                       tablaH.addPrestamo(user, prestamo);
                       
+                        System.out.println(tablaH.librosPrestados(user));
                               
                       JOptionPane.showMessageDialog(prest,"Prestamo Exitoso");  
                       prest.dispose();
