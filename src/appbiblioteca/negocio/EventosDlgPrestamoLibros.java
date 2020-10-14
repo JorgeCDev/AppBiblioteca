@@ -140,9 +140,10 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                     Usuario user=tablaH.getTablaUsuario().get(llaveUsuario);
                       
                     Date date = Calendar.getInstance().getTime();
-                    DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
+                    DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy");
                     String strDate = dateFormat.format(date);
-                      
+                    
+                    
                       
                     Prestamo prestamo= new Prestamo(
                               user.getNombreCompleto(),libroPrestado,strDate);
