@@ -6,9 +6,15 @@
 package appbiblioteca.negocio;
 
 import appbiblioteca.persistencia.ManejaTablaH;
+import appbiblioteca.persistencia.Prestamo;
+import appbiblioteca.persistencia.Usuario;
 import appbiblioteca.vistas.DlgPrestamos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 
@@ -125,7 +131,18 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                           .getSelectedItem().toString());
                         
                       tablaH.getLibro(llaveLibro).cambiarExistencia(-1);
-                        
+                      String libroPrestado=prest.getTxtPresLibNomLibro().getText();
+                      Usuario user=tablaH.getTablaUsuario().get(llaveUsuario);
+                      
+                        Date date = Calendar.getInstance().getTime();
+                        DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
+                        String strDate = dateFormat.format(date);
+                      
+                      
+                      Prestamo prestamo= new Prestamo(
+                              user.getNombreCompleto(),libroPrestado,strDate);
+                      
+                      tablaH.addPrestamo(user, prestamo);
                       
                               
                       JOptionPane.showMessageDialog(prest,"Prestamo Exitoso");  
