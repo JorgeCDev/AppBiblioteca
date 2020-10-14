@@ -184,14 +184,6 @@ public class ManejaTablaH
         }
         return llaves;
     }
-      
-      
-      
-      
-      
-      
-    
-       
        
     public Libro getLibro(int llave){
         
