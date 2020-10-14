@@ -88,6 +88,28 @@ public class DlgPrestamos extends javax.swing.JDialog {
         return txtPresLibNombreUs1;
     }
     
+    public void limpiarTxt(){
+        
+        cmbPrestLibUsuario.setSelectedIndex(-1);
+        cmbPrestLibClave.setSelectedIndex(-1);
+        txtPresLibExistencia.setText("");
+        txtPresLibMorosidad.setText("");
+        txtPresLibNomLibro.setText("");
+        txtPresLibNombreUs1.setText("");
+        txtPresLibPrestamos.setText("");
+        txtPresLibTipo.setText("");
+        
+    }
+    
+    public boolean isEmpty(){
+        
+        if(cmbPrestLibUsuario.getSelectedItem().equals("")||
+        cmbPrestLibClave.getSelectedItem().equals(""))
+            return true;
+        
+        return false;
+        
+    }
    
     
     
