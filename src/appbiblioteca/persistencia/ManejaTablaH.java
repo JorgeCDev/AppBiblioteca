@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.LinkedList;
+import java.util.Objects;
 
 
 
@@ -244,10 +245,19 @@ public class ManejaTablaH
         return tablaPrestamos.get(user);
            
     }
-    
+
     public int librosPrestados(Usuario user){
         
-        return Arrays.asList(getPrestamos(user)).size();
+        int cont =0;
+        
+        for (Object object : getPrestamos(user)) {
+            
+            if(!Objects.isNull(object))
+                cont++;
+            
+        }
+        
+        return cont;
         
     }
     
