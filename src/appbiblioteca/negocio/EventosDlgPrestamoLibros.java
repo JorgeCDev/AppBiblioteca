@@ -116,35 +116,39 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                     
                     int existencia= Integer.parseInt(prest.
                             getTxtPresLibExistencia().getText());
+                    int prestamos=Integer.parseInt(prest.getTxtPresLibPrestamos().getText());
+                    char tipo =prest.getTxtPresLibTipo().getText().charAt(0);
                     if(existencia==0){
                          JOptionPane.showMessageDialog(prest,"Libro Sin Existencia"); 
                     }else
                     if(prest.getTxtPresLibMorosidad().getText().equals("Moroso")){
                         JOptionPane.showMessageDialog(prest,"Usuario Moroso");
                         prest.limpiarTxt();
+                    }else if(prestamos==2&tipo=='A'|prestamos==2&tipo=='E'|prestamos==3&tipo=='M'){
+                         JOptionPane.showMessageDialog(prest,"Limete de Prestamos Alcanzado");
+                        prest.limpiarTxt();
                     }else {
                         
-                        int llaveUsuario = Integer.parseInt(prest.getCmbPrestLibUsuario()
-                          .getSelectedItem().toString());
-                        
-                          int llaveLibro = Integer.parseInt(prest.getCmbPrestLibClave()
-                          .getSelectedItem().toString());
-                        
-                      tablaH.getLibro(llaveLibro).cambiarExistencia(-1);
-                      String libroPrestado=prest.getTxtPresLibNomLibro().getText();
-                      Usuario user=tablaH.getTablaUsuario().get(llaveUsuario);
+                    int llaveUsuario = Integer.parseInt(prest.getCmbPrestLibUsuario()
+                      .getSelectedItem().toString());
+
+                    int llaveLibro = Integer.parseInt(prest.getCmbPrestLibClave()
+                    .getSelectedItem().toString());
+
+                    tablaH.getLibro(llaveLibro).cambiarExistencia(-1);
+                    String libroPrestado=prest.getTxtPresLibNomLibro().getText();
+                    Usuario user=tablaH.getTablaUsuario().get(llaveUsuario);
                       
-                        Date date = Calendar.getInstance().getTime();
-                        DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
-                        String strDate = dateFormat.format(date);
+                    Date date = Calendar.getInstance().getTime();
+                    DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
+                    String strDate = dateFormat.format(date);
                       
                       
-                      Prestamo prestamo= new Prestamo(
+                    Prestamo prestamo= new Prestamo(
                               user.getNombreCompleto(),libroPrestado,strDate);
                       
                       tablaH.addPrestamo(user, prestamo);
                       
-                        System.out.println(tablaH.librosPrestados(user));
                               
                       JOptionPane.showMessageDialog(prest,"Prestamo Exitoso");  
                       prest.dispose();
