@@ -137,7 +137,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
         jLabel3.setText("Clave Libro");
 
         txtPresLibExistencia.setEditable(false);
-        txtPresLibExistencia.setFont(fuenteB);
+        txtPresLibExistencia.setFont(fuenteH);
         txtPresLibExistencia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
         jLabel4.setFont(fuenteH);
@@ -165,7 +165,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
         jLabel8.setText("Tipo");
 
         txtPresLibTipo.setEditable(false);
-        txtPresLibTipo.setFont(fuenteB);
+        txtPresLibTipo.setFont(fuenteH);
         txtPresLibTipo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
         txtPresLibPrestamos.setEditable(false);
