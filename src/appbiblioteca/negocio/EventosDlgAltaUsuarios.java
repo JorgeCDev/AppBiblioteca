@@ -1,7 +1,7 @@
 package appbiblioteca.negocio;
 
 import appbiblioteca.persistencia.ManejaTablaH;
-import appbiblioteca.persistencia.Usuario;
+import appbiblioteca.modelo.Usuario;
 import appbiblioteca.vistas.DlgAltaUsuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

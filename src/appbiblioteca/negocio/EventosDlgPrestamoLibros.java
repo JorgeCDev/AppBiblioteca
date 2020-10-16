@@ -6,8 +6,8 @@
 package appbiblioteca.negocio;
 
 import appbiblioteca.persistencia.ManejaTablaH;
-import appbiblioteca.persistencia.Prestamo;
-import appbiblioteca.persistencia.Usuario;
+import appbiblioteca.modelo.Prestamo;
+import appbiblioteca.modelo.Usuario;
 import appbiblioteca.vistas.DlgPrestamos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -2,7 +2,7 @@ package appbiblioteca.negocio;
 
 import appbiblioteca.persistencia.ManejaLista;
 import appbiblioteca.persistencia.ManejaTablaH;
-import appbiblioteca.persistencia.Usuario;
+import appbiblioteca.modelo.Usuario;
 import appbiblioteca.vistas.DlgMorosos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

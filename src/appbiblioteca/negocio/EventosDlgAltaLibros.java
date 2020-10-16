@@ -1,6 +1,6 @@
 package appbiblioteca.negocio;
 
-import appbiblioteca.persistencia.Libro;
+import appbiblioteca.modelo.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.vistas.DlgAltaLibros;
 import java.awt.event.ActionEvent;

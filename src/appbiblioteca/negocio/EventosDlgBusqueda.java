@@ -5,7 +5,7 @@
  */
 package appbiblioteca.negocio;
 
-import appbiblioteca.persistencia.Libro;
+import appbiblioteca.modelo.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
 import appbiblioteca.vistas.DlgBusqueda;
 import java.awt.event.ActionEvent;
