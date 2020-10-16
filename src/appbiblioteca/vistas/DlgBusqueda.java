@@ -6,7 +6,7 @@
 package appbiblioteca.vistas;
 
 import appbiblioteca.negocio.EventosDlgBusqueda;
-import appbiblioteca.persistencia.Libro;
+import appbiblioteca.modelo.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;

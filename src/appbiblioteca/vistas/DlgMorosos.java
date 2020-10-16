@@ -3,7 +3,7 @@ package appbiblioteca.vistas;//GEN-LINE:variables
 import appbiblioteca.negocio.EventosDlgMorosos;
 import appbiblioteca.persistencia.ManejaLista;
 import appbiblioteca.persistencia.ManejaTablaH;
-import appbiblioteca.persistencia.Usuario;
+import appbiblioteca.modelo.Usuario;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.swing.DefaultComboBoxModel;
