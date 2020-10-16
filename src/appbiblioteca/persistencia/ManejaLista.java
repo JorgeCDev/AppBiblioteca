@@ -1,6 +1,7 @@
 package appbiblioteca.persistencia;
 
 
+import appbiblioteca.modelo.Usuario;
 import java.util.ArrayList;
 import java.util.Enumeration;
 

@@ -1,5 +1,8 @@
 package appbiblioteca.persistencia;
 
+import appbiblioteca.modelo.Usuario;
+import appbiblioteca.modelo.Prestamo;
+import appbiblioteca.modelo.Libro;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Hashtable;
