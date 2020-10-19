@@ -40,7 +40,7 @@ public class EventosDlgAltaLibros implements ActionListener
                         JOptionPane.showMessageDialog(dLibros,"Libro Duplicado","", JOptionPane.WARNING_MESSAGE);
                     else{
                         tablaH.AgregaLibro(libro);
-                        JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
+                        //JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                         dLibros.limpiarTxt();
                     }
                 break;
