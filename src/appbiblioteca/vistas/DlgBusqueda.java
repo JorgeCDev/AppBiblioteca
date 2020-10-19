@@ -5,12 +5,12 @@
  */
 package appbiblioteca.vistas;
 
+import recursos.MaterialBtn;
 import appbiblioteca.negocio.EventosDlgBusqueda;
 import appbiblioteca.modelo.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.Hashtable;
 import java.util.LinkedList;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
@@ -105,9 +105,9 @@ public class DlgBusqueda extends javax.swing.JDialog {
         txtSrcBusqueda = new javax.swing.JTextField();
         rBtnSrcAutor = new javax.swing.JRadioButton();
         rBtnSrcEditorial = new javax.swing.JRadioButton();
-        btnSrcBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSrcResultados = new javax.swing.JTable();
+        btnSrcBuscar = new MaterialBtn("Buscar");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setModal(true);
@@ -126,14 +126,6 @@ public class DlgBusqueda extends javax.swing.JDialog {
         btnGrpSrchGrupo.add(rBtnSrcEditorial);
         rBtnSrcEditorial.setFont(fuenteH);
         rBtnSrcEditorial.setText("Editorial");
-
-        btnSrcBuscar.setBackground(COLOR_MEDIO);
-        btnSrcBuscar.setFont(fuenteB);
-        btnSrcBuscar.setText("Buscar");
-        btnSrcBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.DARK_GRAY));
-        btnSrcBuscar.setBorderPainted(false);
-        btnSrcBuscar.setFocusPainted(false);
-        btnSrcBuscar.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.DARK_GRAY));
 
@@ -174,6 +166,8 @@ public class DlgBusqueda extends javax.swing.JDialog {
         tblSrcResultados.setSelectionBackground(COLOR_LIGHT);
         jScrollPane1.setViewportView(tblSrcResultados);
 
+        btnSrcBuscar.setText("Buscar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,19 +175,19 @@ public class DlgBusqueda extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtSrcBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSrcBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(rBtnSrcAutor)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(rBtnSrcEditorial)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtSrcBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSrcBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -204,7 +198,7 @@ public class DlgBusqueda extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSrcBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSrcBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSrcBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rBtnSrcAutor)

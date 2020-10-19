@@ -136,6 +136,9 @@
           <Dimension value="[100, 30]"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new MaterialBtn()"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

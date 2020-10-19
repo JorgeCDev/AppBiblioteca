@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package appbiblioteca.vistas;
-
+import recursos.MaterialBtn;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -52,7 +52,7 @@ public class DlgAcerca extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btnAcrcaSalir = new javax.swing.JButton();
+        btnAcrcaSalir = new MaterialBtn();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
