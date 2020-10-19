@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package appbiblioteca.vistas;
-
+import recursos.MaterialBtn;
 import appbiblioteca.negocio.EventosDlgAumentarExistencia;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
@@ -80,7 +80,7 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         cmbAmtExstNombreLibro = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnAumentarExistenciaAgregar = new javax.swing.JButton();
+        btnAumentarExistenciaAgregar = new MaterialBtn();
         jLabel4 = new javax.swing.JLabel();
         jSpinnerExistencia = new javax.swing.JSpinner();
 
