@@ -164,6 +164,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmExistencia.setText("Aumentar Existencia");
         menuGestion.add(mnItmExistencia);
 
+        mnItmMorosos.setFont(fuenteH);
         mnItmMorosos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_add_black_18dp.png"))); // NOI18N
         mnItmMorosos.setText("Morosos");
         menuGestion.add(mnItmMorosos);
