@@ -25,6 +25,7 @@ public class MaterialTxtField extends JTextField implements FocusListener {
         setForeground(Color.lightGray);
         setFont(new Font("Helvetica",Font.PLAIN,12));
         addFocusListener(this);
+        
         xFuente=10;
         yFuente=22;
         fuente=14;

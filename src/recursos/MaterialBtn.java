@@ -133,7 +133,7 @@ public class MaterialBtn extends JButton implements MouseListener {
     {
 
         punto =e.getPoint();//obtiene el punto
-        radio=30;//empieza el radio en 30
+        radio=20;//empieza el radio en 20
         temporizador.start();//empieza el "ciclo"
 
 
