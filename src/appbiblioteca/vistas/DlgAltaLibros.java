@@ -5,6 +5,8 @@
  */
 package appbiblioteca.vistas;
 
+import recursos.MaterialBtn;
+import recursos.MaterialTxtField;
 import appbiblioteca.negocio.EventosDlgAltaLibros;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
@@ -85,22 +87,15 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        txtAltaLibClave = new javax.swing.JTextField();
-        txtAltaLibNombre = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtAltaLibDescripcion = new javax.swing.JTextArea();
-        txtAltaLibAutor = new javax.swing.JTextField();
-        txtAltaLibEditorial = new javax.swing.JTextField();
-        btnAltaLibAgregar = new javax.swing.JButton();
-        btnAltaLibSalir = new javax.swing.JButton();
+        txtAltaLibClave = new MaterialTxtField("Clave");
+        txtAltaLibNombre = new MaterialTxtField("Nombre");
+        txtAltaLibAutor = new MaterialTxtField("Autor");
+        txtAltaLibEditorial = new MaterialTxtField("Editorial");
+        btnAltaLibAgregar = new MaterialBtn("Agregar");
+        btnAltaLibSalir = new MaterialBtn("Salir");
         spnAltaLibrosExistencia = new javax.swing.JSpinner();
+        txtAltaLibDescripcion = new MaterialTxtField("Descripcion");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alta de Libros");
@@ -109,49 +104,22 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         setName("Altas Libros"); // NOI18N
         setResizable(false);
 
-        jLabel1.setFont(fuenteL);
-        jLabel1.setText("Clave");
-
-        jLabel2.setFont(fuenteL);
-        jLabel2.setText("Nombre");
-
         jLabel3.setFont(fuenteT);
         jLabel3.setText("Alta de Libros");
 
-        jLabel4.setFont(fuenteL);
-        jLabel4.setText("Descripcion");
-
-        jLabel5.setFont(fuenteL);
-        jLabel5.setText("Autor");
-
-        jLabel6.setFont(fuenteL);
-        jLabel6.setText("Existencia");
-
-        jLabel7.setFont(fuenteL);
-        jLabel7.setText("Editorial");
-
         txtAltaLibClave.setEditable(false);
         txtAltaLibClave.setFont(fuenteL);
-        txtAltaLibClave.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
-        txtAltaLibClave.setPreferredSize(new java.awt.Dimension(50, 25));
+        txtAltaLibClave.setBorder(null);
+        txtAltaLibClave.setPreferredSize(new java.awt.Dimension(30, 40));
 
         txtAltaLibNombre.setBorder(null);
-        txtAltaLibNombre.setPreferredSize(new java.awt.Dimension(50, 25));
-
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-
-        txtAltaLibDescripcion.setColumns(4);
-        txtAltaLibDescripcion.setRows(4);
-        txtAltaLibDescripcion.setBorder(null);
-        jScrollPane1.setViewportView(txtAltaLibDescripcion);
+        txtAltaLibNombre.setPreferredSize(new java.awt.Dimension(100, 40));
 
         txtAltaLibAutor.setBorder(null);
-        txtAltaLibAutor.setPreferredSize(new java.awt.Dimension(50, 25));
+        txtAltaLibAutor.setPreferredSize(new java.awt.Dimension(100, 40));
 
         txtAltaLibEditorial.setBorder(null);
-        txtAltaLibEditorial.setPreferredSize(new java.awt.Dimension(50, 25));
+        txtAltaLibEditorial.setPreferredSize(new java.awt.Dimension(100, 40));
 
         btnAltaLibAgregar.setBackground(COLOR_MEDIO);
         btnAltaLibAgregar.setFont(fuenteB);
@@ -166,88 +134,67 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         btnAltaLibSalir.setPreferredSize(new java.awt.Dimension(100, 30));
 
         spnAltaLibrosExistencia.setFont(fuenteL);
-        spnAltaLibrosExistencia.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        spnAltaLibrosExistencia.setBorder(null);
+        spnAltaLibrosExistencia.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
+        spnAltaLibrosExistencia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(204, 204, 204)));
         spnAltaLibrosExistencia.setPreferredSize(new java.awt.Dimension(29, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(txtAltaLibAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtAltaLibEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(spnAltaLibrosExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAltaLibAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAltaLibSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(503, 503, 503)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(txtAltaLibClave, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAltaLibNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                                .addGap(2, 4, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtAltaLibClave, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtAltaLibNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtAltaLibAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtAltaLibEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(spnAltaLibrosExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(200, 200, 200)
+                                        .addComponent(btnAltaLibAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnAltaLibSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(txtAltaLibDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(4, 4, 4)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAltaLibClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAltaLibNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAltaLibNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAltaLibDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtAltaLibAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAltaLibEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnAltaLibrosExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAltaLibEditorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtAltaLibAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnAltaLibrosExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAltaLibSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAltaLibAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42))
+                    .addComponent(btnAltaLibSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAltaLibAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -258,18 +205,11 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAltaLibAgregar;
     private javax.swing.JButton btnAltaLibSalir;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner spnAltaLibrosExistencia;
     private javax.swing.JTextField txtAltaLibAutor;
     private javax.swing.JTextField txtAltaLibClave;
-    private javax.swing.JTextArea txtAltaLibDescripcion;
+    private javax.swing.JTextField txtAltaLibDescripcion;
     private javax.swing.JTextField txtAltaLibEditorial;
     private javax.swing.JTextField txtAltaLibNombre;
     // End of variables declaration//GEN-END:variables
