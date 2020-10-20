@@ -92,21 +92,6 @@ public class ManejaTablaH
         return lista;
     }
     
-    public String[] getUsuarios(){
-        String[] usuarios = new String[tablaUsuario.size()];
-        Enumeration<Integer> e = tablaUsuario.keys();
-        int cont=0;
-        while(e.hasMoreElements()){
-            int llave = e.nextElement();
-            String nombre = tablaUsuario.get(llave).getNombreUsuario();
-            String apellidoPaterno = tablaUsuario.get(llave).getApePatUsuario();
-            String apellidoMaterno = tablaUsuario.get(llave).getApeMatUsuario();
-            usuarios[cont++] = nombre + " " + apellidoPaterno + " " + apellidoMaterno;
-        }
-        
-        return usuarios;        
-    }
-    
     public String[] getAllNamesLibros() {
       String []names =new String[tablaLibro.size()];
       
