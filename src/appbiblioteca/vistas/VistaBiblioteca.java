@@ -164,8 +164,9 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmExistencia.setText("Aumentar Existencia");
         menuGestion.add(mnItmExistencia);
 
+        mnItmMorosos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_MASK));
         mnItmMorosos.setFont(fuenteH);
-        mnItmMorosos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_add_black_18dp.png"))); // NOI18N
+        mnItmMorosos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_disabled_by_default_black_18dp.png"))); // NOI18N
         mnItmMorosos.setText("Morosos");
         menuGestion.add(mnItmMorosos);
 
@@ -185,13 +186,13 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 
         mnItmReporteUsuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
         mnItmReporteUsuarios.setFont(fuenteH);
-        mnItmReporteUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_search_black_18dp.png"))); // NOI18N
+        mnItmReporteUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_person_search_black_18dp.png"))); // NOI18N
         mnItmReporteUsuarios.setText("Reporte Usuarios");
         menuConsultas.add(mnItmReporteUsuarios);
 
         mnItmInventario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
         mnItmInventario.setFont(fuenteH);
-        mnItmInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_search_black_18dp.png"))); // NOI18N
+        mnItmInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/1x/baseline_find_in_page_black_18dp.png"))); // NOI18N
         mnItmInventario.setText("Inventario");
         menuConsultas.add(mnItmInventario);
 
