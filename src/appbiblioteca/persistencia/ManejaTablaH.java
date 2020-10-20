@@ -188,7 +188,7 @@ public class ManejaTablaH
         
         
       String[] llaves=new String[tablaUsuario.size()+1];
-       llaves[0]=""; 
+       llaves[0]=" "; 
       Enumeration<Integer> e = tablaUsuario.keys();
      
       
