@@ -36,8 +36,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="jjcb_userName" min="-2" pref="432" max="-2" attributes="0"/>
+                                      <Component id="jjcb_userName" min="-2" pref="442" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnDevLibBuscar" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
@@ -149,7 +148,7 @@
               <Table columnCount="3" rowCount="4">
                 <Column editable="false" title="Nombre Usuario" type="java.lang.Object"/>
                 <Column editable="false" title="Nombre Libro" type="java.lang.Object"/>
-                <Column editable="false" title="Dias Transcurridos" type="java.lang.Object"/>
+                <Column editable="false" title="Fecha Prestamo" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="autoResizeMode" type="int" value="4"/>

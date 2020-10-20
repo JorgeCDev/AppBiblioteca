@@ -1,5 +1,7 @@
 package appbiblioteca.vistas;
 
+import recursos.MaterialBtn;
+import recursos.MaterialTxtField;
 import appbiblioteca.negocio.EventosDlgAltaUsuarios;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
@@ -12,7 +14,7 @@ import java.awt.Font;
 public class DlgAltaUsuarios extends javax.swing.JDialog {
 
     private final Font fuenteH= new Font("Helvetica",Font.BOLD,20);
-    private final Font fuenteT= new Font("Helvetica",Font.PLAIN,12);
+    private final Font fuenteT= new Font("Helvetica",Font.PLAIN,14);
     private final Font fuenteB= new Font("Helvetica",Font.BOLD,13);
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
@@ -73,22 +75,16 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
-        javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        javax.swing.JLabel jLabel5 = new javax.swing.JLabel();
-        txtAltaUsuarioApeMat = new javax.swing.JTextField();
+        txtAltaUsuarioApeMat = new MaterialTxtField("Apellido Materno");
         cmbTipo = new javax.swing.JComboBox<>();
-        txtAltaUsuarioCiudad = new javax.swing.JTextField();
-        btnAltaUsuarioAgregar = new javax.swing.JButton();
-        btnAltaUsuarioSalir = new javax.swing.JButton();
-        txtAltaUsuarioApePat = new javax.swing.JTextField();
-        txtAltaUsuarioNombre = new javax.swing.JTextField();
-        javax.swing.JLabel jLabel6 = new javax.swing.JLabel();
-        javax.swing.JLabel jLabel3 = new javax.swing.JLabel();
-        javax.swing.JLabel jLabel7 = new javax.swing.JLabel();
+        txtAltaUsuarioCiudad = new MaterialTxtField("Ciudad de Residencia");
+        btnAltaUsuarioAgregar = new MaterialBtn("Agregar");
+        btnAltaUsuarioSalir = new MaterialBtn("Salir");
+        txtAltaUsuarioApePat = new MaterialTxtField("Apellido Paterno");
+        txtAltaUsuarioNombre = new MaterialTxtField("Nombre");
         jLabel8 = new javax.swing.JLabel();
-        txtAltaUsuarioDomicilio = new javax.swing.JTextField();
+        txtAltaUsuarioDomicilio = new MaterialTxtField("Descripcion");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alta de Usuarios");
@@ -96,18 +92,10 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         setModal(true);
         setResizable(false);
 
-        jLabel1.setFont(fuenteT);
-        jLabel1.setText("Nombre");
-
-        jLabel2.setFont(fuenteT);
-        jLabel2.setText("Domicilio");
-
-        jLabel5.setFont(fuenteT);
-        jLabel5.setText("Ciudad de Residencia");
-
         txtAltaUsuarioApeMat.setFont(fuenteT);
         txtAltaUsuarioApeMat.setBorder(null);
         txtAltaUsuarioApeMat.setMinimumSize(new java.awt.Dimension(0, 20));
+        txtAltaUsuarioApeMat.setPreferredSize(new java.awt.Dimension(100, 40));
 
         cmbTipo.setBackground(Color.WHITE);
         cmbTipo.setFont(fuenteT);
@@ -118,7 +106,7 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
 
         txtAltaUsuarioCiudad.setFont(fuenteT);
         txtAltaUsuarioCiudad.setBorder(null);
-        txtAltaUsuarioCiudad.setPreferredSize(new java.awt.Dimension(0, 25));
+        txtAltaUsuarioCiudad.setPreferredSize(new java.awt.Dimension(100, 40));
 
         btnAltaUsuarioAgregar.setBackground(COLOR_MEDIO);
         btnAltaUsuarioAgregar.setFont(fuenteB);
@@ -139,26 +127,19 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
         txtAltaUsuarioApePat.setFont(fuenteT);
         txtAltaUsuarioApePat.setBorder(null);
         txtAltaUsuarioApePat.setMinimumSize(new java.awt.Dimension(0, 20));
+        txtAltaUsuarioApePat.setPreferredSize(new java.awt.Dimension(100, 40));
 
         txtAltaUsuarioNombre.setFont(fuenteT);
         txtAltaUsuarioNombre.setBorder(null);
         txtAltaUsuarioNombre.setMinimumSize(new java.awt.Dimension(0, 20));
-        txtAltaUsuarioNombre.setPreferredSize(new java.awt.Dimension(0, 25));
-
-        jLabel6.setFont(fuenteT);
-        jLabel6.setText("Tipo");
-
-        jLabel3.setFont(fuenteT);
-        jLabel3.setText("Apellido Paterno");
-
-        jLabel7.setFont(fuenteT);
-        jLabel7.setText("Apellido Materno");
+        txtAltaUsuarioNombre.setPreferredSize(new java.awt.Dimension(100, 40));
 
         jLabel8.setFont(fuenteH);
         jLabel8.setText("Alta de Usuarios");
 
         txtAltaUsuarioDomicilio.setFont(new Font("Helvetica", Font.PLAIN,13));
         txtAltaUsuarioDomicilio.setBorder(null);
+        txtAltaUsuarioDomicilio.setPreferredSize(new java.awt.Dimension(100, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,84 +147,58 @@ public class DlgAltaUsuarios extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel4)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtAltaUsuarioDomicilio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtAltaUsuarioNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtAltaUsuarioNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel8))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtAltaUsuarioDomicilio))))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel8)
-                        .addGap(53, 53, 53))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtAltaUsuarioNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addComponent(jLabel8)
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAltaUsuarioNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAltaUsuarioApePat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAltaUsuarioApeMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
                         .addComponent(jLabel4)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtAltaUsuarioDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
                         .addGap(18, 18, 18)
+                        .addComponent(txtAltaUsuarioDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAltaUsuarioCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(41, 41, 41))))
+                            .addComponent(btnAltaUsuarioSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAltaUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))))
         );
 
         pack();

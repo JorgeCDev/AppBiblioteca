@@ -82,7 +82,7 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
                 {null, null, null}
             },
             new String [] {
-                "Nombre Usuario", "Nombre Libro", "Dias Transcurridos"
+                "Nombre Usuario", "Nombre Libro", "Fecha Prestamo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -131,8 +131,7 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jjcb_userName, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jjcb_userName, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(btnDevLibBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
