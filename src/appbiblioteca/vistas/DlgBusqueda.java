@@ -123,6 +123,7 @@ public class DlgBusqueda extends javax.swing.JDialog {
 
         btnGrpSrchGrupo.add(rBtnSrcAutor);
         rBtnSrcAutor.setFont(fuenteH);
+        rBtnSrcAutor.setSelected(true);
         rBtnSrcAutor.setText("Autor");
 
         btnGrpSrchGrupo.add(rBtnSrcEditorial);
