@@ -64,8 +64,10 @@ public class EventosDlgDevolverLibros implements ActionListener{
                Usuario user = tablaH.getTablaUsuario().getTablaUsuario().get(llave);
                
                tablaH.getTablaPrestamos().removePrestamo(user,(String) model.getValueAt(0,1));
-               if(devolucion.getChkDevLibMoroso().isSelected())
+               if(devolucion.getChkDevLibMoroso().isSelected()){
                    user.setMoroso(true);
+                   devolucion.getChkDevLibMoroso().setSelected(false);
+               }
                
                limpiarModelo();
                 }
@@ -90,7 +92,7 @@ public class EventosDlgDevolverLibros implements ActionListener{
     {
         
         
-        System.out.println(devolucion.getCmbUsuario().getSelectedIndex());
+       
         if(devolucion.getCmbUsuario().getSelectedIndex()>-1)
         {
                 int numero =Integer.parseInt(devolucion.getCmbUsuario().getSelectedItem().toString());
