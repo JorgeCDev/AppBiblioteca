@@ -1,5 +1,7 @@
 package appbiblioteca.vistas;                    
 
+import recursos.MaterialBtn;
+import recursos.FiltraComboBox;
 import appbiblioteca.negocio.EventosDlgMorosos;
 import appbiblioteca.persistencia.ManejaLista;
 import appbiblioteca.persistencia.ManejaTablaH;
@@ -76,17 +78,17 @@ public class DlgMorosos extends javax.swing.JDialog {
 
         lblUsuario = new javax.swing.JLabel();
         cmbUsuario = new javax.swing.JComboBox<>();
-        btnEliminar = new javax.swing.JButton();
+        cmbUsuario = new javax.swing.JComboBox<>();
+        btnEliminar = new MaterialBtn("Eliminar");
         jScrollPane1 = new javax.swing.JScrollPane();
         jTbMorosos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         lblUsuario.setText("Usuario");
 
         cmbUsuario.setBorder(null);
-
-        btnEliminar.setText("Eliminar");
 
         jTbMorosos.setBorder(new javax.swing.border.MatteBorder(null));
         jTbMorosos.setModel(new javax.swing.table.DefaultTableModel(

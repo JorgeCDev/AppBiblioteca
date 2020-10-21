@@ -36,6 +36,7 @@ public class DlgAcerca extends javax.swing.JDialog {
                 dispose();
             }
         });
+        
     }
 
     /**
