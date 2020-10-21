@@ -7,7 +7,9 @@ package appbiblioteca.persistencia;
 
 import appbiblioteca.modelo.Prestamo;
 import appbiblioteca.modelo.Usuario;
+import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.Objects;
 
 /**
@@ -120,6 +122,20 @@ public class ManejaPrestamos {
         if(librosPrestados(user)==0)
             tablaPrestamos.remove(user);
     }
+    
+   public LinkedList<Prestamo[]> getAllPrestamos(){
+        
+        LinkedList<Prestamo[]>lista = new LinkedList<>();
+    
+        Enumeration<Usuario> e = tablaPrestamos.keys();
+          
+        while(e.hasMoreElements()){
+            
+            lista.add(tablaPrestamos.get(e.nextElement()));
+            
+        }        
+        return lista;
+    }  
 
     public Hashtable<Usuario, Prestamo[]> getTablaPrestamos() {
         return tablaPrestamos;
