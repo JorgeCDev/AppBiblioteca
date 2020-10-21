@@ -28,24 +28,29 @@ public class EventosDlgMorosos implements ActionListener
             case "Eliminar":
                 //lista.eliminarMoroso();
                 
-                
+            
+                if (morosos.getCmbUsuario().getSelectedIndex()!=-1) {
                 String usuario = morosos.getCmbUsuario().getSelectedItem().toString();
                 String[] user = usuario.split(" ");
                 String nombre = user[0];
                 String apellPat = user[1];
                 String apellMat = user[2];
-                
                 Usuario moroso = tablaH.getTablaUsuario().buscarUsuario(nombre, apellPat, apellMat);
-                
-                if( lista.usuarioExiste(moroso) ){
+                   if( lista.usuarioExiste(moroso) ){
                     JOptionPane.showMessageDialog(morosos, 
-                            "Usuario Removido de Morosos Correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                            "Usuario Removido", "", JOptionPane.INFORMATION_MESSAGE);
                     lista.eliminarMoroso(moroso);
-                    this.morosos.llenarCombo(lista);
+                    morosos.llenarCombo(lista);
                 }else
                     JOptionPane.showMessageDialog(morosos, 
-                            "Usuario No Existe en Morosos", "", JOptionPane.WARNING_MESSAGE);
-                this.morosos.generarTabla(lista);
+                            "Usuario No Encontrado", "", JOptionPane.WARNING_MESSAGE);
+                    morosos.generarTabla(lista);
+                }
+               
+                
+                
+                
+             
                 break;
         }
 
