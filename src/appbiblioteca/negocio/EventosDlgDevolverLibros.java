@@ -13,6 +13,7 @@ import appbiblioteca.vistas.DlgDevolverLibros;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,12 +31,6 @@ public class EventosDlgDevolverLibros implements ActionListener{
     }
     
  
-    
-    
-    
-    
-    
-
     @Override
     public void actionPerformed(ActionEvent e) {
         String eventos = e.getActionCommand();
@@ -49,14 +44,42 @@ public class EventosDlgDevolverLibros implements ActionListener{
            
                 break;
             
-            
-            
-            
-           
+            case "Devolver":
+                
+                DefaultTableModel model= (DefaultTableModel) devolucion.
+                        getTblDevLibTablaLibrosPrestados().getModel();
+                
+              if( devolucion.getTblDevLibTablaLibrosPrestados().getSelectedRow()>-1)
+              {
+               model.getDataVector().elementAt(devolucion.
+                       getTblDevLibTablaLibrosPrestados().getSelectedRow());
+               
+               tablaH.getTablaLibro().getLibroByName(
+                       (String) model.getValueAt(0,1)).cambiarExistencia(1);
+               
+               int llave= Integer.parseInt(devolucion.getCmbUsuario().
+                       getSelectedItem().toString());
+              
+               
+               Usuario user = tablaH.getTablaUsuario().getTablaUsuario().get(llave);
+               
+               tablaH.getTablaPrestamos().removePrestamo(user,(String) model.getValueAt(0,1));
+               if(devolucion.getChkDevLibMoroso().isSelected())
+                   user.setMoroso(true);
+               
+               limpiarModelo();
+                }
+              else
+              {
+                  JOptionPane.showMessageDialog(devolucion, 
+                            "Seleccione un Prestamo", "", JOptionPane.WARNING_MESSAGE);
+              }
+               
+                
+                break;
+                 
         }
-        
-        
-        
+      
         
     }
     
@@ -67,7 +90,7 @@ public class EventosDlgDevolverLibros implements ActionListener{
     {
         
         
-      
+        System.out.println(devolucion.getCmbUsuario().getSelectedIndex());
         if(devolucion.getCmbUsuario().getSelectedIndex()>-1)
         {
                 int numero =Integer.parseInt(devolucion.getCmbUsuario().getSelectedItem().toString());
@@ -82,7 +105,7 @@ public class EventosDlgDevolverLibros implements ActionListener{
                         devolucion.getTblDevLibTablaLibrosPrestados().getModel();
 
                 modelo.setRowCount(0);
-
+               
                 Object matrix[] = new Object[3];
 
                 for (int i = 0; i < prestamos.length; i++) 
