@@ -56,40 +56,47 @@ public class ManejaEventos implements ActionListener{
                 
             case "Altas Usuario":
                 dialogAltaUsuario = new DlgAltaUsuarios(vista, evento, true, manejaT);
+                dialogAltaUsuario.setLocationRelativeTo(vista);
                 dialogAltaUsuario.setVisible(true);
                 break;
                 
             case "Alta Libros":
                 dialogAltaLibros = new DlgAltaLibros(vista, evento, true, manejaT);
+                dialogAltaLibros.setLocationRelativeTo(vista);
                 dialogAltaLibros.setVisible(true);
                 break;
                 
                 
             case "Aumentar Existencia":
                 dialogAumentarExistencia = new DlgAumentarExist(vista, evento, true, manejaT);
+                dialogAumentarExistencia.setLocationRelativeTo(vista);
                 dialogAumentarExistencia.setVisible(true);
                 break;
                 
                 
             case "Prestamo Libros":
                 
-                prestamos = new DlgPrestamos(vista, "Prestamos", true, manejaT);   
+                prestamos = new DlgPrestamos(vista, "Prestamos", true, manejaT);
+                prestamos.setLocationRelativeTo(vista);
                 prestamos.setVisible(true);
                 
                 break; 
                 
             case "Devolucion de Libros":
                 ddl = new DlgDevolverLibros(vista, evento, true, manejaT);
+                ddl.setLocationRelativeTo(vista);
                 ddl.setVisible(true);
                 break;     
                 
             case "Busqueda":
                 dialogBusqueda = new DlgBusqueda(vista, evento, true, manejaT);
+                dialogBusqueda.setLocationRelativeTo(vista);
                 dialogBusqueda.setVisible(true);
                 break;
                 
             case "Reporte Usuarios":
                 DlgReporteUsuarios dru = new DlgReporteUsuarios(vista, evento, true, manejaT);
+                dru.setLocationRelativeTo(vista);
                 dru.setVisible(true);
                         
 //              vista.getReporteUsuarios().setVisible(true);
@@ -97,17 +104,20 @@ public class ManejaEventos implements ActionListener{
                 
             case "Acerca":
                 dialogAcerca = new DlgAcerca(vista, evento, true);
+                dialogAcerca.setLocationRelativeTo(vista);
                 dialogAcerca.setVisible(true);
                 break; 
                 
             case "Inventario":
-                this.dialogInventario = new DlgInventario(vista, evento, true, manejaT);
-                this.dialogInventario.setVisible(true);
+                dialogInventario = new DlgInventario(vista, evento, true, manejaT);
+                dialogInventario.setLocationRelativeTo(vista);
+                dialogInventario.setVisible(true);
                 break;
                 
             case "Morosos":
-                this.dialogMorosos = new DlgMorosos(vista, evento, true, manejaT, lista);
-                this.dialogMorosos.setVisible(true);
+                dialogMorosos = new DlgMorosos(vista, evento, true, manejaT, lista);
+                dialogMorosos.setLocationRelativeTo(vista);
+                dialogMorosos.setVisible(true);
                 break;
                 
         }
