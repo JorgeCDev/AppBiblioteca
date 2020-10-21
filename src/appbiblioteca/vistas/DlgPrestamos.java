@@ -8,7 +8,7 @@ package appbiblioteca.vistas;
 import appbiblioteca.negocio.EventosDlgPrestamoLibros;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
-import recursos.FiltraComboBox;
+import material.FiltraComboBox;
 import java.awt.Font;
 import java.util.Arrays;
 import javax.swing.JButton;

@@ -5,8 +5,8 @@
  */
 package appbiblioteca.vistas;
 
-import recursos.MaterialBtn;
-import recursos.MaterialTxtField;
+import material.MaterialBtn;
+import material.MaterialTxtField;
 import appbiblioteca.negocio.EventosDlgAltaLibros;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;

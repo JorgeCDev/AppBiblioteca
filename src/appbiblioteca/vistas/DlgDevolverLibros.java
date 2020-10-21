@@ -6,18 +6,17 @@
 package appbiblioteca.vistas;
 
 import appbiblioteca.negocio.EventosDlgDevolverLibros;
-import recursos.FiltraComboBox;
-import recursos.MaterialBtn;
+import material.FiltraComboBox;
+import material.MaterialBtn;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Arrays;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
-import recursos.FiltraComboBox;
+
 
 /**
  *

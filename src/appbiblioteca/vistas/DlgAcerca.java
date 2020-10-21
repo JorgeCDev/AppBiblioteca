@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package appbiblioteca.vistas;
-import recursos.MaterialBtn;
+import material.MaterialBtn;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;

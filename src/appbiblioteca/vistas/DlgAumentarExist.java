@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package appbiblioteca.vistas;
-import recursos.MaterialBtn;
+import material.MaterialBtn;
 import appbiblioteca.negocio.EventosDlgAumentarExistencia;
 import appbiblioteca.persistencia.ManejaTablaH;
 import java.awt.Color;

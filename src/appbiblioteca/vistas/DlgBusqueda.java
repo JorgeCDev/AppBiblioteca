@@ -5,8 +5,8 @@
  */
 package appbiblioteca.vistas;
 
-import recursos.MaterialTxtField;
-import recursos.MaterialBtn;
+import material.MaterialTxtField;
+import material.MaterialBtn;
 import appbiblioteca.negocio.EventosDlgBusqueda;
 import appbiblioteca.modelo.Libro;
 import appbiblioteca.persistencia.ManejaTablaH;
