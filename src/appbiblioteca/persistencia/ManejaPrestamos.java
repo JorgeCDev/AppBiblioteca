@@ -7,6 +7,7 @@ package appbiblioteca.persistencia;
 
 import appbiblioteca.modelo.Prestamo;
 import appbiblioteca.modelo.Usuario;
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Objects;
 
@@ -16,10 +17,11 @@ import java.util.Objects;
  */
 public class ManejaPrestamos {
     
-    Hashtable<Usuario, Prestamo[]> tablaPrestamos =new Hashtable<>();
+    Hashtable<Usuario, Prestamo[]> tablaPrestamos;
     
 
     public ManejaPrestamos() {
+        tablaPrestamos =new Hashtable<Usuario, Prestamo[]>();
     }
     
     
@@ -33,7 +35,8 @@ public class ManejaPrestamos {
         Prestamo[] prestamos =tablaPrestamos.get(user);
         
         for (int i = 0; i < prestamos.length; i++) {
-            if(Objects.isNull(prestamos[i])){
+            if(Objects.isNull(prestamos[i]))
+            {
                 prestamos[i]=prestamo;
                 return;
             }
@@ -58,9 +61,9 @@ public class ManejaPrestamos {
     
     
     public Prestamo[] getPrestamos(Usuario user){
-       
-        return tablaPrestamos.get(user);
-           
+               
+            return tablaPrestamos.get(user);
+        
     }
 
     public int librosPrestados(Usuario user){
@@ -76,6 +79,30 @@ public class ManejaPrestamos {
         
         return cont;
         
+    }
+    
+    public boolean isPrestamoDuplicated(Usuario user,Prestamo prestamo){
+        
+        if(!Objects.isNull(tablaPrestamos.get(user)))
+        {
+        
+        Prestamo[] prestamos = tablaPrestamos.get(user);       
+        
+            for (int i = 0; i < prestamos.length; i++) 
+            {
+                if(!Objects.isNull(prestamos[i]))
+                {
+                        if(prestamos[i].equals(prestamo))
+                            return true;
+                }
+            }
+        }
+       
+        
+    
+       
+        return false;
+  
     }
     
     public void removePrestamo(Usuario user, String nombreLibro){

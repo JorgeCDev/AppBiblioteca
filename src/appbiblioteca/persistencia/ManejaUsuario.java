@@ -16,9 +16,10 @@ import java.util.LinkedList;
  */
 public class ManejaUsuario {
     
-    Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
+    Hashtable<Integer, Usuario> tablaUsuario;
 
     public ManejaUsuario() {
+        tablaUsuario = new Hashtable<Integer,Usuario>();
     }
      
     
@@ -65,11 +66,11 @@ public class ManejaUsuario {
         
         
       String[] llaves=new String[tablaUsuario.size()+1];
-       llaves[0]=""; 
+     
       Enumeration<Integer> e = tablaUsuario.keys();
      
       
-      int cont=1;
+      int cont=0;
       
       while (e.hasMoreElements()){
           int elemt= e.nextElement();
@@ -86,11 +87,11 @@ public class ManejaUsuario {
         
         
       String[] llaves=new String[tablaUsuario.size()+1];
-       llaves[0]=" "; 
+     
       Enumeration<Integer> e = tablaUsuario.keys();
      
       
-      int cont=1;
+      int cont=0;
       
       while (e.hasMoreElements()){
   

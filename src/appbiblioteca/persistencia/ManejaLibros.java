@@ -15,9 +15,10 @@ import java.util.LinkedList;
  * @author Jorge
  */
 public class ManejaLibros {
-    Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
+    Hashtable<Integer, Libro> tablaLibro;
 
     public ManejaLibros() {
+     tablaLibro = new Hashtable<Integer,Libro>();
     }
     
     
