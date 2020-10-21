@@ -74,6 +74,10 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmAcerca.addActionListener(controladora);
         mnItmInventario.addActionListener(controladora);
         mnItmMorosos.addActionListener(controladora);
+        lblInventario.addMouseListener(controladora);
+        lblMorosos.addMouseListener(controladora);
+        lblPrestamos.addMouseListener(controladora);
+        lblUsuario.addMouseListener(controladora);
         
     }
 
@@ -135,6 +139,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         lblInventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_find_in_page_black_18dp.png"))); // NOI18N
         lblInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblInventario.setName("Inventario"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,6 +176,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_person_search_black_18dp.png"))); // NOI18N
         lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblUsuario.setName("Usuarios"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -206,6 +212,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         lblPrestamos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPrestamos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_libraryG.png"))); // NOI18N
         lblPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPrestamos.setName("Prestamos"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -241,6 +248,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         lblMorosos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMorosos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_disabled_by_default_black_18dp.png"))); // NOI18N
         lblMorosos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblMorosos.setName("Morosos"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
