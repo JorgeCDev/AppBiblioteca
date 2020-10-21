@@ -134,6 +134,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         jPanel1.setBackground(COLOR_LIGHT);
 
         jLabel1.setFont(fuenteP);
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Inventario");
 
         lblInventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -167,10 +168,10 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 
         pnlContenedor.add(jPanel1);
 
-        jPanel2.setBackground(COLOR_DARK);
+        jPanel2.setBackground(COLOR_MEDIO);
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(fuenteP);
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuarios");
 
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -203,10 +204,9 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 
         pnlContenedor.add(jPanel2);
 
-        jPanel3.setBackground(COLOR_DARK);
+        jPanel3.setBackground(COLOR_MEDIO);
 
         jLabel3.setFont(fuenteP);
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Prestamos");
 
         lblPrestamos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
