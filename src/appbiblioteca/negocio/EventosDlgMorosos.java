@@ -41,6 +41,7 @@ public class EventosDlgMorosos implements ActionListener
                     JOptionPane.showMessageDialog(morosos, 
                             "Usuario Removido de Morosos Correctamente", "", JOptionPane.INFORMATION_MESSAGE);
                     lista.eliminarMoroso(moroso);
+                    this.morosos.llenarCombo(lista);
                 }else
                     JOptionPane.showMessageDialog(morosos, 
                             "Usuario No Existe en Morosos", "", JOptionPane.WARNING_MESSAGE);

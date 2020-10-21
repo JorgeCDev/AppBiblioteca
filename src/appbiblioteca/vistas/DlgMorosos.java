@@ -1,4 +1,4 @@
-package appbiblioteca.vistas;//GEN-LINE:variables
+package appbiblioteca.vistas;                    
 
 import appbiblioteca.negocio.EventosDlgMorosos;
 import appbiblioteca.persistencia.ManejaLista;
@@ -16,11 +16,12 @@ public class DlgMorosos extends javax.swing.JDialog {
     public DlgMorosos(java.awt.Frame frame,String title, boolean modal, ManejaTablaH tablaH, ManejaLista lista) {
         super(frame,title, modal);
         initComponents();
-        llenarCombo(tablaH);
+        
         crearEscuchadores(tablaH, lista);
         
         lista.agregaMoroso();
         generarTabla(lista);
+        llenarCombo(lista);
     }
     
     private void crearEscuchadores(ManejaTablaH tablaH, ManejaLista lista){
@@ -29,9 +30,18 @@ public class DlgMorosos extends javax.swing.JDialog {
         this.btnEliminar.addActionListener(morosos);
     }
     
-    private void llenarCombo(ManejaTablaH tabla){
-        this.cmbUsuario.setModel(new DefaultComboBoxModel<>(tabla.getUsuarios()));
+    public void llenarCombo(ManejaLista lista){
+        
+        String[] morosos = new String[lista.morosos.size()];
+        
+        for (int i = 0; i < lista.morosos.size(); i++) {
+            morosos[i] = lista.morosos.get(i).getNombreCompleto();
+        }
+        
+        this.cmbUsuario.setModel(new DefaultComboBoxModel<>(morosos));
     }
+    
+    
     public JComboBox<String> getCmbUsuario() {
         return this.cmbUsuario;
     }
