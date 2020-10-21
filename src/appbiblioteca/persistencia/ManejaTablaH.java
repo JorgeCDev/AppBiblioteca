@@ -10,6 +10,7 @@ public class ManejaTablaH
     private ManejaUsuario tablaUsuario = new ManejaUsuario();
     private ManejaPrestamos tablaPrestamos = new ManejaPrestamos();
     private ManejaLibros tablaLibro = new ManejaLibros();
+ 
 
     public ManejaTablaH() {
         
