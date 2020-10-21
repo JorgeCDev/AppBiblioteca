@@ -1,20 +1,24 @@
 package recursos;
 
+
 import javax.swing.*;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class FiltraComboBox extends JComboBox {
+
+public class FiltraComboBox extends JComboBox implements KeyListener {
 
     /**
      * Entries to the combobox list.
      */
     private List<String> entradas;
-
+    private final JTextField textfield;
     public List<String> getEntradas()
     {
+    
         return entradas;
     }
 
@@ -23,31 +27,9 @@ public class FiltraComboBox extends JComboBox {
         super(entradas.toArray());
         this.entradas = entradas  ;
         this.setEditable(true);
-
-        final JTextField textfield =
-                (JTextField) this.getEditor().getEditorComponent();
-
-        /**
-         * Listen for key presses.
-         */
-        textfield.addKeyListener(new KeyAdapter()
-        {
-            public void keyReleased(KeyEvent ke)
-            {
-                SwingUtilities.invokeLater(new Runnable()
-                {
-                    public void run()
-                    {
-                        /**
-                         * On key press filter the list.
-                         * If there is "text" entered in text field of this combo use that "text" for filtering.
-                         */
-                        comboFilter(textfield.getText());
-                    }
-                });
-            }
-        });
-
+        this.setSelectedIndex(-1);
+        textfield =(JTextField) this.getEditor().getEditorComponent();
+        textfield.addKeyListener(this);
     }
 
     /**
@@ -56,12 +38,16 @@ public class FiltraComboBox extends JComboBox {
     public void comboFilter(String texto)
     {
         List<String> listaFiltrada = new ArrayList<String>();
-
+        
+            
         for (String entrada : getEntradas())
         {
-            if (entrada.toLowerCase().contains(texto.toLowerCase()))
+            if(!Objects.isNull(entrada))
             {
-                listaFiltrada.add(entrada);
+                 if (entrada.toLowerCase().contains(texto.toLowerCase()))
+                 {
+                     listaFiltrada.add(entrada);
+                 }
             }
         }
 
@@ -77,5 +63,44 @@ public class FiltraComboBox extends JComboBox {
         {
             this.hidePopup();
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) 
+    {
+        
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) 
+    {
+        
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) 
+    {
+        switch (e.getKeyChar()) {
+            case KeyEvent.VK_ENTER:
+                this.setSelectedItem(textfield.getText());
+                break;
+            case KeyEvent.VK_ESCAPE:
+                this.setSelectedIndex(-1);
+                this.fireActionEvent();
+                break;
+            default:
+                SwingUtilities.invokeLater(new Runnable()
+                {
+                    public void run()
+                    {
+                        
+                        comboFilter(textfield.getText());
+                        
+                        
+                    }
+                });
+                break;
+        }
+
     }
 }
