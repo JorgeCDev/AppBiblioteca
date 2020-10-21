@@ -5,6 +5,7 @@
  */
 package appbiblioteca.vistas;
 
+import appbiblioteca.negocio.EventosDlgDevolverLibros;
 import recursos.FiltraComboBox;
 import recursos.MaterialBtn;
 import appbiblioteca.persistencia.ManejaTablaH;
@@ -12,6 +13,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
 import recursos.FiltraComboBox;
 
 /**
@@ -27,6 +32,7 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);   
     private ManejaTablaH tablaH;
+    private EventosDlgDevolverLibros control;
     /**
      * Creates new form DlgDevolverLibros
      */
@@ -34,7 +40,35 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
         super(parent,title, modal);
         this.tablaH=tablaH; 
         initComponents();
+        creaAcciones();
     }
+    
+    public void creaAcciones(){
+        
+        control = new EventosDlgDevolverLibros(tablaH, this);
+        btnDevLibDevolver.addActionListener(control);
+        cmbUsuario.addActionListener(control);
+    }
+
+    public JButton getBtnDevLibDevolver() {
+        return btnDevLibDevolver;
+    }
+
+    public JCheckBox getChkDevLibMoroso() {
+        return chkDevLibMoroso;
+    }
+
+    public JComboBox<String> getCmbUsuario() {
+        return cmbUsuario;
+    }
+
+    public JTable getTblDevLibTablaLibrosPrestados() {
+        return tblDevLibTablaLibrosPrestados;
+    }
+       
+       
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,7 +80,6 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btnDevLibBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDevLibTablaLibrosPrestados = new javax.swing.JTable();
         chkDevLibMoroso = new javax.swing.JCheckBox();
@@ -63,14 +96,6 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
         jLabel1.setText("Devolucion de Libros");
 
         jLabel2.setText("Usuario");
-
-        btnDevLibBuscar.setBackground(COLOR_LIGHT);
-        btnDevLibBuscar.setFont(fuenteB);
-        btnDevLibBuscar.setText("Buscar");
-        btnDevLibBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.DARK_GRAY));
-        btnDevLibBuscar.setFocusPainted(false);
-        btnDevLibBuscar.setOpaque(false);
-        btnDevLibBuscar.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.DARK_GRAY));
         jScrollPane1.setDoubleBuffered(true);
@@ -128,23 +153,18 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cmbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnDevLibBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jLabel2)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cmbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnDevLibDevolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(chkDevLibMoroso)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDevLibDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(0, 10, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,16 +174,14 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDevLibBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmbUsuario))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDevLibDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(chkDevLibMoroso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDevLibDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,7 +189,6 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDevLibBuscar;
     private javax.swing.JButton btnDevLibDevolver;
     private javax.swing.JCheckBox chkDevLibMoroso;
     private javax.swing.JComboBox<String> cmbUsuario;

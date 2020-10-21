@@ -101,6 +101,22 @@ public class DlgPrestamos extends javax.swing.JDialog {
         
     }
     
+    public void limpiarUsuario(){
+        
+        txtPresLibMorosidad.setText("");   
+        txtPresLibNombreUs1.setText("");
+        txtPresLibPrestamos.setText("");
+        txtPresLibTipo.setText("");
+        
+    }
+    
+    public void limpiarLibro(){
+        
+        txtPresLibNomLibro.setText("");
+        txtPresLibExistencia.setText("");
+        
+    }
+    
     public boolean isEmpty(){
         
         if(cmbPrestLibUsuario.getSelectedItem().equals("")||

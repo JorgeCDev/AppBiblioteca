@@ -29,7 +29,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
     private ManejaTablaH tablaH;
-    EventosDlgAltaLibros controladoraLibros;
+    private EventosDlgAltaLibros controladoraLibros;
     
     /**
      * Creates new form DlgAltaLibros
