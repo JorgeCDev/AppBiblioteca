@@ -132,6 +132,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         pnlContenedor.setLayout(new java.awt.GridLayout(2, 2, 5, 5));
 
         jPanel1.setBackground(COLOR_LIGHT);
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new Color(Color.LIGHT_GRAY.getRed(),Color.LIGHT_GRAY.getGreen(),Color.LIGHT_GRAY.getBlue(),80)));
 
         jLabel1.setFont(fuenteP);
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -154,7 +155,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addComponent(lblInventario)))
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,12 +164,13 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(78, 78, 78)
                 .addComponent(lblInventario)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         pnlContenedor.add(jPanel1);
 
         jPanel2.setBackground(COLOR_MEDIO);
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new Color(Color.LIGHT_GRAY.getRed(),Color.LIGHT_GRAY.getGreen(),Color.LIGHT_GRAY.getBlue(),80)));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(fuenteP);
@@ -188,7 +190,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
+                .addContainerGap(179, Short.MAX_VALUE)
                 .addComponent(lblUsuario)
                 .addGap(171, 171, 171))
         );
@@ -199,12 +201,13 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(76, 76, 76)
                 .addComponent(lblUsuario)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         pnlContenedor.add(jPanel2);
 
         jPanel3.setBackground(COLOR_MEDIO);
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new Color(Color.LIGHT_GRAY.getRed(),Color.LIGHT_GRAY.getGreen(),Color.LIGHT_GRAY.getBlue(),80)));
 
         jLabel3.setFont(fuenteP);
         jLabel3.setText("Prestamos");
@@ -226,7 +229,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addComponent(lblPrestamos)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,12 +238,13 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(88, 88, 88)
                 .addComponent(lblPrestamos)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pnlContenedor.add(jPanel3);
 
         jPanel4.setBackground(COLOR_LIGHT);
+        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new Color(Color.LIGHT_GRAY.getRed(),Color.LIGHT_GRAY.getGreen(),Color.LIGHT_GRAY.getBlue(),80)));
 
         jLabel4.setFont(fuenteP);
         jLabel4.setText("Morosos");
@@ -259,7 +263,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
+                .addContainerGap(181, Short.MAX_VALUE)
                 .addComponent(lblMorosos)
                 .addGap(169, 169, 169))
         );
@@ -270,7 +274,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(81, 81, 81)
                 .addComponent(lblMorosos)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         pnlContenedor.add(jPanel4);
