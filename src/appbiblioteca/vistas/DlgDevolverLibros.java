@@ -142,6 +142,11 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
         btnDevLibDevolver.setFocusPainted(false);
         btnDevLibDevolver.setPreferredSize(new java.awt.Dimension(100, 30));
 
+        cmbUsuario.setFont(fuenteH);
+        cmbUsuario.setBorder(null);
+        cmbUsuario.setDoubleBuffered(true);
+        cmbUsuario.getComponent(0).setBackground(new Color(224, 224, 224, 255));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

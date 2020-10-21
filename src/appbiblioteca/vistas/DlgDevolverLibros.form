@@ -185,13 +185,21 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbUsuario">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="fuenteH" type="code"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="doubleBuffered" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FiltraComboBox(Arrays.asList(names))"/>
         <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String[]names= tablaH.getTablaUsuario().getKeysCombos();"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="cmbUsuario.getComponent(0).setBackground(new Color(224, 224, 224, 255));"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
