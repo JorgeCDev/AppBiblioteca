@@ -15,7 +15,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.Box;
-
+import recursos.MaterialBtn;
 /**
  *
  * @author Jorge
@@ -24,6 +24,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     
     private final Font fuenteH= new Font("Helvetica",Font.PLAIN,13);
     private final Font fuenteT= new Font("Helvetica",Font.PLAIN,15);
+    private final Font fuenteP= new Font("Helvetica",Font.PLAIN,20);
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
@@ -73,6 +74,7 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         mnItmAcerca.addActionListener(controladora);
         mnItmInventario.addActionListener(controladora);
         mnItmMorosos.addActionListener(controladora);
+        
     }
 
     /**
@@ -84,7 +86,19 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlContenedor = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblInventario = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        lblPrestamos = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        lblMorosos = new javax.swing.JLabel();
         mbBarraMenu = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         menuItmSalir = new javax.swing.JMenuItem();
@@ -109,19 +123,149 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/recursos/2x/book-2-24.png")));
         setLocationByPlatform(true);
         setName("VistaBiblioteca"); // NOI18N
+        setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
+        pnlContenedor.setLayout(new java.awt.GridLayout(2, 2, 5, 5));
+
+        jPanel1.setBackground(COLOR_LIGHT);
+
+        jLabel1.setFont(fuenteP);
+        jLabel1.setText("Inventario");
+
+        lblInventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_find_in_page_black_18dp.png"))); // NOI18N
+        lblInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 778, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(lblInventario)))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 534, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(78, 78, 78)
+                .addComponent(lblInventario)
+                .addContainerGap(126, Short.MAX_VALUE))
         );
+
+        pnlContenedor.add(jPanel1);
+
+        jPanel2.setBackground(COLOR_DARK);
+
+        jLabel2.setFont(fuenteP);
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Usuarios");
+
+        lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_person_search_black_18dp.png"))); // NOI18N
+        lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(181, Short.MAX_VALUE)
+                .addComponent(lblUsuario)
+                .addGap(171, 171, 171))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(76, 76, 76)
+                .addComponent(lblUsuario)
+                .addContainerGap(128, Short.MAX_VALUE))
+        );
+
+        pnlContenedor.add(jPanel2);
+
+        jPanel3.setBackground(COLOR_DARK);
+
+        jLabel3.setFont(fuenteP);
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Prestamos");
+
+        lblPrestamos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPrestamos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_libraryG.png"))); // NOI18N
+        lblPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(lblPrestamos)))
+                .addContainerGap(183, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(88, 88, 88)
+                .addComponent(lblPrestamos)
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+
+        pnlContenedor.add(jPanel3);
+
+        jPanel4.setBackground(COLOR_LIGHT);
+
+        jLabel4.setFont(fuenteP);
+        jLabel4.setText("Morosos");
+
+        lblMorosos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMorosos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/2x/baseline_disabled_by_default_black_18dp.png"))); // NOI18N
+        lblMorosos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(183, Short.MAX_VALUE)
+                .addComponent(lblMorosos)
+                .addGap(169, 169, 169))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(81, 81, 81)
+                .addComponent(lblMorosos)
+                .addContainerGap(123, Short.MAX_VALUE))
+        );
+
+        pnlContenedor.add(jPanel4);
 
         mbBarraMenu.setBackground(COLOR_MEDIO);
         mbBarraMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, COLOR_LIGHT, COLOR_MEDIO, COLOR_DARK, COLOR_MEDIO));
@@ -242,14 +386,14 @@ public class VistaBiblioteca extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -258,7 +402,18 @@ public class VistaBiblioteca extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lblInventario;
+    private javax.swing.JLabel lblMorosos;
+    private javax.swing.JLabel lblPrestamos;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JMenuBar mbBarraMenu;
     private javax.swing.JMenu menuAcerca;
     private javax.swing.JMenu menuArchivo;
@@ -276,5 +431,6 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnItmMorosos;
     private javax.swing.JMenuItem mnItmPrestamoLibros;
     private javax.swing.JMenuItem mnItmReporteUsuarios;
+    private javax.swing.JPanel pnlContenedor;
     // End of variables declaration//GEN-END:variables
 }
