@@ -14,11 +14,22 @@ import java.util.Objects;
 
 public class ManejaTablaH 
 {
+    /*
     Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
     Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
     Hashtable<Usuario, Prestamo[]> tablaPrestamos =new Hashtable<>();
-   
+    */
+    private ManejaUsuario tablaUsuario = new ManejaUsuario();
+    private ManejaPrestamos tablaPrestamos = new ManejaPrestamos();
+    private ManejaLibros tablaLibro = new ManejaLibros();
+
+    public ManejaTablaH() {
+        
+    }
     
+    
+   
+    /*
     public void AgregaUsuario(Usuario usuario){
         tablaUsuario.put(tablaUsuario.size()+1, usuario); 
     }
@@ -211,18 +222,18 @@ public class ManejaTablaH
      
     public int sizeLibro(){
         
-        return tablaLibro.size();
+        return tablaLibro.getTablaLibro().size();
     }
     public int sizeUsuario(){
         
-        return tablaUsuario.size();
+        return tablaUsuario.getTablaUsuario().size();
     }
     
     public void addPrestamo(Usuario user, Prestamo prestamo){
         
-    if(tablaPrestamos.containsKey(user)){
+    if(tablaPrestamos.getTablaPrestamos().containsKey(user)){
             
-        Prestamo[] prestamos =tablaPrestamos.get(user);
+        Prestamo[] prestamos =tablaPrestamos.getTablaPrestamos().get(user);
         
         for (int i = 0; i < prestamos.length; i++) {
             if(Objects.isNull(prestamos[i])){
@@ -241,7 +252,7 @@ public class ManejaTablaH
         
         prestamos[0]=prestamo;
         
-        tablaPrestamos.put(user,prestamos);
+        tablaPrestamos.getTablaPrestamos().put(user,prestamos);
         
         
     }
@@ -251,7 +262,7 @@ public class ManejaTablaH
     
     public Prestamo[] getPrestamos(Usuario user){
        
-        return tablaPrestamos.get(user);
+        return tablaPrestamos.getTablaPrestamos().get(user);
            
     }
 
@@ -272,7 +283,7 @@ public class ManejaTablaH
     
     public void removePrestamo(Usuario user, String nombreLibro){
         
-        Prestamo[] prestamos= tablaPrestamos.get(user);
+        Prestamo[] prestamos= tablaPrestamos.getTablaPrestamos().get(user);
         
         for (int i = 0; i < prestamos.length; i++) {
             
@@ -286,15 +297,15 @@ public class ManejaTablaH
     //metodos Get Set
     
     public Hashtable<Integer, Usuario> getTablaUsuario() {
-        return tablaUsuario;
+        return tablaUsuario.getTablaUsuario();
     }
 
     public Hashtable<Integer, Libro> getTablaLibro() {
-        return tablaLibro;
+        return tablaLibro.getTablaLibro();
     }
 
     public Hashtable<Usuario, Prestamo[]> getTablaPrestamos() {
-        return tablaPrestamos;
+        return tablaPrestamos.getTablaPrestamos();
     }
     
     
@@ -307,20 +318,36 @@ public class ManejaTablaH
         while(e.hasMoreElements()){
             int llave = e.nextElement();
                         
-            if( tablaUsuario.get(llave).getNombreUsuario().equals(nombre) &&
-                    tablaUsuario.get(llave).getApePatUsuario().equals(apellPat) &&
-                    tablaUsuario.get(llave).getApeMatUsuario().equals(apellMat) )
+            if( tablaUsuario.getTablaUsuario().get(llave).getNombreUsuario().equals(nombre) &&
+                    tablaUsuario.getTablaUsuario().get(llave).getApePatUsuario().equals(apellPat) &&
+                    tablaUsuario.getTablaUsuario().get(llave).getApeMatUsuario().equals(apellMat) )
             {
-                String domicilio = tablaUsuario.get(llave).getDomicilioUsuario();
-                String ciudad = tablaUsuario.get(llave).getCiudadResidencia();
-                char tipo = tablaUsuario.get(llave).getTipoUsuario();
+                String domicilio = tablaUsuario.getTablaUsuario().get(llave).getDomicilioUsuario();
+                String ciudad = tablaUsuario.getTablaUsuario().get(llave).getCiudadResidencia();
+                char tipo = tablaUsuario.getTablaUsuario().get(llave).getTipoUsuario();
                 
                 user = new Usuario(nombre, apellPat, apellMat, domicilio, ciudad, tipo);
             }   
-            tablaUsuario.get(llave).setMoroso(false);            
+            tablaUsuario.getTablaUsuario().get(llave).setMoroso(false);            
         }
         return user;
     }
+    
+    
+    */
+
+    public ManejaUsuario getTablaUsuario() {
+        return tablaUsuario;
+    }
+
+    public ManejaPrestamos getTablaPrestamos() {
+        return tablaPrestamos;
+    }
+
+    public ManejaLibros getTablaLibro() {
+        return tablaLibro;
+    }
+    
     
     
     

@@ -17,18 +17,18 @@ public class ManejaLista
     
     public void agregaMoroso(){
                
-        Enumeration<Integer> e = tablaH.tablaUsuario.keys();
+        Enumeration<Integer> e = tablaH.getTablaUsuario().tablaUsuario.keys();
         
         while(e.hasMoreElements()){
             int llave = e.nextElement();
             
-            if( tablaH.tablaUsuario.get(llave).isMoroso() ){
-                String nombre = tablaH.tablaUsuario.get(llave).getNombreUsuario();
-                String apellidoPaterno = tablaH.tablaUsuario.get(llave).getApePatUsuario();
-                String apellidoMaterno = tablaH.tablaUsuario.get(llave).getApeMatUsuario();
-                String domicilio = tablaH.tablaUsuario.get(llave).getDomicilioUsuario();
-                String ciudad = tablaH.tablaUsuario.get(llave).getCiudadResidencia();
-                char tipo = tablaH.tablaUsuario.get(llave).getTipoUsuario();
+            if( tablaH.getTablaUsuario().tablaUsuario.get(llave).isMoroso() ){
+                String nombre = tablaH.getTablaUsuario().tablaUsuario.get(llave).getNombreUsuario();
+                String apellidoPaterno = tablaH.getTablaUsuario().tablaUsuario.get(llave).getApePatUsuario();
+                String apellidoMaterno = tablaH.getTablaUsuario().tablaUsuario.get(llave).getApeMatUsuario();
+                String domicilio = tablaH.getTablaUsuario().tablaUsuario.get(llave).getDomicilioUsuario();
+                String ciudad = tablaH.getTablaUsuario().tablaUsuario.get(llave).getCiudadResidencia();
+                char tipo = tablaH.getTablaUsuario().tablaUsuario.get(llave).getTipoUsuario();
 
                 Usuario user = new Usuario(nombre, apellidoPaterno, apellidoMaterno, domicilio, ciudad, tipo);
 
