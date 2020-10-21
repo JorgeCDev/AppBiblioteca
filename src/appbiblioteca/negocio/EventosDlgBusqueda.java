@@ -92,7 +92,7 @@ public class EventosDlgBusqueda implements ActionListener{
     
     public LinkedList<Libro> buscarLibros(String busquedaTipo, String keyword){
         
-        LinkedList<Libro> lista = tablaH.getAllLibros();
+        LinkedList<Libro> lista = tablaH.getTablaLibro().getAllLibros();
         LinkedList<Libro> resultado = new LinkedList<>();
         
         if(busquedaTipo.equals("Autor")){

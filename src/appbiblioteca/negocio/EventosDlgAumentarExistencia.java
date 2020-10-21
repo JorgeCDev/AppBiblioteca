@@ -59,14 +59,14 @@ public class EventosDlgAumentarExistencia implements ActionListener{
                  int llave =Integer.parseInt(existencia.getCmbAumExstClaveLibro().
                          getSelectedItem().toString());
                  
-                 int ext = tablaH.getLibro(llave).getExistencia();
+                 int ext = tablaH.getTablaLibro().getLibro(llave).getExistencia();
                  
                  int nExt= existencia.getExistencia();
                  
-                 tablaH.getLibro(llave).setExistencia(ext+nExt);
+                 tablaH.getTablaLibro().getLibro(llave).setExistencia(ext+nExt);
                  
                  JOptionPane.showMessageDialog(existencia,"Existencia Actualizada Correctamente\n" +
-                         "Existencia Actual: " + tablaH.getLibro(llave).getExistencia());
+                         "Existencia Actual: " + tablaH.getTablaLibro().getLibro(llave).getExistencia());
                  existencia.limpiar();
                 }
                 break;

@@ -35,7 +35,7 @@ public class EventosDlgMorosos implements ActionListener
                 String apellPat = user[1];
                 String apellMat = user[2];
                 
-                Usuario moroso = tablaH.buscarUsuario(nombre, apellPat, apellMat);
+                Usuario moroso = tablaH.getTablaUsuario().buscarUsuario(nombre, apellPat, apellMat);
                 
                 if( lista.usuarioExiste(moroso) ){
                     JOptionPane.showMessageDialog(morosos, 

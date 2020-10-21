@@ -21,6 +21,7 @@ public class EventosDlgAltaLibros implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
         String evento= e.getActionCommand();
        
         switch(evento){
@@ -36,10 +37,10 @@ public class EventosDlgAltaLibros implements ActionListener
                 if( nombre.equals("") || descripcion.equals("") || autor.equals("") || editorial.equals("") )
                     JOptionPane.showMessageDialog(dLibros,"Porfavor llenar los campos Vacios","", JOptionPane.WARNING_MESSAGE);
                 else
-                    if( tablaH.getTablaLibro().contains(libro) )
+                    if( tablaH.getTablaLibro().getTablaLibro().contains(libro) )
                         JOptionPane.showMessageDialog(dLibros,"Libro Duplicado","", JOptionPane.WARNING_MESSAGE);
                     else{
-                        tablaH.AgregaLibro(libro);
+                        tablaH.getTablaLibro().AgregaLibro(libro);
                         //JOptionPane.showMessageDialog(dLibros,"Libro "+nombre+" Agregado Correctamente","", JOptionPane.INFORMATION_MESSAGE);
                         dLibros.limpiarTxt();
                     }

@@ -51,24 +51,24 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                   
                  
                 prest.getTxtPresLibNombreUs1().setText(
-                          tablaH.getTablaUsuario().get(llave).getNombreCompleto()); 
+                          tablaH.getTablaUsuario().getTablaUsuario().get(llave).getNombreCompleto()); 
                 
                 prest.getTxtPresLibTipo().setText(
-                          tablaH.getTablaUsuario().get(llave).getTypeAsString()); 
+                          tablaH.getTablaUsuario().getTablaUsuario().get(llave).getTypeAsString()); 
                 
                 prest.getTxtPresLibMorosidad().setText(
-                        tablaH.getTablaUsuario().get(llave).getMorosidadTxt());
+                        tablaH.getTablaUsuario().getTablaUsuario().get(llave).getMorosidadTxt());
                 
                 
-                if(!tablaH.getTablaPrestamos().containsKey(
-                        tablaH.getTablaUsuario().get(llave)))
+                if(!tablaH.getTablaPrestamos().getTablaPrestamos().containsKey(
+                        tablaH.getTablaUsuario().getTablaUsuario().get(llave)))
                     
                         prest.getTxtPresLibPrestamos().setText("0");
                 else{
                     
                     prest.getTxtPresLibPrestamos().setText(
-                            ""+tablaH.librosPrestados(
-                                    tablaH.getTablaUsuario().get(llave)));
+                            ""+tablaH.getTablaPrestamos().librosPrestados(
+                                    tablaH.getTablaUsuario().getTablaUsuario().get(llave)));
                     
                 }
                   } 
@@ -91,10 +91,10 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                   
                  
                 prest.getTxtPresLibNomLibro().setText(
-                          tablaH.getTablaLibro().get(llave).getNombreLibro()); 
+                          tablaH.getTablaLibro().getTablaLibro().get(llave).getNombreLibro()); 
                 
                 prest.getTxtPresLibExistencia().setText(
-                          ""+tablaH.getTablaLibro().get(llave).getExistencia()); 
+                          ""+tablaH.getTablaLibro().getTablaLibro().get(llave).getExistencia()); 
                
                   } 
               
@@ -135,9 +135,9 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                     int llaveLibro = Integer.parseInt(prest.getCmbPrestLibClave()
                     .getSelectedItem().toString());
 
-                    tablaH.getLibro(llaveLibro).cambiarExistencia(-1);
+                    tablaH.getTablaLibro().getLibro(llaveLibro).cambiarExistencia(-1);
                     String libroPrestado=prest.getTxtPresLibNomLibro().getText();
-                    Usuario user=tablaH.getTablaUsuario().get(llaveUsuario);
+                    Usuario user=tablaH.getTablaUsuario().getTablaUsuario().get(llaveUsuario);
                       
                     Date date = Calendar.getInstance().getTime();
                     DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy");
@@ -148,7 +148,7 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                     Prestamo prestamo= new Prestamo(
                               user.getNombreCompleto(),libroPrestado,strDate);
                       
-                      tablaH.addPrestamo(user, prestamo);
+                      tablaH.getTablaPrestamos().addPrestamo(user, prestamo);
                       
                               
                       JOptionPane.showMessageDialog(prest,"Prestamo Exitoso");  
