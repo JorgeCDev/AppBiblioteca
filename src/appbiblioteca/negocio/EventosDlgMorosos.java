@@ -43,7 +43,7 @@ public class EventosDlgMorosos implements ActionListener
                 }else
                     JOptionPane.showMessageDialog(morosos, 
                             "Usuario No Encontrado", "", JOptionPane.WARNING_MESSAGE);
-                    morosos.generarTabla(lista);
+                                   morosos.generarTabla(lista);
                 }
                
                 
