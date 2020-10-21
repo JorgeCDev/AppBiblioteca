@@ -1,7 +1,6 @@
 package appbiblioteca.vistas;                    
 
 import recursos.MaterialBtn;
-import recursos.FiltraComboBox;
 import appbiblioteca.negocio.EventosDlgMorosos;
 import appbiblioteca.persistencia.ManejaLista;
 import appbiblioteca.persistencia.ManejaTablaH;
