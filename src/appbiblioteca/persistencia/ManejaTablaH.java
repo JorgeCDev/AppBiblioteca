@@ -1,24 +1,12 @@
 package appbiblioteca.persistencia;
 
-import appbiblioteca.modelo.Usuario;
-import appbiblioteca.modelo.Prestamo;
-import appbiblioteca.modelo.Libro;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.Objects;
 
 
 
 
 public class ManejaTablaH 
 {
-    /*
-    Hashtable<Integer, Usuario> tablaUsuario = new Hashtable<Integer,Usuario>();
-    Hashtable<Integer, Libro> tablaLibro = new Hashtable<Integer,Libro>();
-    Hashtable<Usuario, Prestamo[]> tablaPrestamos =new Hashtable<>();
-    */
+
     private ManejaUsuario tablaUsuario = new ManejaUsuario();
     private ManejaPrestamos tablaPrestamos = new ManejaPrestamos();
     private ManejaLibros tablaLibro = new ManejaLibros();
