@@ -76,8 +76,7 @@ public class DlgMorosos extends javax.swing.JDialog {
     private void initComponents() {
 
         lblUsuario = new javax.swing.JLabel();
-        cmbUsuario = new javax.swing.JComboBox<>();
-        cmbUsuario = new javax.swing.JComboBox<>();
+        cmbUsuario = new JComboBox<String>();
         btnEliminar = new MaterialBtn("Eliminar");
         jScrollPane1 = new javax.swing.JScrollPane();
         jTbMorosos = new javax.swing.JTable();
