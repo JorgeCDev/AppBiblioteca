@@ -16,13 +16,16 @@ import appbiblioteca.vistas.DlgPrestamos;
 import appbiblioteca.vistas.DlgDevolverLibros;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JLabel;
 
 
 /**
  *
  * @author Jorge
  */
-public class ManejaEventos implements ActionListener{
+public class ManejaEventos implements ActionListener,MouseListener{
     
     private VistaBiblioteca vista;
     private ManejaTablaH manejaT;
@@ -99,7 +102,7 @@ public class ManejaEventos implements ActionListener{
                 dru.setLocationRelativeTo(vista);
                 dru.setVisible(true);
                         
-//              vista.getReporteUsuarios().setVisible(true);
+
                 break;
                 
             case "Acerca":
@@ -122,6 +125,59 @@ public class ManejaEventos implements ActionListener{
                 
         }
             
+        
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+            JLabel eventL= (JLabel)e.getSource();
+           
+           switch(eventL.getName()){
+                
+           case"Inventario":    
+           dialogInventario = new DlgInventario(vista,"Inventario", true, manejaT);
+                dialogInventario.setLocationRelativeTo(vista);
+                dialogInventario.setVisible(true);
+            break;
+            
+            case"Usuarios":
+           DlgReporteUsuarios dru = new DlgReporteUsuarios(vista,"Usuarios", true, manejaT);
+           dru.setLocationRelativeTo(vista);
+           dru.setVisible(true);
+                break;
+            
+            case"Morosos":
+                dialogMorosos = new DlgMorosos(vista, "Morosos", true, manejaT, lista);
+                dialogMorosos.setLocationRelativeTo(vista);
+                dialogMorosos.setVisible(true);
+                break;
+                
+            case"Prestamos":
+                
+                
+                break;
+                    
+            
+            }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
         
     }
     
