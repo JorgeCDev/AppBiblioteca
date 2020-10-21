@@ -28,9 +28,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" pref="756" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="lblUsuario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="cmbUsuario" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnEliminar" min="-2" pref="172" max="-2" attributes="0"/>
@@ -45,10 +43,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace pref="17" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cmbUsuario" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="lblUsuario" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="cmbUsuario" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="btnEliminar" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -59,13 +54,11 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblUsuario">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Usuario"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JComboBox" name="cmbUsuario">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="cmbUsuario.getComponent(0).setBackground(new Color(224, 224, 224, 255));">
+          <Connection code="fuenteH" type="code"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>

@@ -4,13 +4,15 @@ import material.MaterialBtn;
 import appbiblioteca.negocio.EventosDlgMorosos;
 import appbiblioteca.persistencia.ManejaLista;
 import appbiblioteca.persistencia.ManejaTablaH;
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 public class DlgMorosos extends javax.swing.JDialog {
 
-    
+    private final Font fuenteH= new Font("Helvetica",Font.PLAIN,13);
     /**
      * Creates new form DlgAltaMorosos
      */
@@ -75,7 +77,6 @@ public class DlgMorosos extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblUsuario = new javax.swing.JLabel();
         cmbUsuario = new JComboBox<String>();
         btnEliminar = new MaterialBtn("Eliminar");
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -84,8 +85,8 @@ public class DlgMorosos extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
 
-        lblUsuario.setText("Usuario");
-
+        cmbUsuario.setFont(fuenteH);
+        cmbUsuario.getComponent(0).setBackground(new Color(224, 224, 224, 255));
         cmbUsuario.setBorder(null);
 
         jTbMorosos.setBorder(new javax.swing.border.MatteBorder(null));
@@ -132,8 +133,6 @@ public class DlgMorosos extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cmbUsuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -144,9 +143,7 @@ public class DlgMorosos extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cmbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,6 +159,5 @@ public class DlgMorosos extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> cmbUsuario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTbMorosos;
-    private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
 }
