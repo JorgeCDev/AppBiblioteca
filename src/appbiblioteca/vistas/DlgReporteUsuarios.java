@@ -19,7 +19,7 @@ public class DlgReporteUsuarios extends javax.swing.JDialog{
             "Ciudad o Residencia",
             "Tipo de Usuario"
         };
-        String[][] data = mt.ObtenerTablaUsuario();
+        String[][] data = mt.getTablaUsuario().ObtenerTablaUsuario();
         System.out.println( "datos: " + data );
         JTable jt_info = new JTable(data, nombreColumnas);
         jt_info.setPreferredScrollableViewportSize(new Dimension (600, 180));

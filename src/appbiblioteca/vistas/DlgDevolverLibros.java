@@ -51,7 +51,7 @@ public class DlgDevolverLibros extends javax.swing.JDialog {
         tblDevLibTablaLibrosPrestados = new javax.swing.JTable();
         chkDevLibMoroso = new javax.swing.JCheckBox();
         btnDevLibDevolver = new MaterialBtn("Devolver");
-        String[]names= tablaH.getKeysCombos();
+        String[]names= tablaH.getTablaUsuario().getKeysCombos();
         cmbUsuario = new FiltraComboBox(Arrays.asList(names));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);

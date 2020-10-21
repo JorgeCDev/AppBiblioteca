@@ -49,7 +49,7 @@ public class DlgBusqueda extends javax.swing.JDialog {
     
     private void generarTabla(ManejaTablaH tablaH){
                 
-        LinkedList<Libro> lista = tablaH.getAllLibros();
+        LinkedList<Libro> lista = tablaH.getTablaLibro().getAllLibros();
         DefaultTableModel modelo = (DefaultTableModel) this.tblSrcResultados.getModel();
 
         modelo.setRowCount(0);

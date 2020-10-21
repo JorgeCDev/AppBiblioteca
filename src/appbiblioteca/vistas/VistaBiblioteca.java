@@ -43,17 +43,17 @@ public class VistaBiblioteca extends javax.swing.JFrame {
         Usuario hernan = new Usuario("HERNAN", "ROSALES", "CORVERA", "POR AHI", "CULIACAN", 'M');
         Usuario armando = new Usuario("ARMANDO", "BELTRAN", "MEDINA", "DOMICILIO CONOCIDO", "CULIACAN", 'E');
 
-        tablaH.AgregaUsuario(pedro);
-        tablaH.AgregaUsuario(hernan);
-        tablaH.AgregaUsuario(armando);
+        tablaH.getTablaUsuario().AgregaUsuario(pedro);
+        tablaH.getTablaUsuario().AgregaUsuario(hernan);
+        tablaH.getTablaUsuario().AgregaUsuario(armando);
         
         // Libros Agregados Inicialmente Para Hacer Pruebas
         Libro libro1 = new Libro("GAME OF THRONES", "GEORGE R.R MARTIN",
                 "LIBRO DE FANTASIA MEDIEVAL", "NO SE", 5);
         Libro libro2 = new Libro("HARRY POTTER Y LA PIEDRA FILOSOFAL", "J.K ROWLINS", "LIBRO DE FANTASIA MAGICA Y HECHICERIA", "BLOOMSBURY PUBLISHING", 6);
         
-        tablaH.AgregaLibro(libro1);
-        tablaH.AgregaLibro(libro2);
+        tablaH.getTablaLibro().AgregaLibro(libro1);
+        tablaH.getTablaLibro().AgregaLibro(libro2);
                 
         pedro.setMoroso(true);
         

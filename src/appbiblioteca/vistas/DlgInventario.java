@@ -20,7 +20,7 @@ public class DlgInventario extends javax.swing.JDialog
             "Editorial",
             "Existencia"
         };
-        String[][] data = mt.ObtenerTablaLibro();
+        String[][] data = mt.getTablaLibro().ObtenerTablaLibro();
         JTable jt_info = new JTable(data, nombreColumnas);
         jt_info.setPreferredScrollableViewportSize(new Dimension (600, 180));
 

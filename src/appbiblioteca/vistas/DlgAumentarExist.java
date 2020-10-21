@@ -48,8 +48,8 @@ public class DlgAumentarExist extends javax.swing.JDialog {
         cmbAmtExstNombreLibro.addActionListener(existencia); 
     }
     private void llenarCombos(ManejaTablaH tabla){
-        cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllKeysLibros()));
-        cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getAllNamesLibros()));
+        cmbAumExstClaveLibro.setModel(new DefaultComboBoxModel<>(tabla.getTablaLibro().getAllKeysLibros()));
+        cmbAmtExstNombreLibro.setModel(new DefaultComboBoxModel<>(tabla.getTablaLibro().getAllNamesLibros()));
     }
     
     public void limpiar(){

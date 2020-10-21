@@ -39,7 +39,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
         this.tablaH=tablaH;
         initComponents();
         creaAcciones(tablaH);
-        txtAltaLibClave.setText(""+(tablaH.sizeLibro()+1));
+        txtAltaLibClave.setText(""+(tablaH.getTablaLibro().sizeLibro()+1));
                 
         // Impide que se ingresen letras al JSpinner 
         JFormattedTextField txt = ((JSpinner.NumberEditor) spnAltaLibrosExistencia.getEditor()).getTextField(); 
@@ -71,7 +71,7 @@ public class DlgAltaLibros extends javax.swing.JDialog {
     
     public void limpiarTxt(){
         txtAltaLibAutor.setText("");
-        txtAltaLibClave.setText(""+(tablaH.sizeLibro()+1));
+        txtAltaLibClave.setText(""+(tablaH.getTablaLibro().sizeLibro()+1));
         txtAltaLibDescripcion.setText("");
         txtAltaLibEditorial.setText("");
         spnAltaLibrosExistencia.setValue(0);

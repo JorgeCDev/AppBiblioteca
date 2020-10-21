@@ -223,7 +223,7 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FiltraComboBox(Arrays.asList(names))"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String[]names= tablaH.getKeysCombos();"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String[]names= tablaH.getTablaUsuario().getKeysCombos();"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>

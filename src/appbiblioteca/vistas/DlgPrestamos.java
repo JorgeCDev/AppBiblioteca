@@ -137,9 +137,9 @@ public class DlgPrestamos extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         txtPresLibTipo = new javax.swing.JTextField();
         txtPresLibPrestamos = new javax.swing.JTextField();
-        String[]names= tablaH.getKeysCombos();
+        String[]names= tablaH.getTablaUsuario().getKeysCombos();
         cmbPrestLibUsuario = new FiltraComboBox(Arrays.asList(names));
-        String[]llaves= tablaH.getKeysLibrosCombos();
+        String[]llaves= tablaH.getTablaLibro().getKeysLibrosCombos();
         cmbPrestLibClave = new FiltraComboBox(Arrays.asList(llaves));
         txtPresLibNomLibro = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
