@@ -8,12 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ *
+ * @author Jorge
+ */
 
 public class FiltraComboBox extends JComboBox implements KeyListener {
 
-    /**
-     * Entries to the combobox list.
-     */
+  
     private List<String> entradas;
     private final JTextField textfield;
     public List<String> getEntradas()
@@ -32,9 +34,7 @@ public class FiltraComboBox extends JComboBox implements KeyListener {
         textfield.addKeyListener(this);
     }
 
-    /**
-     * Build a list of entries that match the given filter.
-     */
+  
     public void comboFilter(String texto)
     {
         List<String> listaFiltrada = new ArrayList<String>();
