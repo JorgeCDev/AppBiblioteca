@@ -63,19 +63,7 @@ private ManejaTablaH tablaH;
                 }
 
                getTblReportePrestados().setModel(modelo);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
     }
     
