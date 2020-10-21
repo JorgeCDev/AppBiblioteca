@@ -14,6 +14,7 @@ import appbiblioteca.vistas.DlgBusqueda;
 import appbiblioteca.vistas.DlgInventario;
 import appbiblioteca.vistas.DlgPrestamos;
 import appbiblioteca.vistas.DlgDevolverLibros;
+import appbiblioteca.vistas.DlgReportePrestados;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -39,6 +40,7 @@ public class ManejaEventos implements ActionListener,MouseListener{
     private DlgMorosos dialogMorosos;
     private DlgDevolverLibros ddl;
     private DlgPrestamos prestamos;
+    private DlgReportePrestados prestados;
 
     public ManejaEventos(VistaBiblioteca vista, ManejaTablaH mt, ManejaLista lista) {
         this.vista = vista;
@@ -154,7 +156,9 @@ public class ManejaEventos implements ActionListener,MouseListener{
                 
             case"Prestamos":
                 
-                
+                prestados = new DlgReportePrestados(vista, "Reporte Libros Prestados", true, manejaT);
+                prestados.setLocationRelativeTo(vista);
+                prestados.setVisible(true);
                 break;
                     
             
