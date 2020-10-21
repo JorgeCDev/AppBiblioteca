@@ -7,7 +7,6 @@ package appbiblioteca.persistencia;
 
 import appbiblioteca.modelo.Prestamo;
 import appbiblioteca.modelo.Usuario;
-import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Objects;
 
@@ -111,9 +110,15 @@ public class ManejaPrestamos {
         
         for (int i = 0; i < prestamos.length; i++) {
             
-           if(prestamos[i].getNombreUsuario().equalsIgnoreCase(nombreLibro))
-               prestamos[i]=null;
-        }    
+            if(!Objects.isNull(prestamos[i]))
+                 if(prestamos[i].getLibroPrestado().equalsIgnoreCase(nombreLibro))
+                         prestamos[i]=null;
+              
+           
+        }  
+        
+        if(librosPrestados(user)==0)
+            tablaPrestamos.remove(user);
     }
 
     public Hashtable<Usuario, Prestamo[]> getTablaPrestamos() {

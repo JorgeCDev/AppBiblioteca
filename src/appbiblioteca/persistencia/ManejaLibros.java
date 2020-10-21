@@ -116,6 +116,24 @@ public class ManejaLibros {
         
     }
      
+    public Libro getLibroByName(String libro){
+        
+     
+      Enumeration<Integer> e = tablaLibro.keys();
+ 
+      Libro temp = null;
+      
+      while (e.hasMoreElements()){
+  
+          temp=tablaLibro.get(e.nextElement());
+          
+          if(temp.getNombreLibro().equals(libro))
+           break;
+          
+        }
+          return temp;
+    } 
+     
      public int sizeLibro(){
         
         return tablaLibro.size();
