@@ -29,6 +29,8 @@ public class MaterialTxtField extends JTextField implements FocusListener {
         xFuente=10;
         yFuente=22;
         fuente=14;
+        
+ 
     }
 
     @Override
@@ -39,15 +41,17 @@ public class MaterialTxtField extends JTextField implements FocusListener {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        
         g2.setColor(Color.LIGHT_GRAY);
-
         g2.setStroke(new BasicStroke(2));
         g2.drawLine(0,getHeight()-1,getWidth(),getHeight()-1);
-
+        
+            if(x1!=0){
             g2.setColor(getLightTone());
             g2.drawLine(x1, y1, line, y1);
             g2.drawLine(x1, y1, lineTwo, y1);
-
+            }
+            
             if (isFocusOwner())
                 g2.setColor(getLightTone());
             else
