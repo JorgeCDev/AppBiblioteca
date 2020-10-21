@@ -14,7 +14,6 @@ import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-
 /**
  *
  * @author Jorge
@@ -160,7 +159,7 @@ public class DlgPrestamos extends javax.swing.JDialog {
         txtPresLibNomLibro = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtPresLibNombreUs1 = new javax.swing.JTextField();
+        txtPresLibNombreUs1 = new JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Prestamo de Libros");
@@ -171,21 +170,21 @@ public class DlgPrestamos extends javax.swing.JDialog {
         jLabel1.setFont(fuenteT);
         jLabel1.setText("Prestamo de Libros");
 
-        jLabel3.setFont(fuenteH);
+        jLabel3.setFont(fuenteB);
         jLabel3.setText("Clave Libro");
 
         txtPresLibExistencia.setEditable(false);
         txtPresLibExistencia.setFont(fuenteH);
         txtPresLibExistencia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
-        jLabel4.setFont(fuenteH);
+        jLabel4.setFont(fuenteB);
         jLabel4.setText("Existencia");
 
         txtPresLibMorosidad.setEditable(false);
         txtPresLibMorosidad.setFont(fuenteH);
         txtPresLibMorosidad.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
-        jLabel5.setFont(fuenteH);
+        jLabel5.setFont(fuenteB);
         jLabel5.setText("Morosidad");
 
         btnPresLibPrestar.setBackground(COLOR_MEDIO);
@@ -195,11 +194,13 @@ public class DlgPrestamos extends javax.swing.JDialog {
         btnPresLibPrestar.setFocusPainted(false);
         btnPresLibPrestar.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        jLabel6.setFont(fuenteH);
+        jLabel6.setFont(fuenteB);
         jLabel6.setText("Clave Usuario");
 
+        jLabel7.setFont(fuenteB);
         jLabel7.setText("Prestamos");
 
+        jLabel8.setFont(fuenteB);
         jLabel8.setText("Tipo");
 
         txtPresLibTipo.setEditable(false);
@@ -225,8 +226,10 @@ public class DlgPrestamos extends javax.swing.JDialog {
         txtPresLibNomLibro.setFont(fuenteH);
         txtPresLibNomLibro.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, Color.lightGray));
 
+        jLabel2.setFont(fuenteB);
         jLabel2.setText("Usuario");
 
+        jLabel9.setFont(fuenteB);
         jLabel9.setText("Nombre Libro");
 
         txtPresLibNombreUs1.setEditable(false);

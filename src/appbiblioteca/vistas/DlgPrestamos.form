@@ -138,7 +138,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="fuenteH" type="code"/>
+          <Connection code="fuenteB" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Clave Libro"/>
       </Properties>
@@ -161,7 +161,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="fuenteH" type="code"/>
+          <Connection code="fuenteB" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Existencia"/>
       </Properties>
@@ -184,7 +184,7 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="fuenteH" type="code"/>
+          <Connection code="fuenteB" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Morosidad"/>
       </Properties>
@@ -208,18 +208,24 @@
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="fuenteH" type="code"/>
+          <Connection code="fuenteB" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Clave Usuario"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="fuenteB" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Prestamos"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="fuenteB" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Tipo"/>
       </Properties>
     </Component>
@@ -307,11 +313,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="fuenteB" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Usuario"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="fuenteB" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Nombre Libro"/>
       </Properties>
     </Component>
@@ -329,6 +341,9 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JTextField()"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
