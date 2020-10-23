@@ -5,7 +5,7 @@
  */
 package appbiblioteca.vistas;
 
-
+import recursos.JPanelGradient;
 import appbiblioteca.negocio.ManejaEventos;
 import appbiblioteca.modelo.Libro;
 import appbiblioteca.persistencia.ManejaLista;
@@ -91,16 +91,16 @@ public class VistaBiblioteca extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlContenedor = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new JPanelGradient();
         jLabel1 = new javax.swing.JLabel();
         lblInventario = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel2 = new JPanelGradient();
         jLabel2 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new JPanelGradient();
         jLabel3 = new javax.swing.JLabel();
         lblPrestamos = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jPanel4 = new JPanelGradient();
         jLabel4 = new javax.swing.JLabel();
         lblMorosos = new javax.swing.JLabel();
         mbBarraMenu = new javax.swing.JMenuBar();

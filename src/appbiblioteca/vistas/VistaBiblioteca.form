@@ -339,6 +339,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JPanelGradient()"/>
+          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -407,6 +410,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JPanelGradient()"/>
+          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -474,6 +480,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JPanelGradient()"/>
+          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -541,6 +550,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JPanelGradient()"/>
+          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">
