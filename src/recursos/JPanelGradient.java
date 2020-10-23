@@ -20,6 +20,7 @@ public class JPanelGradient extends JPanel {
     private final Color COLOR_MEDIO = new Color(0, 176, 255);
     private final Color COLOR_LIGHT = new Color(105, 226, 255);
     private final Color COLOR_DARK = new Color(0, 129, 203);
+    
     public JPanelGradient() {
     }
     
