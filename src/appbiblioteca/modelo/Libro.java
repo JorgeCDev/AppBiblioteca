@@ -66,9 +66,10 @@ public class Libro {
     
     public void cambiarExistencia(int restarSumar){
      
-        if (existencia==0|existencia>=10){
+        if (existencia==0){
             
             return;
+            
         }else{
             existencia=existencia+(restarSumar);
         }
