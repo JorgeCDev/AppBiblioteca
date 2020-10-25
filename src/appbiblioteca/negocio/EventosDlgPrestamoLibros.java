@@ -150,7 +150,7 @@ public class EventosDlgPrestamoLibros implements ActionListener{
                     
                     else if(prestamos==2&tipo=='A'|prestamos==2&tipo=='E'|prestamos==3&tipo=='M')
                     {
-                         JOptionPane.showMessageDialog(prest,"Limete de Prestamos Alcanzado");
+                         JOptionPane.showMessageDialog(prest,"Limite de Prestamos Alcanzado");
                         prest.limpiarTxt();
                     }
                     else 
